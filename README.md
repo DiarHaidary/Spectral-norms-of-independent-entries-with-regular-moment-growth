@@ -6,14 +6,34 @@ proved: `MI32.main_upper` in [`Solution.lean`](Solution.lean) contains no
 `sorry`, and its transitive axiom audit reports exactly `propext`,
 `Classical.choice` and `Quot.sound`.
 
-**It is not registered with Palomar.** A submission has been made; its AI
-editorial review returned requested changes on classification and provenance
-metadata and on the Challenge documentation, which this revision addresses.
-Comparator and NanoDa cannot run on this Windows host (they need `landrun` and
-`systemd-run`), so the mechanical checks recorded here are local Lean evidence
-only and mechanical verification of the submission is Palomar's own step.
-Registration has not been requested, no human peer review of the mathematics
-has taken place, and no novelty or priority claim is made.
+**Registered with Palomar** as
+[PALOMAR-2026-09-14-000006, version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-14-000006&version=1),
+published 2026-09-14, registering commit `762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0`
+of this repository and the declaration `MI32.main_upper`.
+
+Palomar's mechanical verification ran on its own Linux infrastructure on
+2026-09-14 ([workflow run 34852526384](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/34852526384)):
+Comparator at `5756749`, NanoDa at `68d5ca9`, `lean4export` at `15f6055` and
+`landrun` at `811cfff`, permitting only `propext`, `Quot.sound` and
+`Classical.choice`. The entry records trust level `high`, and Palomar preserved
+an archival fork of the registered commit. The AI editorial review returned
+outcome `neutral` — no blocking problem — with one warning about the informal
+account, addressed below.
+
+What registration does **not** assert: Palomar is a registry, not a journal,
+and its automated review does not accept, approve or endorse a submission, nor
+does it establish novelty or independently validate the informal argument.
+There has been no human peer review of the mathematics. Note also that the
+registered artefact is commit `762bd5e`; later commits in this repository,
+including the one you are reading, are not covered by entry version 1.
+
+**The review warning, and its correction.** The review found that the informal
+account "materially misidentifies the exact-logarithmic LocalLogMoment theorem
+as a step in the selected proof". That was correct:
+`LocalLogMoment.mean_spectralNorm_le_literal` is a companion corollary and is
+referenced nowhere in the proof of `main_upper`. The description in step 3
+below has been corrected; the chain applies
+`LocalSymmetricMoment.operator_moment_le` at each block's scheduled order.
 
 ## The statement that is proved
 
@@ -61,10 +81,16 @@ is a statement check and is not used by the proof.
    interpolation to the Hölder exponent.
 3. **The local symmetric-law theorem.**
    `LocalSymmetricMoment.operator_moment_le` bounds every even operator moment
-   of a symmetric regular matrix by the variance scale plus its undeleted weak
-   moment, with a dimension factor that is absolute at logarithmic orders;
-   `LocalLogMoment.mean_spectralNorm_le_literal` states it at exactly
-   `log (n+1)`.
+   of a symmetric regular matrix by the variance scale plus its weak moment at
+   that order, with a dimension factor that is absolute at logarithmic orders.
+   This is the theorem the deletion decomposition applies, and it is applied at
+   the scheduled order `2 * BlockOrderArithmetic.blockOrder a` of each block,
+   not at `log (n+1)`.
+   `LocalLogMoment.mean_spectralNorm_le_literal`, which states the mean bound
+   at exactly `log (n+1)`, is a companion corollary and is **not** a step in
+   the proof of `main_upper`; the chain uses only the utility lemmas
+   `linearForm_eq_bilinear` and `integrable_and_mean_le_even_moment` from that
+   module.
 4. **The deletion decomposition.** A nested deterministic family
    `NestedDeletionFamily.sets` at the explicit schedule
    `budget k = 2^(5^k) - 1` screens both orientations with threshold
@@ -79,8 +105,9 @@ is a statement check and is not used by the proof.
      moment ([`FarRemainderMoment.lean`](MI32/FarRemainderMoment.lean)),
      giving `varianceScale * sqrt (1 + sqrt 2 * α^2)` each;
    * each two-shell block is a fiber block outside an earlier selected set, so
-     ten scalar doublings raise the recorded logarithmic order to the scheduled
-     one and the local theorem applies
+     the ten scalar doublings of `BilinearHighOrder.bilinear_moment_le_pow`
+     raise its recorded weak moment from the deletion order `order (a-2)` to
+     the scheduled order `2 * blockOrder a`, at which the local theorem applies
      ([`NearBlockMoment.lean`](MI32/NearBlockMoment.lean)); the growing orders
      make the block maximum cost a factor three, not the number of blocks.
 5. **Symmetrization.** `SymmetrizationReduction.upperBoundAt_of_symmetric`

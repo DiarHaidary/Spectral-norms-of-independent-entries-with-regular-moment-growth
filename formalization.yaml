@@ -20,7 +20,8 @@ project:
     and interpolation, exact occupation-count localization, finite nets, a
     direct independent-coordinate Hilbert comparison, full original-law creator
     and annihilator contractions, positive vacuum iteration giving the local
-    symmetric-law operator-moment theorem at the exact order log(n+1), a nested
+    symmetric-law operator-moment theorem, which the decomposition applies at
+    the scheduled per-block order rather than at log(n+1), a nested
     deterministic deletion decomposition with cubic two-sided variance
     screening, an elementary centered-Gram estimate for the far remainder, two
     two-shell block families controlled by the local theorem at scheduled
@@ -149,9 +150,10 @@ status:
     Palomar challenge hole and is never imported by the proof core or by the
     Solution; its theorem documentation states this and distinguishes it from
     the completed Solution declaration. Comparator and NanoDa cannot be run in
-    the author's local Windows environment, which is why the repository records
-    only local Lean evidence; mechanical verification of the submission is
-    Palomar's own step.
+    the author's local Windows environment; they were run by Palomar on its own
+    Linux infrastructure for the registered commit
+    762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0, which is registered as
+    PALOMAR-2026-09-14-000006 version 1.
   known_gaps: >-
     No lower bound and no quantile statement is formalized or selected; the
     matching lower estimate is credited to Latała-Świątkowski Theorem 4.1. The
@@ -206,12 +208,19 @@ review:
     - "Codex statement-fidelity agent: independent read-only audit of the exact target, 14 September 2026"
   notes: >-
     The statement-fidelity audit found no material mismatch with the MI-32
-    problem statement. It is not independent review of the analytic proof. A
-    Palomar submission has been made and its AI editorial review returned
-    requested changes concerning classification and provenance metadata and the
-    Challenge documentation; this revision addresses them. No human peer review
-    of the mathematics has taken place, and no Palomar acceptance, registry
-    entry, priority or novelty claim is made.
+    problem statement. It is not independent review of the analytic proof. Palomar
+    registered commit 762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0 as entry
+    PALOMAR-2026-09-14-000006 version 1 on 2026-09-14, after mechanical
+    verification on its Linux infrastructure and an AI editorial review with
+    outcome neutral, meaning no blocking problem was identified. An earlier
+    round had requested changes to classification and provenance metadata and
+    to the Challenge documentation, made before registration. The registered
+    review carried one warning, that the informal account misidentified
+    LocalLogMoment.mean_spectralNorm_le_literal as a step in the selected
+    proof; it is a companion corollary, and the README, PROOF_OBLIGATIONS and
+    this description were corrected after registration. Registration is not
+    acceptance, endorsement, human peer review, or a novelty or priority
+    claim.
 
 alignment:
   namespace: "MI32"

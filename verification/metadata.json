@@ -1,8 +1,8 @@
 {
   "status": "passed",
   "tool_commit": "ef2fa1eadcb246c2346ddba39b52eaa53d4bb763",
-  "checked_at": "2026-09-14T13:55:36.754592+00:00",
-  "metadata_sha256": "12759b404bb50f755877db87cf8eea4a747368f26f6847682c39e28c2754ad45",
+  "checked_at": "2026-09-14T16:05:45.808601+00:00",
+  "metadata_sha256": "3cdf4960c0baccedb0e33e81e74fae16385d45f845f0cc1330a99c4743cffd92",
   "project": "MI-32: Lean formalization of the parity and positive-polynomial upper bound",
   "scope": "Pinned metadata mechanical minimum only; not proof verification or submission"
 }

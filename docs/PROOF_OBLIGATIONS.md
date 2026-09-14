@@ -110,7 +110,12 @@ source hashes.
 29. `SymmetricLinearAllOrders` and `LocalLogMoment`: original scalar sums
     double uniformly down to log 2. The literal local operator mean bound
     uses exactly log(n+1), with variance and weak budgets derived from the
-    definitions and all constants explicit.
+    definitions and all constants explicit. That literal endpoint,
+    `LocalLogMoment.mean_spectralNorm_le_literal`, is a companion corollary and
+    is not a step in the proof of `MI32.main_upper`: the deletion decomposition
+    applies `LocalSymmetricMoment.operator_moment_le` directly at each block's
+    scheduled order, and uses only `linearForm_eq_bilinear` and
+    `integrable_and_mean_le_even_moment` from this module.
 30. `WeakMomentBasics`, `DeletionMomentEndpoints`, and `CopyDeletionScale`:
     actual deterministic minimizers, bounded weak-test sets at every
     positive order, and the exact same-set bound D(X-X') <= e D(X), including

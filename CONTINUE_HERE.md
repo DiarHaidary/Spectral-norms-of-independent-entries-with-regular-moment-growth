@@ -43,14 +43,15 @@ entry repeats a variable and the paired dilation budget is not needed.
 
 ## What is NOT done, and must not be claimed
 
-- **Comparator and NanoDa have not been run locally.** They require `landrun`
-  and `systemd-run`; neither exists on this Windows host. A local checkout of
-  the Comparator source is on the machine but is unbuilt and unusable here.
-  Mechanical verification of a submission is Palomar's own step.
-- A Palomar submission has been made and its AI editorial review returned
-  requested changes (classification, provenance, Challenge documentation),
-  addressed in this revision. Registration has not been requested and the
-  project is not registered.
+- **Comparator and NanoDa have never been run locally.** They require
+  `landrun` and `systemd-run`; neither exists on this Windows host. They were
+  run by Palomar on its own Linux infrastructure for the registered commit
+  `762bd5e` (workflow run 34852526384); that is the only mechanical
+  verification that exists, and it covers that commit only.
+- The project IS registered: PALOMAR-2026-09-14-000006 version 1, status
+  `registered`, trust `high`, editorial outcome `neutral` with one warning
+  about the informal account (now corrected). Registration is not acceptance,
+  endorsement, or a novelty claim.
 - No human peer review of the mathematics. Agent review is not peer review.
 - No novelty, priority, lower-bound or quantile claim. The lower comparison is
   a credited existing theorem and is not formalized or selected here.
