@@ -1,4 +1,4 @@
-⚠ [2570/2739] Replayed Challenge
+⚠ [2570/2628] Replayed Challenge
 warning: Challenge.lean:112:8: declaration uses `sorry`
 ⚠ [3461/3668] Replayed GraphMatrices.FiniteL2
 warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:55:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.reconstruct`:

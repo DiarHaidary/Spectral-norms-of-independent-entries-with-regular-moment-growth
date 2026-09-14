@@ -1,0 +1,2083 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+ colorlinks=true,
+ linkcolor=NavyBlue,
+ urlcolor=NavyBlue,
+ citecolor=NavyBlue,
+ pdftitle={Spectral Norms of Independent-Entry Matrices with Regular Moment Growth},
+ pdfauthor={Diar Heidary},
+ pdfkeywords={random matrices, spectral norm, regular moment growth, MI-32, positive polynomials}
+}
+\setlist{itemsep=0.25em,topsep=0.35em}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+
+\title{Spectral Norms of Independent-Entry Matrices\\with Regular Moment Growth}
+\author{Diar Heidary}
+\date{Research draft --- 14 September 2026}
+
+\begin{document}
+\maketitle
+
+\begingroup
+\setlength{\fboxrule}{1pt}
+\setlength{\fboxsep}{8pt}
+\noindent
+\fcolorbox{NavyBlue!75!black}{NavyBlue!3}{%
+ \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+ \small\raggedright
+ \textbf{\color{NavyBlue}AI-assisted draft; the upper bound is
+ machine-checked.}
+ The upper comparison of Theorem~\ref{mi32-main-theorem} has been
+ formalized in Lean~4 and checked by the Lean kernel. The formal target
+ carries no proof gap, and its transitive axiom audit reports only
+ \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound};
+ Section~\ref{mi32-formalization} records the exact statement, the
+ development, and the two places where the formal proof deliberately
+ differs from the informal one. The lower comparison in
+ Section~\ref{mi32-lower-section} is a known result of
+ Lata\l a--\'Swi\k atkowski, reproduced here for completeness, and is
+ \emph{not} formalized. AI tools assisted the derivation, the
+ formalization and the exposition under the author's direction. There
+ has been no external peer review. The upper comparison is registered
+ with the Palomar registry as entry
+ 	exttt{PALOMAR-2026-09-14-000006}, whose mechanical verification
+ replayed the development through the Comparator and NanoDa kernels;
+ registration is not acceptance, endorsement, or peer review.
+ \end{minipage}%
+}
+\endgroup
+\medskip
+
+\begin{abstract}
+We prove the upper comparison in problem MI-32, that is, the upper half
+of Conjecture~4.3 of Lata\l a--\'Swi\k atkowski: for real matrices with
+independent mean-zero entries whose moments satisfy
+$\norm{X_{ij}}_{L_{2p}}\le\alpha\norm{X_{ij}}_{L_p}$, the expected
+operator norm is at most $C_\alpha$ times the sum of the row and column
+variance scales and the shared-index deletion parameter built from weak
+bilinear moments at order $\log(k+1)$, including the exponent
+$\log2<1$ at $k=1$.
+
+The local estimate comes from representing each entry as an independent
+sign times its magnitude. Sign parity supplies orthogonal sectors while
+every magnitude power stays inside the polynomial coefficients, so
+revisiting an entry does not lose its moment information. Creation
+localizes a few original rows and annihilation a few original columns,
+and a net on whichever axis is small costs an absolute factor at the
+relevant moment order. The remaining ingredient is a moment comparison
+on the cone of polynomials with nonnegative original monomial
+coefficients, which contains every vacuum walk polynomial and is
+preserved by the parity projections: in degree $d$ such a polynomial
+obeys an $L_2$-to-$L_4$ bound with factor $(\sqrt3\,\alpha^2)^d$.
+
+The argument is self-contained. In place of the strong/weak moment
+comparison for Banach-space-valued sums we prove the
+independent-coordinate statement the matrix argument actually needs, by
+an independent copy and a multinomial expansion; in place of the
+variance-envelope matrix estimate used in the published reduction of the
+deletion parameter we raise the screening threshold from $b^2$ to $b^3$
+and estimate the far remainder by an elementary centered Gram second
+moment. All constants are explicit, and all of them are constants that
+a proof assistant has checked. We also reproduce the established lower
+comparison, with attribution, and record precisely what the formal
+development does and does not certify.
+\end{abstract}
+
+\clearpage
+\begingroup
+\small
+\tableofcontents
+\endgroup
+\clearpage
+
+% MI32 BODY BEGIN
+
+
+\section{Introduction and the exact mean-norm statement}
+\label{mi32-introduction}
+
+Let $X=(X_{ij})_{i,j\le n}$ be a real matrix with independent mean-zero
+entries. We assume that every absolute moment is finite and that one
+constant $\alpha\ge1$ satisfies
+\begin{equation}\label{mi32-regularity}
+ \norm{X_{ij}}_{L_{2p}}\le\alpha\norm{X_{ij}}_{L_p},
+ \qquad p\ge1,\quad i,j\in[n].
+\end{equation}
+Here $[n]=\{1,\ldots,n\}$ and
+$\norm{Z}_{L_p}=(\E|Z|^p)^{1/p}$ for every $p>0$. At $p<1$ this
+notation denotes a moment functional, not a norm. All logarithms below
+are natural. Matrix norms without a subscript are operator norms for
+the Euclidean norms on domain and range. For a scalar random variable
+we also use the abbreviation $\norm{Z}_p=\norm{Z}_{L_p}$; for a
+deterministic vector, the subscript $2$ denotes its Euclidean norm.
+
+Define the deterministic variance scales
+\begin{equation}\label{mi32-variances}
+ \begin{aligned}
+ \sigma_r(X)&=\max_i\Big(\sum_j\E X_{ij}^2\Big)^{1/2},&
+ \sigma_c(X)&=\max_j\Big(\sum_i\E X_{ij}^2\Big)^{1/2},\\
+ M(X)&=\sigma_r(X)+\sigma_c(X),&
+ \sigma(X)&=\max\{\sigma_r(X),\sigma_c(X)\}.
+ \end{aligned}
+\end{equation}
+For a deterministic set $I\subset[n]$ and $p>0$, put
+\begin{equation}\label{mi32-weak}
+ R_{X,I}(p)=\sup_{\norm{s}_2,\norm{t}_2\le1}
+     \norm{\sum_{i,j\notin I}X_{ij}s_it_j}_{L_p},
+ \qquad R_X(p)=R_{X,\varnothing}(p).
+\end{equation}
+The vectors in this supremum are deterministic. The deletion parameter is
+\begin{equation}\label{mi32-D}
+ D(X)=\max_{1\le k\le n}\ \min_{I\subset[n],\ |I|\le k}
+                                  R_{X,I}(\log(k+1)).
+\end{equation}
+One and the same original set $I$ deletes both rows and columns. It is
+chosen for the law, before any realization is observed. The minimum is
+outside the vector supremum and is attained, since the collection of
+sets is finite. Deleting all indices gives zero, so the $k=n$ term is
+zero. The $k=1$ term retains its exact exponent $\log2<1$.
+
+\begin{theorem}[Independent entries with regular moment growth]
+\label{mi32-main-theorem}
+For every $\alpha\ge1$ there are constants $c_\alpha,C_\alpha>0$
+such that every $n\ge1$ and every matrix satisfying
+\eqref{mi32-regularity} obey
+\begin{equation}\label{mi32-main-bound}
+ c_\alpha\{M(X)+D(X)\}\le\E\norm{X}
+                       \le C_\alpha\{M(X)+D(X)\}.
+\end{equation}
+The constants depend only on $\alpha$, not on the dimension, the
+individual entry distributions, or the deterministic deletion sets.
+\end{theorem}
+
+Only the upper comparison in \eqref{mi32-main-bound} is proved here. It
+is the new content of this paper, and it is the half that has been
+machine-checked; an explicit admissible value of $C_\alpha$ is recorded
+in \eqref{mi32-final-constant}. The lower comparison is a known result,
+reproduced with attribution in Section~\ref{mi32-lower-section}.
+Section~\ref{mi32-literature} locates both halves in the literature and
+says precisely what the present argument adds.
+
+\subsection{The proof mechanism}
+
+For symmetric entries, write $Y_e=\varepsilon_e Z_e$ in law, where
+$Z_e=|Y_e|$ and the original signs are independent of all magnitudes.
+The signs give an orthogonal parity basis. Magnitude powers stay inside
+its coefficients, so visiting an entry repeatedly does not lose its
+moment information. In the row-to-column direction, parity creation
+has exact sectors involving few original rows, whereas parity
+annihilation has different exact sectors involving few original
+columns. A net on this small axis has constant cost at the relevant
+moment order.
+
+The remaining estimate is a polynomial moment comparison on the cone
+of nonnegative original monomial coefficients. That cone contains
+every vacuum walk polynomial and is preserved by the parity projections
+and every subsequent original multiplication. It is not the entire
+linear span of these polynomials. This distinction permits the argument
+to retain rare-amplitude effects without bounding an unrestricted
+orthogonal-polynomial multiplication operator.
+
+Every analytic input is proved below from \eqref{mi32-regularity}: the
+Boolean fourth-moment inequality
+(Lemma~\ref{mi32-hilbert-boolean}), the positive-cone comparison
+(Lemma~\ref{mi32-cone-lemma}), the scalar and vector moment comparisons
+of Section~\ref{mi32-comparison-section}, and the deletion reduction of
+Section~\ref{mi32-reduction-section}. See
+Remark~\ref{mi32-no-external-inputs}.
+
+\subsection{Relation to the literature}
+\label{mi32-literature}
+
+Estimate \eqref{mi32-main-bound} is the content of
+\cite[Conjecture~4.3]{LatalaSwiatkowski}, recorded as problem MI-32 in
+\cite{MI32}. Its lower half is
+\cite[Theorem~4.1]{LatalaSwiatkowski}, which we reproduce in
+Section~\ref{mi32-lower-section}; the upper half is what is proved
+here. The conjecture refines a long line of work on the norm of a
+matrix with independent but not identically distributed entries:
+Seginer's comparison with the largest row and column
+\cite{Seginer}, Lata\l a's variance-based bound \cite{Latala2005}, the
+sharp Gaussian and sub-Gaussian estimates of Bandeira--van~Handel
+\cite{BandeiraVanHandel}, the logarithmic-factor results of
+Riemer--Sch\"utt \cite{RiemerSchutt}, and the dimension-free structure
+theory of Lata\l a--van~Handel--Youssef \cite{LatalaVanHandelYoussef};
+see \cite{VanHandelSurvey} for a survey. For weighted Rademacher
+matrices the conjecture is known up to a triple logarithm
+\cite{Latala2024}, and for general independent entries up to an
+iterated logarithm \cite{Meller}; the present estimate removes the
+remaining gap under the regularity hypothesis
+\eqref{mi32-regularity}.
+
+The relation to \cite{LatalaSwiatkowski} is worth stating precisely,
+because it isolates exactly what is new.
+\cite[Remark~4.5]{LatalaSwiatkowski} shows that, to obtain the upper
+half of their conjecture, it suffices to prove the \emph{undeleted}
+local estimate
+\begin{equation}\label{mi32-lsw-sufficient}
+ \E\norm{X}\le C_\alpha\bigl\{M(X)+R_X(\log(n+1))\bigr\}.
+\end{equation}
+Corollary~\ref{mi32-local-mean} below is exactly
+\eqref{mi32-lsw-sufficient} for entries symmetric in law, and it is the
+new local estimate of this paper. The deduction of the conjecture from
+\eqref{mi32-lsw-sufficient} sketched in
+\cite[Remark~4.5]{LatalaSwiatkowski} passes through a variance-envelope
+bound taken from \cite[Theorem~4.4]{LatalaVanHandelYoussef}.
+Section~\ref{mi32-reduction-section} gives a different deduction that
+avoids that input; the reason and the cost are explained there and in
+Remark~\ref{mi32-cube-remark}.
+
+\subsection{Organization}
+
+Sections~\ref{mi32-polynomial-section} and
+\ref{mi32-comparison-section} prove the polynomial, scalar and vector
+moment estimates used later. Section~\ref{mi32-representation-section}
+sets up the parity--amplitude representation and
+Section~\ref{mi32-counts-section} the two count decompositions.
+Sections~\ref{mi32-thin-section} and \ref{mi32-vacuum-section} prove the
+local moment theorem and its consequence
+\eqref{mi32-lsw-sufficient} at the exact order $\log(n+1)$.
+Section~\ref{mi32-reduction-section} replaces the undeleted weak moment
+by the deletion parameter and removes the symmetry assumption, which
+completes the upper bound. Section~\ref{mi32-lower-section} reproduces
+the known lower comparison, Section~\ref{mi32-scope} delimits what is
+claimed, and Section~\ref{mi32-formalization} describes the machine
+verification.
+\section{Polynomial moment estimates from the entry law}
+\label{mi32-polynomial-section}
+
+Every analytic ingredient of the upper bound is proved in this section
+and the next, from the entry hypothesis \eqref{mi32-regularity} alone.
+Two features of this are worth stating at the outset, because earlier
+treatments of the same route depend on external matrix theorems.
+
+\begin{remark}[No external analytic input]
+\label{mi32-no-external-inputs}
+The upper bound uses no strong/weak moment comparison for
+Banach-space-valued sums, and no variance-envelope matrix estimate. The
+vector comparison the argument needs is the
+independent-coordinate statement of
+Theorem~\ref{mi32-hilbert-comparison}, which is proved here by an
+independent copy and a multinomial expansion. The far remainder of the
+deletion argument is estimated in
+Section~\ref{mi32-far-remainder} by an elementary centered Gram second
+moment. Consequently the only results quoted from the literature are the
+lower comparison of Section~\ref{mi32-lower-section}, which is not part
+of the estimate proved here, and the classical Boolean fourth-moment
+inequality of Lemma~\ref{mi32-hilbert-boolean}, for which we give a
+complete proof.
+\end{remark}
+
+\subsection{Hilbert-valued Boolean fourth moments}
+
+On independent signs $\varepsilon_1,\ldots,\varepsilon_N$, write
+$\varepsilon_S=\prod_{e\in S}\varepsilon_e$ and let $N_\rho$ be the
+noise operator defined on Fourier characters by
+$N_\rho\varepsilon_S=\rho^{|S|}\varepsilon_S$. Only the
+$L_2$-to-$L_4$ case of Boolean hypercontractivity is needed, and only
+for Hilbert-space-valued coefficients. We give its short proof; the
+general Boolean theorem is in \cite[Ch.~9--10]{ODonnellBoolean}.
+
+\begin{lemma}[Hilbert-valued Boolean polynomials]
+\label{mi32-hilbert-boolean}
+If $F=\sum_{|S|\le d}\varepsilon_S v_S$ takes values in a real
+Euclidean space, then
+\begin{equation}\label{mi32-hilbert-boolean-bound}
+ \norm{F}_{L_4(\ell_2)}\le3^{d/2}\norm{F}_{L_2(\ell_2)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For fixed real Hilbert vectors $a,b$,
+\[
+ \E_\varepsilon\norm{a+\varepsilon b}_2^4
+ =(\norm{a}_2^2+\norm{b}_2^2)^2+4\ip{a}{b}^2
+ \le\norm{a}_2^4+6\norm{a}_2^2\norm{b}_2^2+\norm{b}_2^4.
+\]
+If $A,B$ depend on other signs, integrate this inequality and use
+Cauchy--Schwarz in the mixed term. Taking a square root gives
+\begin{equation}\label{mi32-one-sign-fourth}
+ \norm{A+\varepsilon B}_{L_4(\ell_2)}^2
+ \le\norm{A}_{L_4(\ell_2)}^2+3\norm{B}_{L_4(\ell_2)}^2.
+\end{equation}
+Set $\rho=1/\sqrt3$ and induct on the number of signs. Write
+$F=A+\varepsilon_N B$, where $A,B$ depend on the first $N-1$ signs.
+Denoting by $N_\rho'$ the noise operator on those signs, the induction
+hypothesis and \eqref{mi32-one-sign-fourth} yield
+\[
+ \norm{N_\rho F}_{L_4(\ell_2)}^2
+ \le\norm{N_\rho'A}_{L_4(\ell_2)}^2
+        +3\rho^2\norm{N_\rho'B}_{L_4(\ell_2)}^2
+ \le\norm{A}_{L_2(\ell_2)}^2+\norm{B}_{L_2(\ell_2)}^2
+ =\norm{F}_{L_2(\ell_2)}^2.
+\]
+The base case of zero signs is equality. Finally set
+$G=\sum_{|S|\le d}\rho^{-|S|}\varepsilon_Sv_S$, so $N_\rho G=F$.
+Hilbert Fourier orthogonality gives
+\[
+ \norm{F}_{L_4(\ell_2)}
+ \le\norm{G}_{L_2(\ell_2)}
+ =\Big(\sum_{|S|\le d}\rho^{-2|S|}\norm{v_S}_2^2\Big)^{1/2}
+ \le\rho^{-d}\norm{F}_{L_2(\ell_2)}.
+\]
+\end{proof}
+
+\subsection{Product moments of the magnitudes}
+
+Fix independent symmetric variables $W=(W_e)_{e\le N}$ satisfying
+\eqref{mi32-regularity}, and put $Z_e=|W_e|$. For an exponent vector
+$\nu\in\mathbb N_0^N$, write $Z^\nu=\prod_e Z_e^{\nu_e}$ and
+$|\nu|=\sum_e\nu_e$. Polynomial degree below always means this
+ordinary total degree, including all repeated powers.
+
+\begin{lemma}[A product-moment bound]
+\label{mi32-product-moment-lemma}
+For $m_e(u)=\E Z_e^u$, $u\in\mathbb N_0$, and $m_e(0)=1$,
+\begin{equation}\label{mi32-product-moment}
+ m_e(u+v)\le\alpha^{u+v}m_e(u)m_e(v)
+          \le\alpha^{2(u+v)}m_e(u)m_e(v),
+ \qquad u,v\in\mathbb N_0.
+\end{equation}
+Consequently, every scalar polynomial
+$G(Z)=\sum_\nu a_\nu Z^\nu$ with $a_\nu\ge0$ and degree at most
+$D$ satisfies
+\begin{equation}\label{mi32-magnitude-polynomial}
+ \E G(Z)^2\le\alpha^{4D}(\E G(Z))^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For positive integers $u,v$, Cauchy--Schwarz and moment doubling give
+\[
+ \begin{aligned}
+ m_e(u+v)&\le\sqrt{m_e(2u)m_e(2v)},\\
+ m_e(2u)&=\norm{W_e}_{L_{2u}}^{2u}
+        \le\alpha^{2u}\norm{W_e}_{L_u}^{2u}
+         =\alpha^{2u}m_e(u)^2.
+ \end{aligned}
+\]
+Apply the second formula also with $v$ to prove the first inequality in
+\eqref{mi32-product-moment}; the second holds because $\alpha\ge1$.
+If either exponent is zero, the assertion follows from $\alpha\ge1$;
+this does not apply moment doubling at zero. Identically zero variables
+cause no exception.
+
+For two monomials of $G$, independence and the weaker form of
+\eqref{mi32-product-moment} give
+\[
+ \E Z^{\nu+\mu}
+ =\prod_e m_e(\nu_e+\mu_e)
+ \le\alpha^{2(|\nu|+|\mu|)}
+             \prod_e m_e(\nu_e)\prod_e m_e(\mu_e).
+\]
+Multiply by $a_\nu a_\mu\ge0$, sum over $\nu,\mu$, and use
+$|\nu|+|\mu|\le2D$ to obtain \eqref{mi32-magnitude-polynomial}.
+\end{proof}
+
+\begin{lemma}[Positive-coefficient polynomial comparison]
+\label{mi32-cone-lemma}
+Let $F(W)$ be a polynomial taking values in a fixed finite-dimensional
+real Euclidean space. Suppose every coordinate has nonnegative
+coefficients in the ordinary monomial basis of the original $W_e$,
+and $\deg F\le d$. With
+\begin{equation}\label{mi32-H-constant}
+ H_\alpha=\sqrt3\,\alpha^2,
+\end{equation}
+one has
+\begin{align}
+ \norm{F}_{L_4(\ell_2)}&\le H_\alpha^d\norm{F}_{L_2(\ell_2)},
+                  \label{mi32-cone-four}\\
+ \norm{F}_{L_{2p/(p-2)}(\ell_2)}
+   &\le H_\alpha^{4d/p}\norm{F}_{L_2(\ell_2)},\qquad p\ge4.
+                  \label{mi32-cone-holder}
+\end{align}
+\end{lemma}
+\begin{proof}
+Represent $W_e=\varepsilon_eZ_e$ in law with independent signs and
+independent magnitudes. Group ordinary monomials by their exponent
+parity:
+\[
+ F(\varepsilon Z)=\sum_S\varepsilon_SF_S(Z).
+\]
+Every coordinate of each $F_S$ still has nonnegative coefficients.
+Its monomials have exponent parity $S$, degree at most $d$, and hence
+$|S|\le d$. Conditional on $Z$, Lemma~\ref{mi32-hilbert-boolean}
+gives
+\begin{equation}\label{mi32-conditional-fourth}
+ \E_\varepsilon\norm{F(\varepsilon Z)}_2^4
+ \le3^{2d}\Big(\sum_S\norm{F_S(Z)}_2^2\Big)^2.
+\end{equation}
+The scalar polynomial $G(Z)=\sum_S\norm{F_S(Z)}_2^2$ has
+nonnegative coefficients and degree at most $2d$. Conditional sign
+orthogonality gives $\E G=\E\norm{F}_2^2$. Thus
+\eqref{mi32-magnitude-polynomial}, with $D=2d$, proves
+\[
+ \E\norm{F}_2^4\le3^{2d}\alpha^{8d}(\E\norm{F}_2^2)^2
+                =H_\alpha^{4d}(\E\norm{F}_2^2)^2.
+\]
+Its fourth root is \eqref{mi32-cone-four}. For
+$u=2p/(p-2)\in[2,4]$, the interpolation identity
+$1/u=(1-4/p)/2+(4/p)/4$ proves \eqref{mi32-cone-holder}.
+Degree zero gives equality in both comparisons.
+\end{proof}
+
+\begin{remark}[A sharper cone constant, not used]
+\label{mi32-sharp-cone-remark}
+The first inequality of \eqref{mi32-product-moment} is stronger than
+the one used, and yields $\E G^2\le\alpha^{2D}(\E G)^2$ in place of
+\eqref{mi32-magnitude-polynomial}, hence $H_\alpha=\sqrt3\,\alpha$.
+We deliberately carry the conservative value $\sqrt3\,\alpha^2$,
+because it is the one the formal development certifies
+(Section~\ref{mi32-formalization}); every constant displayed in this
+manuscript is therefore a machine-checked constant. Using the sharp
+value replaces one factor $\alpha^2$ by $\alpha$ at each occurrence of
+$H_\alpha$ below, and changes nothing else.
+\end{remark}
+
+The hypothesis of Lemma~\ref{mi32-cone-lemma} concerns coefficients,
+not pointwise positivity of $F(W)$. A coordinate such as $W_1+W_2$ is
+allowed although its value may be negative. Nor does the lemma apply to
+every polynomial merely because the law is symmetric: arbitrary negative
+monomial coefficients may create cancellations in the $L_2$ norm. We
+will only project or multiply polynomials in ways that preserve the
+stated coefficient cone.
+
+\subsection{Scalar linear forms double at every even order}
+
+The following corollary is the only consequence of
+Lemma~\ref{mi32-cone-lemma} needed for scalar sums. It is what replaces
+the scalar moment-growth estimate that an external strong/weak
+comparison would otherwise supply.
+
+\begin{corollary}[Even-order doubling for linear forms]
+\label{mi32-scalar-doubling}
+Let $W=(W_e)$ be independent symmetric variables satisfying
+\eqref{mi32-regularity}, let $a_e$ be arbitrary real coefficients, and
+put $S=\sum_ea_eW_e$. For every integer $q\ge1$,
+\begin{equation}\label{mi32-scalar-doubling-bound}
+ \norm{S}_{L_{4q}}\le H_\alpha\norm{S}_{L_{2q}}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Represent $W_e=\varepsilon_eZ_e$. Replacing $a_e$ by $|a_e|$ changes
+neither side: the signs $\mathrm{sgn}(a_e)\varepsilon_e$ have the same
+joint law as the $\varepsilon_e$, and both moments depend only on that
+law. So assume $a_e\ge0$. Then $S^q$ is a scalar polynomial in the
+original variables of degree $q$ whose ordinary coefficients are
+nonnegative, being multinomial coefficients times products of the
+$a_e$. Lemma~\ref{mi32-cone-lemma}, applied to the one-dimensional
+Euclidean space with $d=q$, gives
+\[
+ \E S^{4q}=\E|S^q|^4\le H_\alpha^{4q}\bigl(\E|S^q|^2\bigr)^2
+               =H_\alpha^{4q}\bigl(\E S^{2q}\bigr)^2 .
+\]
+Taking $4q$-th roots gives \eqref{mi32-scalar-doubling-bound}.
+\end{proof}
+
+\section{A strong/weak comparison for independent coordinates}
+\label{mi32-comparison-section}
+
+The thin-matrix estimate of Section~\ref{mi32-thin-section} needs to
+compare the $L_{4q}$ moment of the Euclidean norm of a random vector
+with its variance and its weak moments. For a vector with
+\emph{independent} coordinates this can be proved directly, and that is
+all the matrix argument uses. We do so here. No comparison for general
+Banach norms or general index sets is required, and none is assumed.
+
+\subsection{An even-moment comparison for independent symmetric families}
+
+\begin{lemma}[Coordinatewise even moments tensorize]
+\label{mi32-even-comparison}
+Let $(A_j)_{j\in J}$ and $(B_j)_{j\in J}$ be finite families of
+symmetric real random variables, each family independent, with moments
+through order $2q$ finite. The two families may live on different
+probability spaces, or on one space with arbitrary dependence between
+them. If $c\ge0$ and
+\[
+ \E A_j^{2r}\le c^{2r}\,\E B_j^{2r}
+ \qquad(j\in J,\ 1\le r\le q),
+\]
+then
+\begin{equation}\label{mi32-even-comparison-bound}
+ \E\Bigl(\sum_jA_j\Bigr)^{2q}
+ \le c^{2q}\,\E\Bigl(\sum_jB_j\Bigr)^{2q}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expand the $2q$-th power by the multinomial formula. Independence
+factors each monomial expectation as $\prod_j\E A_j^{k_j}$ with
+$\sum_jk_j=2q$; every such monomial is integrable, by independence and
+finiteness of the individual powers. Symmetry makes $\E A_j^{k_j}=0$
+whenever $k_j$ is odd, so only terms with all $k_j$ even survive. For
+those terms every factor is nonnegative and the hypothesis applies
+coordinatewise; the multinomial coefficients are nonnegative integers,
+and the powers of $c$ multiply to $c^{\sum_jk_j}=c^{2q}$. Summing the
+surviving terms gives \eqref{mi32-even-comparison-bound}. Exponent-zero
+factors equal one by normalization.
+\end{proof}
+
+Note what this argument does \emph{not} do: it does not compare
+expansions of absolute values. The odd monomials vanish exactly, and
+the remaining ones are compared term by term.
+
+\subsection{The comparison}
+
+\begin{theorem}[Independent-coordinate strong/weak comparison]
+\label{mi32-hilbert-comparison}
+Let $(V_j)_{j\in J}$ be a finite family of independent real random
+variables, each symmetric in law, with finite moments of order $4q$ for
+an integer $q\ge1$. Suppose $\beta\ge0$ satisfies
+\begin{equation}\label{mi32-coordinate-regularity}
+ \norm{V_j}_{L_{4r}}\le\beta\norm{V_j}_{L_{2r}}
+ \qquad(j\in J,\ 1\le r\le q).
+\end{equation}
+Put
+\[
+ R=\Bigl(\sum_jV_j^2\Bigr)^{1/2},\qquad
+ \sigma^2=\sum_j\E V_j^2,\qquad
+ W_s=\sup_{\sum_jt_j^2\le1}
+        \Bigl\|\sum_jt_jV_j\Bigr\|_{L_s}.
+\]
+Then
+\begin{equation}\label{mi32-hilbert-comparison-bound}
+ \norm{R}_{L_{4q}}\le\sigma+2\beta^2W_{2q}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+All the displayed quantities are finite: $R\le\sum_j|V_j|$ pointwise,
+Minkowski controls the latter at every order used, and every unit-ball
+coefficient satisfies $|t_j|\le1$, so
+$W_s\le\sum_j\norm{V_j}_{L_s}<\infty$. The supremum defining $W_s$ is a
+supremum of deterministic numbers; no measurable selection is involved.
+For $J=\varnothing$ every quantity vanishes.
+
+Work on a product space carrying an independent copy $(V_j')$ of the
+whole family, and set
+\[
+ A_j=V_j^2-(V_j')^2,\qquad B_j=V_jV_j'.
+\]
+The pairs $(V_j,V_j')$ are independent in $j$, so $(A_j)$ and $(B_j)$
+are independent families. Each $A_j$ is symmetric by exchanging the two
+copies, and each $B_j$ is symmetric because the law of $V_j$ is
+symmetric and the copy is independent. These are statements about laws;
+no sign-flipping map on the underlying space is needed.
+
+For $1\le r\le q$, Minkowski, \eqref{mi32-coordinate-regularity} and
+exact factorization of the two independent copies give
+\begin{equation}\label{mi32-AB-comparison}
+ \norm{A_j}_{L_{2r}}\le2\norm{V_j^2}_{L_{2r}}
+   =2\norm{V_j}_{L_{4r}}^2
+   \le2\beta^2\norm{V_j}_{L_{2r}}^2
+   =2\beta^2\norm{B_j}_{L_{2r}}.
+\end{equation}
+Raising \eqref{mi32-AB-comparison} to the power $2r$ and applying
+Lemma~\ref{mi32-even-comparison} with $c=2\beta^2$ yields
+\begin{equation}\label{mi32-AB-sums}
+ \Bigl\|\sum_jA_j\Bigr\|_{L_{2q}}
+ \le2\beta^2\Bigl\|\sum_jB_j\Bigr\|_{L_{2q}}.
+\end{equation}
+
+Put $S=\sum_jV_j^2$ and $S'=\sum_j(V_j')^2$, so $\E S'=\sigma^2$.
+Jensen in the copy coordinate, applied to $z\mapsto|z|^{2q}$ and then
+integrated in the first coordinate, gives
+\begin{equation}\label{mi32-jensen-copy}
+ \norm{S-\sigma^2}_{L_{2q}}\le\norm{S-S'}_{L_{2q}}
+ =\Bigl\|\sum_jA_j\Bigr\|_{L_{2q}} .
+\end{equation}
+For a fixed deterministic vector $v'$, homogeneity of the definition of
+$W_{2q}$ gives $\norm{\sum_jv_j'V_j}_{L_{2q}}\le W_{2q}\norm{v'}_2$;
+this is trivial at $v'=0$ and otherwise follows by normalizing.
+Raising to the power $2q$, integrating over the independent copy and
+taking the root,
+\begin{equation}\label{mi32-B-weak}
+ \Bigl\|\sum_jB_j\Bigr\|_{L_{2q}}\le W_{2q}\norm{R}_{L_{2q}}.
+\end{equation}
+This is the integration of a deterministic scalar bound; the inner law
+is always the original law of $V$, and the coefficient vector is the
+independent copy.
+
+Let $x=\norm{R}_{L_{4q}}$ and $y=\norm{R}_{L_{2q}}$, both finite and
+nonnegative. Since $\norm{S}_{L_{2q}}=x^2$, combining Minkowski with
+\eqref{mi32-jensen-copy}, \eqref{mi32-AB-sums} and
+\eqref{mi32-B-weak}, and then $y\le x$, gives
+\[
+ x^2\le\sigma^2+2\beta^2W_{2q}\,y\le\sigma^2+2\beta^2W_{2q}\,x .
+\]
+For nonnegative $x,\sigma,a$ the inequality $x^2\le\sigma^2+ax$ forces
+$x\le\sigma+a$: otherwise $x>\sigma+a\ge0$ would give
+$x^2>(\sigma+a)x\ge\sigma^2+ax$. Taking $a=2\beta^2W_{2q}$ proves
+\eqref{mi32-hilbert-comparison-bound}.
+\end{proof}
+
+The hypotheses of Theorem~\ref{mi32-hilbert-comparison} are finite-order
+and concern only the individual coordinates. They contain neither the
+conclusion nor any vector moment estimate, and there are no dimension
+factors in \eqref{mi32-hilbert-comparison-bound}.
+
+\subsection{Doubling at every real order above \texorpdfstring{$\log2$}{log 2}}
+
+The deletion argument of Section~\ref{mi32-reduction-section} compares
+weak moments at the subunit order $\log2$ with weak moments at large
+scheduled orders. The next proposition supplies that comparison from
+Corollary~\ref{mi32-scalar-doubling} alone, with an explicit constant
+and no restriction to orders above one.
+
+\begin{proposition}[Uniform real-order doubling]
+\label{mi32-real-doubling}
+Let $S=\sum_ea_eW_e$ be as in Corollary~\ref{mi32-scalar-doubling} and
+put
+\begin{equation}\label{mi32-J-constant}
+ J_\alpha=H_\alpha^7=(\sqrt3\,\alpha^2)^7 .
+\end{equation}
+Then
+\begin{equation}\label{mi32-real-doubling-bound}
+ \norm{S}_{L_{2p}}\le J_\alpha\norm{S}_{L_p},
+ \qquad p\ge\tfrac12 .
+\end{equation}
+In particular \eqref{mi32-real-doubling-bound} holds for every
+$p\ge\log2$.
+\end{proposition}
+\begin{proof}
+Write $\beta=H_\alpha\ge1$. Corollary~\ref{mi32-scalar-doubling} at
+$q=1$ gives $\norm{S}_{L_4}\le\beta\norm{S}_{L_2}$, that is,
+$\E|S|^4\le\beta^4(\E|S|^2)^2$. H\"older with the interpolation
+$2=\tfrac47\cdot\tfrac12+\tfrac37\cdot4$ gives
+\[
+ \E|S|^2\le\bigl(\E|S|^{1/2}\bigr)^{4/7}
+              \bigl(\E|S|^4\bigr)^{3/7},
+\]
+hence $(\E|S|^2)^7\le(\E|S|^{1/2})^4(\E|S|^4)^3
+\le\beta^{12}(\E|S|^{1/2})^4(\E|S|^2)^6$, so
+$\E|S|^2\le\beta^{12}(\E|S|^{1/2})^4$ and therefore
+\begin{equation}\label{mi32-two-to-half}
+ \norm{S}_{L_2}\le\beta^6\norm{S}_{L_{1/2}} .
+\end{equation}
+All these integrals are finite, and the argument is unaffected if one
+of them vanishes.
+
+Let $\tfrac12\le p\le2$. Monotonicity of $p\mapsto\norm{S}_{L_p}$ on a
+probability space, Corollary~\ref{mi32-scalar-doubling} at $q=1$ and
+\eqref{mi32-two-to-half} give
+\[
+ \norm{S}_{L_{2p}}\le\norm{S}_{L_4}
+   \le\beta\norm{S}_{L_2}
+   \le\beta^7\norm{S}_{L_{1/2}}
+   \le\beta^7\norm{S}_{L_p} .
+\]
+Let $p>2$ and put $r=\lfloor p/2\rfloor\ge1$, so that
+$2r\le p\le4r$ and $2p\le8r$. Two applications of
+Corollary~\ref{mi32-scalar-doubling}, at $2r$ and at $r$, give
+\[
+ \norm{S}_{L_{2p}}\le\norm{S}_{L_{8r}}
+   \le\beta\norm{S}_{L_{4r}}
+   \le\beta^2\norm{S}_{L_{2r}}
+   \le\beta^2\norm{S}_{L_p}
+   \le\beta^7\norm{S}_{L_p} .
+\]
+Finally $\log2>\tfrac12$.
+\end{proof}
+
+Taking bilinear suprema over deterministic unit vectors on a fixed
+deleted submatrix, \eqref{mi32-real-doubling-bound} gives
+\begin{equation}\label{mi32-weak-doubling}
+ R_{X,I}(2p)\le J_\alpha R_{X,I}(p),\qquad p\ge\log2,
+\end{equation}
+for every deterministic $I$, since each bilinear form
+$\sum_{i,j\notin I}X_{ij}s_it_j$ is a deterministic linear combination
+of the original entries. The set $I$ is unchanged by this operation.
+\section{The exact parity--amplitude representation}
+\label{mi32-representation-section}
+
+For now let $Y=(Y_{ij})_{i,j\le n}$ have independent symmetric entries
+satisfying \eqref{mi32-regularity}. There is one original label
+$e=(i,j)$ for each nonzero entry; denote this finite label set by
+$\mathcal E$. Keeping zero entries as zero multipliers would give the
+same formulas. Row vertices $r_i$ and column vertices $c_j$ belong to
+disjoint copies of $[n]$; write $\mathcal V$ for their union.
+
+Represent the joint law as $Y_e=\varepsilon_eZ_e$. The magnitudes are
+independent because the original entries are independent. Signs can be
+chosen independent of all magnitudes even at zero atoms: the product
+law on $(\varepsilon,Z)$ has exactly the required image law for $Y$.
+The sign at $(i,j)$ is distinct from that at $(j,i)$ when both labels
+exist. Both directions of the single edge between $r_i$ and $c_j$
+use the same variable $Y_{ij}$.
+
+\subsection{The space and its polynomial domain}
+
+Let $\mu_Z$ be the joint magnitude law and define
+\begin{equation}\label{mi32-state-space}
+ \mathcal H=L_2\bigl(\mu_Z;
+                    \ell_2(\mathcal V\times2^{\mathcal E})\bigr),
+ \qquad
+ \norm{f}_{\mathcal H}^2
+      =\E_Z\sum_{v\in\mathcal V}\sum_{S\subset\mathcal E}
+                                                |f_{v,S}(Z)|^2.
+\end{equation}
+Conditional Fourier transform in the signs is the isometry
+\begin{equation}\label{mi32-fourier-transform}
+ (\mathcal U f)_v(\varepsilon,Z)
+          =\sum_{S\subset\mathcal E}\varepsilon_S f_{v,S}(Z)
+\end{equation}
+onto $L_2(\varepsilon,Z;\ell_2(\mathcal V))$.
+This transform preserves the $L_2$ norm, not general $L_p$ norms.
+For example, with one sign and unit magnitude, amplitudes
+$f_{\varnothing}=f_{\{e\}}=1$ have coefficient-vector norm $\sqrt2$,
+whereas $\mathcal U f=1+\varepsilon_e$ has $L_4$ norm $2^{3/4}$.
+Every non-$L_2$ norm used in the contraction below is therefore a norm
+of the reconstructed random polynomial $\mathcal U f$, rather than
+of its occupation-amplitude vector.
+All formulas below may be restricted to polynomial coefficients, for
+which every required moment is finite. No assertion about boundedness
+of the full multiplication operator on $\mathcal H$ is needed.
+
+Define $\mathcal P_d^+$ to be the image under $\mathcal U^{-1}$ of
+vector polynomials in the original $Y_e$ of degree at most $d$ whose
+ordinary coefficients are nonnegative in each current-vertex coordinate.
+Thus a monomial $a_{v,\nu}Y^\nu$ contributes
+$a_{v,\nu}Z^\nu$ to the component $(v,S)$ with
+$S=\{e:\nu_e\text{ is odd}\}$. This parity compatibility is part
+of the definition. It ensures that $\mathcal U f$ is a polynomial in
+the original variables, so Lemma~\ref{mi32-cone-lemma} applies.
+
+The parity grade of $(v,S)$ is $|S|$. Let $P_k$ keep exactly grade $k$.
+For $f\in\mathcal P_d^+$, necessarily $P_kf=0$ for $k>d$.
+Projection onto any collection of pairs $(v,S)$ simply discards
+ordinary monomials, hence preserves $\mathcal P_d^+$. Distinct such
+collections are orthogonal in \eqref{mi32-state-space}.
+Magnitude coefficients on different parity states may have common
+even powers, including powers of edges outside the occupied set $S$.
+They are not required to be orthogonal or independent.
+
+\subsection{Multiplication, creation, and annihilation}
+
+The actual symmetric dilation is
+\begin{equation}\label{mi32-dilation}
+ H_Y=\begin{pmatrix}0&Y\\Y^\top&0\end{pmatrix}.
+\end{equation}
+For a scalar magnitude polynomial $h(Z)$ at state $(v,S)$,
+conjugating multiplication by $H_Y$ through $\mathcal U$ gives
+\begin{equation}\label{mi32-exact-operator}
+ \mathcal T\bigl(h(Z)|v,S\rangle\bigr)
+    =\sum_{e=vw}Z_eh(Z)|w,S\triangle\{e\}\rangle.
+\end{equation}
+Here $e=vw$ means the original bipartite entry with endpoints $v,w$.
+Define $\mathcal C_+$ by keeping terms with $e\notin S$ and
+$\mathcal C_-$ by keeping terms with $e\in S$. Their sum is exactly
+$\mathcal T$, and they change parity grade by $+1$ and $-1$.
+
+Both maps multiply the magnitude coefficient by $Z_e$. On an ordinary
+monomial $Y^\nu$, either action increases $\nu_e$ by one. Therefore
+\begin{equation}\label{mi32-cone-preservation}
+ \mathcal C_+\mathcal P_d^+\subset\mathcal P_{d+1}^+,
+ \qquad
+ \mathcal C_-\mathcal P_d^+\subset\mathcal P_{d+1}^+,
+ \qquad
+ \mathcal T\mathcal P_d^+\subset\mathcal P_{d+1}^+.
+\end{equation}
+In particular annihilation does not divide by a magnitude or reset its
+earlier powers. On $Y_e^3$, its action gives $Y_e^4$ while removing the
+odd parity flag. This retains the full fourth moment of that same entry.
+
+\section{Exact localization by the two original count vectors}
+\label{mi32-counts-section}
+
+For $S\subset\mathcal E$, define
+\[
+ r_i(S)=|S\cap(\{i\}\times[n])|,
+ \qquad c_j(S)=|S\cap([n]\times\{j\})|.
+\]
+The vectors $r(S),c(S)$ count occupied original parity labels, not
+total magnitude degrees. Write $\delta_i$ for a coordinate vector in
+the relevant row or column count space.
+
+\begin{lemma}[Two exact count decompositions]
+\label{mi32-counts-lemma}
+Consider maps from a current row to a current column, at input parity
+grade $k$. Each of the following gives orthogonal partitions of both
+the input states and the output states of the specified map.
+\begin{enumerate}
+\item For creation, label input $(r_i,S)$ by $d=r(S)+\delta_i$ and
+output $(c_j,U)$ by $d=r(U)$. Put $I=\{i:d_i>0\}$. Then
+$|I|\le k+1$ and the entire sector is an input/output parity-count
+compression of multiplication by $Y[I,:]^\top$.
+\item For annihilation, label input $(r_i,S)$ by $d=c(S)$ and output
+$(c_j,U)$ by $d=c(U)+\delta_j$. Put $J=\{j:d_j>0\}$. Then
+$|J|\le k$ and the entire sector is an input/output parity-count
+compression of multiplication by $Y[:,J]^\top$. At $k=0$ the map is
+zero.
+\end{enumerate}
+The reverse current-side direction transposes the statements.
+Every magnitude variable remains available inside the coefficients.
+\end{lemma}
+\begin{proof}
+Creation along $e=(i,j)\notin S$ produces
+$U=S\cup\{(i,j)\}$, so $r(U)=r(S)+\delta_i=d$.
+For fixed $d$, every input current row lies in $I$, and all parity
+flags on input and output lie in $I\times[n]$.
+The sum of the coordinates of $d$ is $k+1$, giving $|I|\le k+1$.
+Multiplication by $Y[I,:]^\top$ therefore includes every actual
+transition, with exactly its original coefficient.
+
+More explicitly, let $P_d$ select the input label $r(S)+\delta_i=d$
+and $Q_d$ select output grade $k+1$ with $r(U)=d$. The sector map is
+$Q_d\mathcal U^{-1}M_{Y[I,:]^\top}\mathcal U P_d$, with the natural
+current-coordinate inclusions understood. Output grade removes every
+annihilation term. Conversely every selected creation term satisfies
+the same original input and output conditions. This proves equality
+of maps, rather than a comparison of their coefficients.
+
+For annihilation, $e=(i,j)\in S$ produces
+$U=S\setminus\{(i,j)\}$, so $c(U)+\delta_j=c(S)=d$.
+Every parity flag lies in $[n]\times J$ and every output current
+column lies in $J$, although the input current row may be arbitrary.
+Now $\sum_jd_j=k$. Select input label $c(S)=d$ and output grade
+$k-1$ with $c(U)+\delta_j=d$. The analogous compression of
+$M_{Y[:,J]^\top}$ retains exactly the annihilation terms.
+Creation terms have grade $k+1$ and cannot survive the output projection.
+
+Each input label is a function of $(v,S)$ alone, and so is each output
+label. Distinct labels thus give disjoint components of
+\eqref{mi32-state-space}, hence orthogonal decompositions. The two
+current-side directions have orthogonal domains and ranges. Different
+input grades also have different output grades within each of
+$\mathcal C_+$ and $\mathcal C_-$. No amplitude restriction was
+used: even powers outside the selected row or column set remain in
+$f_{v,S}(Z)$ throughout.
+\end{proof}
+
+The distinction between the two labels is necessary. The creator is
+controlled through a small set of original rows in its output counts;
+the annihilator is controlled through a small set of original columns
+in its input counts. We will estimate the latter directly, not infer
+it by applying an adjoint argument to a cone-restricted norm inequality.
+
+\section{Thin matrices and the cone contraction}
+\label{mi32-thin-section}
+
+\begin{lemma}[A net only on the small axis]
+\label{mi32-thin-lemma}
+Let $q\ge1$ be an integer. For a fixed original row set $I$ and a fixed
+original column set $J$,
+\begin{align}
+ \bigl(\E\norm{Y[I,:]}^{4q}\bigr)^{1/(4q)}
+ &\le2\cdot5^{|I|/(4q)}
+        \bigl\{\sigma_r(Y)+6\alpha^4R_Y(2q)\bigr\},
+                     \label{mi32-thin-rows}\\
+ \bigl(\E\norm{Y[:,J]}^{4q}\bigr)^{1/(4q)}
+ &\le2\cdot5^{|J|/(4q)}
+        \bigl\{\sigma_c(Y)+6\alpha^4R_Y(2q)\bigr\}.
+                     \label{mi32-thin-columns}
+\end{align}
+In particular the numerical factor is at most $2\cdot5^{1/4}$ as soon as
+the small axis has at most $q$ indices. Empty submatrices give zero and
+require no net.
+\end{lemma}
+\begin{proof}
+Fix a deterministic unit vector $s\in\R^I$ and consider the random
+vector $Y[I,:]^\top s$, whose $j$-th coordinate is
+\[
+ V_j=\sum_{i\in I}s_iY_{ij}.
+\]
+Distinct coordinates use disjoint sets of original entries, so the
+family $(V_j)_j$ is independent; each $V_j$ is a deterministic linear
+combination of independent symmetric variables, hence symmetric in law.
+We verify the three hypotheses of
+Theorem~\ref{mi32-hilbert-comparison} for this family.
+
+First, independence and zero means give
+\begin{equation}\label{mi32-fixed-vector-variance}
+ \sigma^2=\sum_j\E V_j^2
+   =\sum_{i\in I}s_i^2\sum_j\E Y_{ij}^2
+   \le\sigma_r(Y)^2 .
+\end{equation}
+Second, Corollary~\ref{mi32-scalar-doubling} applies to each $V_j$ and
+supplies \eqref{mi32-coordinate-regularity} with
+$\beta=H_\alpha$. Third, for a deterministic unit vector $t$,
+\[
+ \sum_jt_jV_j=\sum_{i\in I,\,j}s_it_jY_{ij},
+\]
+which is one of the bilinear forms in the definition
+\eqref{mi32-weak} of $R_Y$ evaluated at the unit vectors
+$s$ (extended by zero) and $t$; hence $W_{2q}\le R_Y(2q)$.
+Theorem~\ref{mi32-hilbert-comparison} therefore gives
+\begin{equation}\label{mi32-fixed-vector-strong}
+ \bigl\|\,\norm{Y[I,:]^\top s}_2\,\bigr\|_{L_{4q}}
+ \le\sigma_r(Y)+2H_\alpha^2R_Y(2q)
+  =\sigma_r(Y)+6\alpha^4R_Y(2q),
+\end{equation}
+because $2H_\alpha^2=2\cdot3\alpha^4=6\alpha^4$.
+
+Choose a deterministic $1/2$-net $\mathcal N$ of the unit sphere in
+$\R^I$, with $|\mathcal N|\le5^{|I|}$; this cardinality follows by
+taking a maximal $1/2$-separated set and comparing its disjoint balls
+of radius $1/4$ with the ball of radius $5/4$. For every realization,
+$\norm{Y[I,:]}\le2\max_{s\in\mathcal N}\norm{Y[I,:]^\top s}_2$.
+Raising to the power $4q$ and bounding a maximum by a sum,
+\[
+ \bigl(\E\norm{Y[I,:]}^{4q}\bigr)^{1/(4q)}
+ \le2\Bigl(\sum_{s\in\mathcal N}
+        \E\norm{Y[I,:]^\top s}_2^{4q}\Bigr)^{1/(4q)}
+ \le2\cdot5^{|I|/(4q)}
+        \bigl\{\sigma_r(Y)+6\alpha^4R_Y(2q)\bigr\},
+\]
+which is \eqref{mi32-thin-rows}. Transposing the matrix exchanges the
+roles of rows and columns and proves \eqref{mi32-thin-columns} with the
+maximum column variance. If $|I|\le q$ then $5^{|I|/(4q)}\le5^{1/4}$.
+\end{proof}
+
+The weak moment entering \eqref{mi32-thin-rows} is taken at order
+$2q$, half the order of the strong moment on the left. This is a feature
+of Theorem~\ref{mi32-hilbert-comparison} and is what makes the whole
+chain close at the logarithmic order: the local theorem below needs its
+weak input at $2q$, not at $4q$.
+
+\begin{proposition}[Contraction on the preserved cone]
+\label{mi32-contraction-proposition}
+For an integer $q\ge1$, put
+\begin{equation}\label{mi32-B-constant}
+ B_\alpha=2\cdot5^{1/4}H_\alpha=2\sqrt3\cdot5^{1/4}\alpha^2 .
+\end{equation}
+For every $f\in\mathcal P_{q-1}^+$,
+\begin{equation}\label{mi32-contraction}
+ \begin{aligned}
+ \norm{\mathcal C_\pm f}_{\mathcal H}
+   &\le B_\alpha\bigl\{\sigma(Y)+6\alpha^4R_Y(2q)\bigr\}
+            \norm{f}_{\mathcal H},\\
+ \norm{\mathcal T f}_{\mathcal H}
+   &\le2B_\alpha\bigl\{\sigma(Y)+6\alpha^4R_Y(2q)\bigr\}
+            \norm{f}_{\mathcal H}.
+ \end{aligned}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Set $p=4q$. First consider row-to-column creation at a fixed parity
+grade $k\le q-1$ and decompose its input as $\sum_df_d$ using
+Lemma~\ref{mi32-counts-lemma}. Every $f_d$ lies in
+$\mathcal P_{q-1}^+$, since its projection only discards ordinary
+monomials. Its sector has $|I|\le k+1\le q$.
+Apply $\mathcal U$ first. It identifies the multiplier in that sector
+with $Y[I,:]^\top$, and the transformed output projection is an
+$L_2$ contraction. H\"older is then applied on the original joint
+probability space to $Y[I,:]^\top\mathcal U f_d$. Together,
+Lemma~\ref{mi32-cone-lemma} and
+Lemma~\ref{mi32-thin-lemma} imply
+\begin{align}
+ \norm{\mathcal C_{+,d}f_d}_{\mathcal H}
+ &\le\norm{Y[I,:]^\top\mathcal U f_d}_{L_2(\ell_2)}\nonumber\\
+ &\le\bigl(\E\norm{Y[I,:]}^p\bigr)^{1/p}
+            \norm{\mathcal U f_d}_{L_{2p/(p-2)}(\ell_2)}\nonumber\\
+ &\le2\cdot5^{1/4}\bigl\{\sigma_r(Y)+6\alpha^4R_Y(2q)\bigr\}
+      H_\alpha^{4(q-1)/p}\norm{f_d}_{\mathcal H}\nonumber\\
+ &\le B_\alpha\bigl\{\sigma_r(Y)+6\alpha^4R_Y(2q)\bigr\}
+            \norm{f_d}_{\mathcal H}.
+ \label{mi32-sector-bound}
+\end{align}
+In the last step $4(q-1)/p=(q-1)/q\le1$ and $H_\alpha\ge1$.
+The expectation in H\"older is over the full joint sign and magnitude
+law. It requires no independence between the matrix multiplier and
+$\mathcal U f_d$, so magnitude powers outside $I$ stay in the state.
+The $L_{2p/(p-2)}$ factor is explicitly the norm of $\mathcal U f_d$.
+Only its final $L_2$ norm is replaced by $\norm{f_d}_{\mathcal H}$
+using the isometry; no $L_p$ isometry of occupation amplitudes is used.
+
+For row-to-column annihilation use its column-count sectors instead.
+They have $|J|\le k\le q-1$, and \eqref{mi32-thin-columns} gives the
+same bound with $\sigma_c(Y)$. The reverse current-side direction
+transposes these two statements. Sum the squared estimates over the
+orthogonal input and output sectors, over their grades, and over
+current-side directions. The sums of squared input norms equal
+$\norm{f}_{\mathcal H}^2$; there is no factor for the number of
+sectors. This proves the separate bounds for $\mathcal C_+$ and
+$\mathcal C_-$, after replacing $\sigma_r$ and $\sigma_c$ by their
+maximum $\sigma$. Their triangle inequality gives the stated bound for
+$\mathcal T$.
+\end{proof}
+
+There is no random maximum over row or column sets in this argument.
+Each set is the support of a deterministic count label, and the same
+unconditional inequality bounds every corresponding squared sector
+norm before summation. Nor is \eqref{mi32-contraction} a bound on the
+entire polynomial linear span: it is asserted only on the specified
+cone at the specified total degree.
+
+\section{Vacuum walks and the local moment theorem}
+\label{mi32-vacuum-section}
+
+\begin{theorem}[Symmetric regular-law local moment bound]
+\label{mi32-local-theorem}
+Let $Y$ be an $n\times n$ matrix with independent symmetric entries
+satisfying \eqref{mi32-regularity}. With $B_\alpha$ from
+\eqref{mi32-B-constant}, every integer $q\ge1$ satisfies
+\begin{equation}\label{mi32-local-moment}
+ \bigl(\E\norm{Y}^{2q}\bigr)^{1/(2q)}
+ \le(2n)^{1/(2q)}\,2B_\alpha
+       \bigl\{\sigma(Y)+6\alpha^4R_Y(2q)\bigr\}.
+\end{equation}
+The same bound holds with $\sigma(Y)$ replaced by any $B$ that
+dominates both the row and the column variance scale, in particular by
+$M(Y)$.
+\end{theorem}
+\begin{proof}
+For a current vertex $v\in\mathcal V$, let $\Omega_v$ be the state
+with coefficient one at $(v,\varnothing)$ and zero elsewhere. It has
+norm one in $\mathcal H$. Under $\mathcal U$ it is the constant vector
+$e_v$. For every $j\ge0$,
+\[
+ \mathcal U\mathcal T^j\Omega_v=H_Y^j e_v.
+\]
+Each coordinate on the right is the sum, over original ordered walks
+of length $j$ between the indicated vertices, of the product of their
+entry variables. Every coefficient is a nonnegative integer, even
+when the realized entries are negative. Repeated edges retain their
+powers in the same monomial. Thus
+$\mathcal T^j\Omega_v\in\mathcal P_j^+$.
+
+Apply Proposition~\ref{mi32-contraction-proposition} successively to
+the prefixes $j=0,\ldots,q-1$, keeping the common horizon $q$:
+\begin{equation}\label{mi32-vacuum-prefix}
+ \norm{\mathcal T^q\Omega_v}_{\mathcal H}
+ \le\bigl[2B_\alpha\{\sigma(Y)+6\alpha^4R_Y(2q)\}\bigr]^q .
+\end{equation}
+The dilation $H_Y$ is real symmetric, so $\norm{H_Y}^q=\norm{H_Y^q}$
+and, comparing the operator norm of $H_Y^q$ with its Frobenius norm,
+\begin{equation}\label{mi32-vacuum-trace}
+ \norm{H_Y}^{2q}\le\sum_{v\in\mathcal V}\norm{H_Y^qe_v}_2^2 .
+\end{equation}
+Taking expectations, using
+$\norm{\mathcal T^q\Omega_v}_{\mathcal H}^2
+ =\E\norm{H_Y^qe_v}_2^2$ and $|\mathcal V|=2n$,
+\[
+ \E\norm{H_Y}^{2q}
+ \le2n\bigl[2B_\alpha\{\sigma(Y)+6\alpha^4R_Y(2q)\}\bigr]^{2q}.
+\]
+Finally $\norm{Y}\le\norm{H_Y}$, because $H_Y$ maps the embedded copy
+of a column vector to the embedded copy of its image under $Y$
+isometrically on each side. Taking the $2q$-th root gives
+\eqref{mi32-local-moment}. Only the row and column variance budgets
+enter Proposition~\ref{mi32-contraction-proposition}, so any common
+bound $B$ for both may replace $\sigma(Y)$.
+\end{proof}
+
+The dimension factor counts both sides of the bipartite dilation. One
+may instead compare the two diagonal blocks of the even power and
+replace $2n$ by $n$; we retain $2n$ because it is the factor the formal
+development certifies, and at $q$ comparable to $\log n$ the difference
+is at most $\sqrt2$. Every equality above uses the original joint law,
+and all expectations are finite by the entry moment assumptions. The
+proof requires neither polynomial completeness in an infinite $L_2$
+space nor a bounded extension of the full multiplication operator.
+
+\begin{corollary}[The local mean at the exact logarithmic order]
+\label{mi32-local-mean}
+Let $Y$ be as in Theorem~\ref{mi32-local-theorem} with $n\ge1$, and put
+\begin{equation}\label{mi32-L-constant}
+ L_\alpha=4e\cdot5^{1/4}\sqrt3\,\alpha^2=2e\,B_\alpha .
+\end{equation}
+Then
+\begin{equation}\label{mi32-local-mean-bound}
+ \E\norm{Y}\le L_\alpha
+    \bigl\{M(Y)+6\alpha^4J_\alpha^3R_Y(\log(n+1))\bigr\}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Take $q=\lceil2\log(n+1)\rceil\ge1$. Then
+$\log(2n)\le2\log(n+1)\le q$, so $(2n)^{1/(2q)}\le e^{1/2}\le e$, and
+$2q\le4\log(n+1)+2\le8\log(n+1)$ because
+$\log(n+1)\ge\log2>\tfrac12$. Three applications of
+\eqref{mi32-weak-doubling}, with $I=\varnothing$, therefore give
+$R_Y(2q)\le J_\alpha^3R_Y(\log(n+1))$. Since
+$\E\norm{Y}\le(\E\norm{Y}^{2q})^{1/(2q)}$, the claim follows from
+\eqref{mi32-local-moment} with $B=M(Y)\ge\sigma(Y)$.
+\end{proof}
+
+The right-hand side of \eqref{mi32-local-mean-bound} uses the
+\emph{undeleted} weak moment $R_Y=R_{Y,\varnothing}$. Replacing it by
+the smaller deletion parameter $D(Y)$ is exactly the remaining matrix
+problem, and it is the subject of the next section.
+\section{From the local estimate to shared-index deletion}
+\label{mi32-reduction-section}
+
+Corollary~\ref{mi32-local-mean} controls $\E\norm{Y}$ by the undeleted
+weak moment $R_Y(\log(n+1))$, which can be much larger than $D(Y)$.
+This section closes that gap. The target is the symmetric-law statement
+
+\begin{theorem}[Symmetric-law deletion bound]
+\label{mi32-symmetric-deletion}
+There is a constant $C^{\rm sym}_\alpha$, depending only on $\alpha$,
+such that every $n\ge1$ and every $n\times n$ matrix $Y$ with
+independent entries that are symmetric in law and satisfy
+\eqref{mi32-regularity} obey
+\begin{equation}\label{mi32-symmetric-deletion-bound}
+ \E\norm{Y}\le C^{\rm sym}_\alpha\{M(Y)+D(Y)\}.
+\end{equation}
+One may take
+\begin{equation}\label{mi32-Csym}
+ C^{\rm sym}_\alpha
+ =\sqrt{31}+2\sqrt{1+\sqrt2\,\alpha^2}
+   +24e\cdot5^{1/4}\sqrt3\,\alpha^2
+   +144e\cdot5^{1/4}\sqrt3\,\alpha^6J_\alpha^{10}.
+\end{equation}
+\end{theorem}
+
+Section~\ref{mi32-symmetrization} then removes the symmetry assumption.
+The overall design of the reduction --- a nested deterministic selection
+of indices, a decomposition into near bands and a far remainder, and a
+maximum over blocks with growing moment orders --- follows
+Lata\l a--\'Swi\k atkowski\ \cite[Remark~4.5]{LatalaSwiatkowski}. Two
+steps are different here, and both differences are what make the
+argument self-contained.
+
+\begin{enumerate}
+\item The published remainder step invokes a variance-envelope estimate
+that is a consequence of
+\cite[Theorem~4.4]{LatalaVanHandelYoussef}. Adapting that theorem to
+the present hypotheses would require a one-sided version of a Gaussian
+comparison whose stated form assumes two-sided polynomial moment
+growth, which $\alpha$-regular entries need not have. We instead raise
+the per-coordinate screening threshold from $b^2$ to $b^3$ and estimate
+the remainder by an elementary centered Gram second moment
+(Section~\ref{mi32-far-remainder}). No general fourth-moment matrix
+inequality is used.
+\item The published argument works with a matrix-symmetric dilation,
+whose reflected entries repeat variables, and afterwards pays for a
+paired deletion budget. We instead run the whole decomposition on the
+original rectangular matrix with one shared index family on both axes
+--- which is precisely what the functional $D$ in \eqref{mi32-D}
+quantifies over. Every entry family used below is therefore genuinely
+independent, and no dilation budget arises.
+\end{enumerate}
+
+Throughout this section $Y$ is as in
+Theorem~\ref{mi32-symmetric-deletion}, and we abbreviate
+\[
+ M=M(Y),\qquad D=D(Y),\qquad v_{ij}=\E Y_{ij}^2 .
+\]
+By \eqref{mi32-variances}, $\sum_jv_{ij}\le M^2$ for every $i$ and
+$\sum_iv_{ij}\le M^2$ for every $j$. Regularity at order two gives the
+fourth-moment budget
+\begin{equation}\label{mi32-fourth-budget}
+ \E Y_{ij}^4\le\alpha^4v_{ij}^2 ,
+\end{equation}
+since $\norm{Y_{ij}}_{L_4}\le\alpha\norm{Y_{ij}}_{L_2}$.
+
+\subsection{The deletion schedule}
+\label{mi32-schedule}
+
+Define, for $k\ge0$,
+\begin{equation}\label{mi32-schedule-def}
+ b_k=2^{5^k}-1,\qquad
+ \pi_k=\log(b_k+1)=5^k\log2,\qquad
+ t_k=b_k^3 .
+\end{equation}
+So $b_0=1$, $\pi_0=\log2$, $b_1=31$, and $b_{k+1}+1=(b_k+1)^5$.
+Three elementary facts are used.
+
+\begin{lemma}[Schedule arithmetic]
+\label{mi32-schedule-lemma}
+For every $k\ge0$ and every integer $0\le a\le b_k$,
+\begin{align}
+ 2\bigl(a+a\,t_k\bigr)+b_k&\le b_{k+1},
+                     \label{mi32-schedule-card}\\
+ 2^k&\le b_k,\qquad n\le b_n\quad(n\ge0),
+                     \label{mi32-schedule-growth}\\
+ 5^{a+1}&\le125\cdot5^{(a-2)^+}\quad(a\ge1).
+                     \label{mi32-schedule-ratio}
+\end{align}
+\end{lemma}
+\begin{proof}
+Write $b=b_k\ge1$. Expanding $b_{k+1}=(b+1)^5-1$ gives
+$b_{k+1}=b^5+5b^4+10b^3+10b^2+5b$, whereas
+$2(a+ab^3)+b\le2(b+b^4)+b=2b^4+3b$; since $b\ge1$ this is at most
+$5b^4+5b\le b_{k+1}$, proving \eqref{mi32-schedule-card}. For
+\eqref{mi32-schedule-growth}, $b_k+1=2^{5^k}\ge2^{k+1}$ because
+$5^k\ge k+1$, and $n+1\le2^n\le2^{5^n}=b_n+1$. Finally
+\eqref{mi32-schedule-ratio} is an equality for $a\ge2$ and reads
+$25\le125$ at $a=1$.
+\end{proof}
+
+\subsection{Two-sided screening and the nested family}
+\label{mi32-nested}
+
+Fix a deterministic index set $S$ and an integer $t\ge0$. For a column
+$j\in S$, at most $t$ rows $i$ can satisfy $(t+1)v_{ij}>M^2$: otherwise
+$t+1$ of them would already contribute more than $M^2$ to
+$\sum_iv_{ij}\le M^2$. Let $\mathrm{col}_t(S)$ be the union of $S$ with
+all such rows, over all $j\in S$, and let $\mathrm{row}_t(S)$ be the
+transposed construction. Then
+\begin{equation}\label{mi32-selection-card}
+ |\mathrm{col}_t(S)|\le|S|(1+t),\qquad
+ |\mathrm{row}_t(S)|\le|S|(1+t),
+\end{equation}
+and, by construction,
+\begin{equation}\label{mi32-selection-screen}
+ j\in S,\ i\notin\mathrm{col}_t(S)\ \Longrightarrow\
+ (t+1)v_{ij}\le M^2,
+\end{equation}
+with the analogous statement for $\mathrm{row}_t$ and $v_{ji}$.
+
+For an integer budget $k\ge1$ let $I_k$ be a deterministic minimizer of
+$I\mapsto R_{Y,I}(\log(k+1))$ over $|I|\le k$; the minimum is attained
+because there are finitely many sets, so
+\begin{equation}\label{mi32-minimizer}
+ R_{Y,I_k}(\log(k+1))=\min_{|I|\le k}R_{Y,I}(\log(k+1))\le D
+ \qquad(1\le k\le n),
+\end{equation}
+directly from \eqref{mi32-D}. For $k>n$ we may take $I_k=[n]$, and then
+$R_{Y,I_k}(p)=0$ for every $p>0$, so \eqref{mi32-minimizer} holds for
+every $k\ge1$. Now define the nested family
+\begin{equation}\label{mi32-nested-def}
+ S_0=I_{b_0}=I_1,\qquad
+ S_{k+1}=\mathrm{col}_{t_k}(S_k)\cup\mathrm{row}_{t_k}(S_k)
+                \cup I_{b_k}.
+\end{equation}
+
+\begin{lemma}[The nested family]
+\label{mi32-nested-lemma}
+The sets \eqref{mi32-nested-def} are increasing, and for every $k\ge0$
+\begin{equation}\label{mi32-nested-card}
+ |S_k|\le b_k,\qquad S_{n+1}=[n].
+\end{equation}
+Moreover, for $r+1\le s$,
+\begin{equation}\label{mi32-nested-screen}
+ j\in S_r,\ i\notin S_s\ \Longrightarrow\
+ v_{ij}\le\frac{M^2}{b_r^3+1},
+ \qquad
+ i\in S_r,\ j\notin S_s\ \Longrightarrow\
+ v_{ij}\le\frac{M^2}{b_r^3+1},
+\end{equation}
+and, for every $a\ge1$,
+\begin{equation}\label{mi32-nested-weak}
+ R_{Y,S_{a-1}}\bigl(\pi_{(a-2)^+}\bigr)\le D .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Monotonicity is clear from $S\subset\mathrm{col}_t(S)$. Since
+$|S_0|\le b_0$, \eqref{mi32-selection-card} and
+\eqref{mi32-schedule-card} give
+$|S_{k+1}|\le2|S_k|(1+t_k)+b_k\le b_{k+1}$ inductively. By
+\eqref{mi32-schedule-growth}, $b_n\ge n$, so $I_{b_n}=[n]$ may be
+taken and $S_{n+1}=[n]$.
+
+For \eqref{mi32-nested-screen}, note $i\notin S_s$ and $r+1\le s$ imply
+$i\notin S_{r+1}$, hence $i\notin\mathrm{col}_{t_r}(S_r)$; now
+\eqref{mi32-selection-screen} with $t=t_r=b_r^3$ gives the first
+implication, and the transposed construction gives the second.
+
+For \eqref{mi32-nested-weak}, enlarging a deleted set can only decrease
+the weak moment, because masking both deterministic test vectors on the
+larger set is a Euclidean contraction and reproduces exactly the
+smaller bilinear form. At $a=1$ we have $S_{a-1}=S_0=I_1$ and
+$\pi_{(a-2)^+}=\pi_0=\log2=\log(1+1)$, so \eqref{mi32-minimizer} at
+$k=1$ applies. At $a\ge2$ we have $I_{b_{a-2}}\subset S_{a-1}$ by
+\eqref{mi32-nested-def}, and $\pi_{a-2}=\log(b_{a-2}+1)$, so
+\[
+ R_{Y,S_{a-1}}(\pi_{a-2})\le R_{Y,I_{b_{a-2}}}(\pi_{a-2})\le D
+\]
+by \eqref{mi32-minimizer} at $k=b_{a-2}$.
+\end{proof}
+
+Only $b_r$, and never $b_{r+1}$, appears in \eqref{mi32-nested-screen}
+and \eqref{mi32-nested-weak}: the minimizer inserted at step $k$ carries
+the budget $b_k$, one stage behind the set that contains it. This
+one-stage shift is what keeps the recorded logarithmic orders
+comparable to the scheduled ones in Section~\ref{mi32-near-bands}.
+
+\subsection{Shells and the exact five-mask partition}
+\label{mi32-shells}
+
+By \eqref{mi32-nested-card} every index lies in some $S_k$, so
+\begin{equation}\label{mi32-level-def}
+ \ell_i=\min\{r\ge0:\ i\in S_r\}\in\{0,1,\ldots,n+1\}
+\end{equation}
+is well defined, and $\{i:\ell_i\le r\}=S_r$ by monotonicity. Hence
+\begin{equation}\label{mi32-level-card}
+ \bigl|\{i:\ \ell_i\le r\}\bigr|\le b_r .
+\end{equation}
+Split the entries of $Y$ by the five deterministic masks
+\begin{equation}\label{mi32-masks}
+ \begin{aligned}
+ \text{\rm nearLow}&:\ \ell_i\le1\ \text{and}\ \ell_j\le1, &
+ \text{\rm farLow}&:\ \ell_j+1<\ell_i,\\
+ \text{\rm nearHigh}&:\ \lfloor\ell_i/2\rfloor
+     =\lfloor\ell_j/2\rfloor\ge1, &
+ \text{\rm farUp}&:\ \ell_i+1<\ell_j,\\
+ \text{\rm nearCross}&:\ \bigl\lfloor(\ell_i+1)/2\bigr\rfloor
+     =\bigl\lfloor(\ell_j+1)/2\bigr\rfloor
+        \ \text{and}\ \ell_i\ne\ell_j. &&
+ \end{aligned}
+\end{equation}
+
+\begin{lemma}[Exact partition]
+\label{mi32-partition-lemma}
+For all integers $a,b\ge0$, exactly one of the five conditions in
+\eqref{mi32-masks} holds at $(\ell_i,\ell_j)=(a,b)$. Consequently
+$Y$ is the sum of the five corresponding masked matrices, and
+\begin{equation}\label{mi32-five-masks}
+ \norm{Y}\le\norm{Y^{\rm nL}}+\norm{Y^{\rm nH}}
+          +\norm{Y^{\rm nC}}+\norm{Y^{\rm fL}}+\norm{Y^{\rm fU}}
+\end{equation}
+pointwise, where the superscripts name the masks in the order listed.
+\end{lemma}
+\begin{proof}
+The two far conditions are disjoint from each other and from
+$|a-b|\le1$. For $|a-b|\le1$: if $\lfloor a/2\rfloor=\lfloor
+b/2\rfloor$ then either both $a,b\le1$, which is nearLow, or
+$\lfloor a/2\rfloor\ge1$, which is nearHigh, and these two are
+disjoint; otherwise $|a-b|=1$ with $a,b$ in different pairs
+$\{2m,2m+1\}$, which forces $\{a,b\}=\{2m+1,2m+2\}$ and hence
+$\lfloor(a+1)/2\rfloor=\lfloor(b+1)/2\rfloor=m+1$ with $a\ne b$, which
+is nearCross and excludes $\lfloor a/2\rfloor=\lfloor b/2\rfloor$.
+Conversely nearCross forces $|a-b|=1$. The triangle inequality gives
+\eqref{mi32-five-masks}.
+\end{proof}
+
+\subsection{The far remainder has a summable Gram energy}
+\label{mi32-far-remainder}
+
+\begin{proposition}[Far orientations]
+\label{mi32-far-proposition}
+With $Y^{\rm fL}$ and $Y^{\rm fU}$ as in
+Lemma~\ref{mi32-partition-lemma},
+\begin{equation}\label{mi32-far-bound}
+ \E\norm{Y^{\rm fL}}\le M\sqrt{1+\sqrt2\,\alpha^2},
+ \qquad
+ \E\norm{Y^{\rm fU}}\le M\sqrt{1+\sqrt2\,\alpha^2}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Write $A=Y^{\rm fL}$, so $A_{ij}=Y_{ij}\mathbf1\{\ell_j+1<\ell_i\}$,
+and put $w_{ij}=\E A_{ij}^2\le v_{ij}$. The masks are deterministic, so
+the entries of $A$ are still independent, centered and symmetric, and
+\eqref{mi32-fourth-budget} still holds for them. Also
+$\sum_iw_{ij}\le M^2$ for every $j$.
+
+\emph{Support cap.} Suppose $w_{ik}\ne0$ and $\ell_j\le\ell_k$. Then
+$\ell_k+1<\ell_i$, so $i\notin S_{\ell_k+1}$, while $j\in
+S_{\ell_k}$. Applying the first implication of
+\eqref{mi32-nested-screen} with $r=\ell_k$ and $s=\ell_k+1$,
+\begin{equation}\label{mi32-far-cap}
+ w_{ij}\le v_{ij}\le\frac{M^2}{b_{\ell_k}^3+1}.
+\end{equation}
+
+\emph{Pair energy.} Fix columns $j,k$ and let $r=\max(\ell_j,\ell_k)$.
+By symmetry of the claim assume $\ell_j\le\ell_k$, so $r=\ell_k$. Only
+indices $i$ with $w_{ik}\ne0$ contribute, and for those
+\eqref{mi32-far-cap} applies, whence
+\begin{equation}\label{mi32-far-pair}
+ \sum_iw_{ij}w_{ik}
+ \le\frac{M^2}{b_r^3+1}\sum_iw_{ik}
+ \le\frac{M^4}{b_r^3+1}.
+\end{equation}
+
+\emph{Summation.} The number of ordered pairs $(j,k)$ with
+$\max(\ell_j,\ell_k)=r$ is at most $|\{i:\ell_i\le r\}|^2\le b_r^2$ by
+\eqref{mi32-level-card}. Since $b_r\ge1$ we have
+$b_r^2/(b_r^3+1)\le1/b_r$, and $b_r\ge2^r$ by
+\eqref{mi32-schedule-growth}. Therefore
+\begin{equation}\label{mi32-far-total}
+ \sum_j\sum_k\sum_iw_{ij}w_{ik}
+ \le M^4\sum_{r\ge0}\frac{b_r^2}{b_r^3+1}
+ \le M^4\sum_{r\ge0}2^{-r}
+ =2M^4 .
+\end{equation}
+
+\emph{Centered Gram.} Let $d_j=\sum_iw_{ij}$, let
+$\Delta=\diag(d_j)$, and put $G=A^\top A-\Delta$. Distinct original
+entries are independent, and masking preserves this. For $j\ne k$,
+\[
+ G_{jk}=\sum_iA_{ij}A_{ik}
+\]
+is a sum over $i$ of independent centered products, so $\E G_{jk}=0$
+and, the cross terms vanishing,
+\begin{equation}\label{mi32-gram-off}
+ \E G_{jk}^2=\sum_i\E\bigl(A_{ij}^2A_{ik}^2\bigr)
+            =\sum_iw_{ij}w_{ik}.
+\end{equation}
+For $j=k$, $G_{jj}=\sum_i(A_{ij}^2-w_{ij})$ is a sum of independent
+centered variables, so by \eqref{mi32-fourth-budget}
+\begin{equation}\label{mi32-gram-diag}
+ \E G_{jj}^2=\sum_i\bigl(\E A_{ij}^4-w_{ij}^2\bigr)
+    \le\alpha^4\sum_iw_{ij}^2 .
+\end{equation}
+No independence among the entries of $G$ is asserted or needed. Since
+$\alpha\ge1$, the right-hand sides of \eqref{mi32-gram-off} and
+\eqref{mi32-gram-diag} are at most $\alpha^4$ times the corresponding
+term of the triple sum in \eqref{mi32-far-total}, so
+\begin{equation}\label{mi32-gram-frobenius}
+ \E\norm{G}_F^2=\sum_j\sum_k\E G_{jk}^2\le2\alpha^4M^4 .
+\end{equation}
+
+\emph{From the Gram energy to the norm.} Deterministically
+$\norm{A}^2=\norm{A^\top A}\le\norm{\Delta}+\norm{G}
+ \le M^2+\norm{G}_F$, since
+$\norm{\Delta}=\max_jd_j\le M^2$ and the operator norm is at most the
+Frobenius norm. Two applications of Cauchy--Schwarz and
+\eqref{mi32-gram-frobenius} give
+\[
+ \E\norm{A}\le\bigl(\E\norm{A}^2\bigr)^{1/2}
+  \le\bigl(M^2+\E\norm{G}_F\bigr)^{1/2}
+  \le\Bigl(M^2+\bigl(\E\norm{G}_F^2\bigr)^{1/2}\Bigr)^{1/2}
+  \le M\sqrt{1+\sqrt2\,\alpha^2},
+\]
+which is the first bound in \eqref{mi32-far-bound}. All the
+integrability used is that of the finitely many fourth entry moments.
+There is no division by $M$, so $M=0$ is included.
+
+For $Y^{\rm fU}$, note that its transpose is the lower-far mask of
+$Y^\top$ for the same level function, and the operator norm is
+invariant under transposition. Running the argument for $Y^\top$ uses
+the second implication of \eqref{mi32-nested-screen} and the row
+variance budget, and gives the same bound.
+\end{proof}
+
+\begin{remark}[Why the cube]
+\label{mi32-cube-remark}
+With the threshold $t_r=b_r^2$ the individual fourth moments are still
+summable, but \eqref{mi32-far-total} would contribute
+$b_r^2/(b_r^2+1)\approx1$ for every shell, and the number of shells is
+not bounded in terms of $\alpha$. Recovering the estimate from that
+route requires a general fourth-moment matrix inequality --- exactly the
+external input we are avoiding. The cube absorbs the off-diagonal Gram
+pairs directly, at no cost anywhere else: the enlarged selection is
+charged only in \eqref{mi32-schedule-card}, which the schedule
+\eqref{mi32-schedule-def} already accommodates.
+\end{remark}
+
+\subsection{The near bands}
+\label{mi32-near-bands}
+
+For $a\ge0$ put $V_a=\{i:\ \ell_i\in\{a,a+1\}\}$. Then
+\begin{equation}\label{mi32-block-support}
+ V_a\subset S_{a+1},\qquad |V_a|\le b_{a+1},
+ \qquad\text{and}\qquad
+ V_a\cap S_{a-1}=\varnothing\quad(a\ge1),
+\end{equation}
+the last because every $i\in V_a$ has $\ell_i\ge a$. Each of the two
+remaining near masks is block diagonal:
+$Y^{\rm nH}$ vanishes unless $\lfloor\ell_i/2\rfloor
+=\lfloor\ell_j/2\rfloor$, and $Y^{\rm nC}$ vanishes unless
+$\lfloor(\ell_i+1)/2\rfloor=\lfloor(\ell_j+1)/2\rfloor$. The block of
+$Y^{\rm nH}$ at index $m$ is empty for $m=0$ and equals the full
+submatrix $Y[V_{2m},V_{2m}]$ for $m\ge1$; the block of $Y^{\rm nC}$ at
+index $m$ is empty for $m=0$ and, for $m\ge1$, is the part of
+$Y[V_{2m-1},V_{2m-1}]$ supported off the two diagonal shell blocks.
+
+\begin{lemma}[Block-diagonal norms and two-colour masks]
+\label{mi32-block-norm-lemma}
+Let $A$ be a matrix that vanishes whenever $c(i)\ne c(j)$ for a
+deterministic map $c$. Then $\norm{A}=\max_m\norm{A[c^{-1}(m),
+c^{-1}(m)]}$; in particular there is no factor for the number of
+blocks. If moreover $\sigma$ takes two values on $c^{-1}(m)$ and
+$A^{\rm off}$ agrees with $A$ where $\sigma(i)\ne\sigma(j)$ and
+vanishes elsewhere, then $\norm{A^{\rm off}[c^{-1}(m),c^{-1}(m)]}
+\le\norm{A[c^{-1}(m),c^{-1}(m)]}$.
+\end{lemma}
+\begin{proof}
+The Euclidean space splits orthogonally along the fibres of $c$, and
+$A$ preserves that splitting, which gives the first claim. For the
+second, let $\Delta=\diag(\pm1)$ be $+1$ on one value of $\sigma$ and
+$-1$ on the other. Then $A^{\rm off}=\tfrac12(A-\Delta A\Delta)$
+entrywise on the block, and $\norm{\Delta}=1$, so
+$\norm{A^{\rm off}}\le\tfrac12(\norm{A}+\norm{A})=\norm{A}$.
+\end{proof}
+
+\begin{proposition}[Blocks at the scheduled order]
+\label{mi32-block-proposition}
+For $a\ge1$ put $q_a=\lceil2\pi_{a+1}\rceil$ and
+\begin{equation}\label{mi32-block-bound-constant}
+ L=L_\alpha\bigl\{M+6\alpha^4J_\alpha^{10}D\bigr\},
+\end{equation}
+with $L_\alpha$ from \eqref{mi32-L-constant}. Then
+\begin{equation}\label{mi32-block-bound}
+ \bigl(\E\norm{Y[V_a,V_a]}^{2q_a}\bigr)^{1/(2q_a)}\le L,
+ \qquad\text{and}\qquad
+ a+2\le2q_a .
+\end{equation}
+\end{proposition}
+\begin{proof}
+The submatrix $Y[V_a,V_a]$ has independent symmetric entries satisfying
+\eqref{mi32-regularity}, and its row and column variance sums are
+sub-sums of those of $Y$, hence at most $M^2$.
+
+\emph{Weak input.} Let $s,t$ be deterministic unit vectors supported on
+$V_a$. Since $V_a\cap S_{a-1}=\varnothing$ by
+\eqref{mi32-block-support}, the bilinear form $\sum_{i,j\in
+V_a}Y_{ij}s_it_j$ is one of the forms occurring in
+$R_{Y,S_{a-1}}$, so
+$R_{Y[V_a,V_a]}(p)\le R_{Y,S_{a-1}}(p)$ for every $p>0$. Next,
+\[
+ 2q_a\le4\pi_{a+1}+2
+    \le500\,\pi_{(a-2)^+}+4\log2
+    \le504\,\pi_{(a-2)^+}
+    \le2^{10}\pi_{(a-2)^+},
+\]
+where the second step used \eqref{mi32-schedule-ratio} in the form
+$4\cdot5^{a+1}\le500\cdot5^{(a-2)^+}$ and $2\le4\log2$, and the third
+used $\pi_{(a-2)^+}\ge\log2$. Ten applications of
+\eqref{mi32-weak-doubling} and then \eqref{mi32-nested-weak} give
+\begin{equation}\label{mi32-block-weak}
+ R_{Y[V_a,V_a]}(2q_a)
+ \le J_\alpha^{10}R_{Y,S_{a-1}}\bigl(\pi_{(a-2)^+}\bigr)
+ \le J_\alpha^{10}D .
+\end{equation}
+
+\emph{Dimension factor.} By \eqref{mi32-block-support},
+$|V_a|\le b_{a+1}$, and $2b\le(b+1)^2$ for $b\ge1$ gives
+\[
+ \log\bigl(2|V_a|\bigr)\le\log\bigl(2b_{a+1}\bigr)
+ \le2\log(b_{a+1}+1)=2\pi_{a+1}\le q_a\le2q_a ,
+\]
+so $(2|V_a|)^{1/(2q_a)}\le e$. Applying
+Theorem~\ref{mi32-local-theorem} to $Y[V_a,V_a]$ at $q=q_a$ with
+$B=M$, and inserting \eqref{mi32-block-weak}, gives
+\[
+ \bigl(\E\norm{Y[V_a,V_a]}^{2q_a}\bigr)^{1/(2q_a)}
+ \le e\cdot2B_\alpha\bigl\{M+6\alpha^4J_\alpha^{10}D\bigr\}=L,
+\]
+by \eqref{mi32-L-constant}. Finally $q_a\ge2\pi_{a+1}
+=2\cdot5^{a+1}\log2\ge5^{a+1}\ge a+2$, since $\log2>\tfrac12$.
+\end{proof}
+
+\begin{lemma}[A maximum of growing moments]
+\label{mi32-max-lemma}
+Let $Z_1,\ldots,Z_m\ge0$ and let $p_i\ge i+2$ be integers with
+$\norm{Z_i}_{L_{p_i}}\le L$ for a constant $L>0$. Then
+$\E\max_iZ_i\le3L$, with no dependence on $m$ and no independence
+assumption.
+\end{lemma}
+\begin{proof}
+For $z\ge0$, $t>0$ and $p\ge1$ one has
+$z\le t+z^p/t^{p-1}$: this is clear if $z\le t$, and otherwise
+$z\cdot t^{p-1}\le z\cdot z^{p-1}$. With $t=2L$,
+\[
+ \max_iZ_i\le2L+\sum_{i=1}^m\frac{Z_i^{p_i}}{(2L)^{p_i-1}} .
+\]
+Taking expectations and using $\E Z_i^{p_i}\le L^{p_i}$ and
+$L^{p_i}/(2L)^{p_i-1}=L\,2^{-(p_i-1)}\le L\,2^{-(i+1)}$ gives
+$\E\max_iZ_i\le2L+L\sum_{i\ge1}2^{-(i+1)}\le3L$.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{mi32-symmetric-deletion}}
+
+If $L=0$ in \eqref{mi32-block-bound-constant}, replace $L$ by
+$L+\epsilon$ throughout and let $\epsilon\downarrow0$ at the end; all
+the bounds below are continuous in $L$. So assume $L>0$.
+
+The mask $Y^{\rm nL}$ is supported on $S_1\times S_1$ with
+$|S_1|\le b_1=31$ by \eqref{mi32-nested-card}. Hence
+\begin{equation}\label{mi32-nearlow-bound}
+ \E\norm{Y^{\rm nL}}
+ \le\bigl(\E\norm{Y^{\rm nL}}_F^2\bigr)^{1/2}
+ =\Bigl(\sum_{i\in S_1}\sum_{j\in S_1}v_{ij}\Bigr)^{1/2}
+ \le\bigl(|S_1|M^2\bigr)^{1/2}\le\sqrt{31}\,M .
+\end{equation}
+This is the only block for which no deletion budget is available, and it
+is also the only one whose dimension is bounded by an absolute
+constant.
+
+For $Y^{\rm nH}$ apply Lemma~\ref{mi32-block-norm-lemma} with
+$c(i)=\lfloor\ell_i/2\rfloor$ and
+$Z_m=\norm{Y^{\rm nH}[c^{-1}(m),c^{-1}(m)]}$, so that
+$\norm{Y^{\rm nH}}=\max_mZ_m$. The block at $m=0$ vanishes, and for
+$m\ge1$ it equals $Y[V_{2m},V_{2m}]$, to which
+Proposition~\ref{mi32-block-proposition} applies at $a=2m\ge1$ with
+$p_m=2q_{2m}\ge2m+2\ge m+2$. Lemma~\ref{mi32-max-lemma} therefore gives
+$\E\norm{Y^{\rm nH}}\le3L$.
+
+For $Y^{\rm nC}$ apply Lemma~\ref{mi32-block-norm-lemma} with
+$c(i)=\lfloor(\ell_i+1)/2\rfloor$ and
+$\sigma(i)=\ell_i\bmod2$. The block at $m=0$ vanishes, since there
+$\ell_i=\ell_j=0$. For $m\ge1$ the two levels present in $c^{-1}(m)$
+are $2m-1$ and $2m$, which have opposite parities, so the nearCross
+condition $\ell_i\ne\ell_j$ is exactly $\sigma(i)\ne\sigma(j)$; the
+second part of Lemma~\ref{mi32-block-norm-lemma} bounds that block by
+$\norm{Y[V_{2m-1},V_{2m-1}]}$, which
+Proposition~\ref{mi32-block-proposition} controls at $a=2m-1\ge1$ with
+$p_m=2q_{2m-1}\ge2m+1\ge m+2$. Again
+$\E\norm{Y^{\rm nC}}\le3L$.
+
+Adding these to Proposition~\ref{mi32-far-proposition} through
+\eqref{mi32-five-masks},
+\begin{equation}\label{mi32-assembly}
+ \E\norm{Y}\le\sqrt{31}\,M+6L+2M\sqrt{1+\sqrt2\,\alpha^2}.
+\end{equation}
+By \eqref{mi32-block-bound-constant} and \eqref{mi32-L-constant},
+\[
+ 6L=24e\cdot5^{1/4}\sqrt3\,\alpha^2M
+      +144e\cdot5^{1/4}\sqrt3\,\alpha^6J_\alpha^{10}D,
+\]
+so the right-hand side of \eqref{mi32-assembly} is
+$c_1M+c_2D$ with $c_1,c_2\ge0$ summing to $C^{\rm sym}_\alpha$ as in
+\eqref{mi32-Csym}. Since $M,D\ge0$, this is at most
+$C^{\rm sym}_\alpha(M+D)$. \qed
+
+\subsection{Symmetrization without changing the small exponent}
+\label{mi32-symmetrization}
+
+For general independent centered entries $X$, let $X'$ be an
+independent copy and put $Y=X-X'$. For every $p\ge1$, conditional
+Jensen and the triangle inequality give
+\[
+ \norm{X_{ij}}_{L_p}\le\norm{Y_{ij}}_{L_p},\qquad
+ \norm{Y_{ij}}_{L_{2p}}\le2\alpha\norm{Y_{ij}}_{L_p}.
+\]
+Thus $Y$ has independent entries that are symmetric in law and satisfy
+\eqref{mi32-regularity} with $2\alpha$; moreover
+$\E Y_{ij}^2=2\E X_{ij}^2$, so $M(Y)=\sqrt2M(X)$, and
+$\E\norm{X}\le\E\norm{Y}$ by Jensen applied to the convex function
+$\norm{\cdot}$ in the copy coordinate.
+
+For each fixed $I,s,t$, write the bilinear sum as $S$ and its
+independent copy as $S'$. If $p\ge1$ then
+$\norm{S-S'}_{L_p}\le2\norm{S}_{L_p}$. If $\log2\le p<1$,
+subadditivity of $x\mapsto x^p$ gives instead
+\[
+ \norm{S-S'}_{L_p}\le2^{1/p}\norm{S}_{L_p}\le e\norm{S}_{L_p},
+\]
+since $2^{1/p}\le2^{1/\log2}=e$. Because $2\le e$, the factor $e$ covers
+both ranges. Taking the same bilinear suprema, then the same
+deterministic minimum over each budget --- the minimizer for $X$ is a
+feasible set for $Y$ --- and then the budget maximum gives
+$D(Y)\le eD(X)$. Every budget keeps its exact order $\log(k+1)$, and the
+same original set is deleted from both axes throughout.
+
+Applying Theorem~\ref{mi32-symmetric-deletion} to $Y$ with parameter
+$2\alpha$ and using $\sqrt2\le e$ therefore proves
+\begin{equation}\label{mi32-reduction-final-upper}
+ \E\norm{X}\le C^{\rm sym}_{2\alpha}
+     \bigl\{\sqrt2M(X)+eD(X)\bigr\}
+ \le e\,C^{\rm sym}_{2\alpha}\{M(X)+D(X)\},
+\end{equation}
+which is the upper comparison in Theorem~\ref{mi32-main-theorem} with
+\begin{equation}\label{mi32-final-constant}
+ C_\alpha=e\,C^{\rm sym}_{2\alpha}.
+\end{equation}
+\section{The known lower bound on the same matrix}
+\label{mi32-lower-section}
+
+For completeness we reproduce the argument of
+\cite[Theorem~4.1 and Lemma~4.2]{LatalaSwiatkowski}, with its
+small-order and independence details. In this section $X$ itself
+has independent centered entries satisfying \eqref{mi32-regularity}.
+There is no symmetrization or comparison to a second input matrix.
+Nothing in this section is used for the upper bound, and none of it is
+part of the formalized statement.
+
+\subsection{The scalar growth input}
+
+Unlike the upper bound, the lower bound genuinely uses a moment-growth
+estimate from the literature. By
+\cite[Corollary~1.4]{LatalaStrzelecka}, applied to the singleton family
+of test vectors, there is $K_\alpha\ge1$ such that every deterministic
+linear combination $S$ of independent centered variables satisfying
+\eqref{mi32-regularity} obeys
+\begin{equation}\label{mi32-lower-scalar-growth}
+ \norm{S}_{L_p}\le K_\alpha(p/r)^\beta\norm{S}_{L_r},
+ \qquad p\ge r\ge2,
+ \qquad \beta=\max\{1/2,\log_2\alpha\},
+\end{equation}
+and the exponent $\beta$ is optimal
+\cite[Remark~1.5]{LatalaStrzelecka}. The same estimate appears as
+\cite[(27)]{LatalaSwiatkowski}. Note that
+Proposition~\ref{mi32-real-doubling} is \emph{not} a substitute here:
+it compares $2p$ with $p$, whereas the sparsification below needs the
+growth rate in $p$ itself.
+
+\subsection{Row and column variances}
+
+Fix a row and put $Q=\sum_jX_{ij}^2$, $v=\E Q$.
+Regularity at order two and Cauchy--Schwarz give
+\[
+ \E Q^2=\sum_{j,l}\E(X_{ij}^2X_{il}^2)
+ \le\alpha^4\sum_{j,l}\E X_{ij}^2\E X_{il}^2
+ =\alpha^4v^2.
+\]
+Paley--Zygmund implies
+$\E\sqrt Q\ge(4\sqrt2\alpha^4)^{-1}\sqrt v$.
+Since every row and column Euclidean norm is at most $\norm{X}$,
+\begin{equation}\label{mi32-lower-variance}
+ M(X)\le8\sqrt2\alpha^4\E\norm{X}.
+\end{equation}
+Rows or columns with zero variance cause no exception.
+
+\subsection{A large weak moment has a small original support}
+
+For $p\ge2$, let $R_X^{\rm sp}(p)$ be the bilinear supremum
+restricted to vectors whose supports each have cardinality at most
+$p^{2\beta}$. Then
+\begin{equation}\label{mi32-lower-sparsification}
+ R_X(p)\le R_X^{\rm sp}(p)+C_\alpha M(X).
+\end{equation}
+Here is a direct proof. For a unit vector $z$, set
+$I_p(z)=\{i:|z_i|\ge p^{-\beta}\}$, so that
+$|I_p(z)|\le p^{2\beta}$. Split a bilinear sum into the part on
+$I_p(s)\times I_p(t)$, the part with $j\notin I_p(t)$, and the
+remaining part with $i\notin I_p(s)$ and $j\in I_p(t)$.
+The first part is controlled by $R_X^{\rm sp}(p)$. For the second,
+independence and zero means give
+\[
+ \left\|\sum_{i,\,j\notin I_p(t)}s_it_jX_{ij}\right\|_2^2
+ \le p^{-2\beta}\sum_i s_i^2\sum_j\E X_{ij}^2
+ \le p^{-2\beta}\sigma_r(X)^2.
+\]
+Apply \eqref{mi32-lower-scalar-growth} with lower order two
+to bound its $L_p$ moment by $C_\alpha\sigma_r(X)$.
+The third part is bounded in the same way by
+$C_\alpha\sigma_c(X)$. The triangle inequality proves
+\eqref{mi32-lower-sparsification}, also on every fixed deleted
+submatrix with the same constant. The union of the two sparse
+vector supports uses at most $2p^{2\beta}$ original indices.
+
+\subsection{A uniform scalar lower tail}
+
+Choose $D_\alpha\ge e$ so large that
+$\norm{S}_{L_{2r}}\le D_\alpha\norm{S}_{L_r}$ for $r\ge2$,
+using \eqref{mi32-lower-scalar-growth}, and set
+$\delta=(4\log D_\alpha)^{-1}\le1/4$.
+For $P\ge2/\delta$, take $r=\delta P\ge2$.
+Paley--Zygmund applied to $|S|^r$ and scalar moment comparison give
+\[
+ \begin{split}
+ \Prob\{|S|\ge\tfrac12\norm{S}_{L_r}\}
+ &\ge(1-2^{-r})^2
+       \left(\frac{\norm{S}_{L_r}}{\norm{S}_{L_{2r}}}\right)^{2r}
+       \ge\tfrac14 e^{-P/2},\\
+ \norm{S}_{L_r}&\ge K_\alpha^{-1}\delta^\beta\norm{S}_{L_P}.
+ \end{split}
+\]
+Thus, with $c_0=\delta^\beta/(2K_\alpha)>0$,
+\begin{equation}\label{mi32-lower-tail}
+ \Prob\{|S|\ge c_0\norm{S}_{L_P}\}\ge\tfrac14e^{-P/2}.
+\end{equation}
+Only the scalar comparison of the original independent entries is used.
+
+\subsection{Disjoint witnesses for each deletion budget}
+
+Fix $1\le k\le n$ and write
+\[
+ P=\log(k+1),\qquad
+ \gamma_k=\min_{|I|\le k}R_{X,I}(P).
+\]
+We prove $\gamma_k\le C_\alpha\E\norm{X}$ uniformly in $k$.
+Choose $k_0(\alpha)$ large enough that, for $k\ge k_0$,
+\[
+ P\ge2/\delta,\qquad 2P^{2\beta}\le\sqrt k,\qquad k\ge4.
+\]
+For $k<k_0$, moment monotonicity and
+\eqref{mi32-lower-scalar-growth} show
+\[
+ \gamma_k\le R_X(P)
+ \le C_\alpha\max_{ij}\norm{X_{ij}}_2
+ \le C_\alpha M(X).
+\]
+For $P<2$, only monotonicity to order two is used, so this covers
+$k=1$ with its unchanged exponent $\log2$. Equation
+\eqref{mi32-lower-variance} completes these finitely many orders.
+
+Now let $k\ge k_0$. If $\gamma_k\le2C_\alpha M(X)$ with the
+constant from \eqref{mi32-lower-sparsification}, the variance
+bound again suffices. Otherwise, for every deterministic
+$|I|\le k$, sparsification in $X[I^c,I^c]$ supplies unit vectors
+$s,t$ supported outside $I$ on a common set $J$ of at most
+$2P^{2\beta}\le\sqrt k$ indices, with
+\[
+ \left\|\sum_{i,j\in J}s_it_jX_{ij}\right\|_{L_P}
+       \ge\gamma_k/2.
+\]
+The suprema are attained: there are finitely many possible supports,
+and the moment functional is continuous on each compact product of
+unit balls. Alternatively an arbitrarily small slack gives the
+same constants.
+
+Apply this observation successively, deleting the union of the
+previously selected sets. It constructs
+$m=\lfloor\sqrt k\rfloor$ disjoint deterministic sets $J_1,\ldots,J_m$
+and bilinear sums $S_1,\ldots,S_m$ with
+$\norm{S_l}_{L_P}\ge\gamma_k/2$. At every stage the already
+deleted union has at most $(m-1)\sqrt k\le k$ elements.
+The random variables $S_l$ are independent because they use disjoint
+collections of original entries. Each satisfies $|S_l|\le\norm{X}$
+pointwise, and \eqref{mi32-lower-tail} gives
+\[
+ \Prob\{|S_l|\ge c_0\gamma_k/2\}
+       \ge\frac1{4\sqrt{k+1}}.
+\]
+Consequently
+\[
+ \begin{split}
+ \E\norm{X}
+ &\ge\frac{c_0\gamma_k}{2}
+   \left[1-\left(1-\frac1{4\sqrt{k+1}}\right)^m\right]\\
+ &\ge\frac{c_0\gamma_k}{2}
+       \left(1-e^{-1/(8\sqrt2)}\right).
+ \end{split}
+\]
+In the last step we used $m\ge\sqrt k/2$ and $k\ge4$.
+Taking the maximum over the original budgets proves
+\begin{equation}\label{mi32-lower-deletion}
+ D(X)\le C_\alpha\E\norm{X}.
+\end{equation}
+Combining \eqref{mi32-lower-variance} and
+\eqref{mi32-lower-deletion} gives the known same-matrix lower
+estimate. Together with \eqref{mi32-reduction-final-upper}, it
+proves Theorem~\ref{mi32-main-theorem}.
+For $n=1$, $D(X)=0$ and the direct comparison
+$\norm{X_{11}}_2\le\alpha\E|X_{11}|$ also verifies the lower
+endpoint. All deletion minima throughout this proof remove the
+same deterministic original set from both axes.
+
+
+\section{Scope and the information retained by the proof}
+\label{mi32-scope}
+
+The estimate concerns the expected norm of the same original matrix
+throughout. Its constants depend only on the entry regularity parameter.
+The deletion sets are deterministic for the law, use the same original
+indices on both axes, and retain the exact moment order $\log(k+1)$,
+including $\log2<1$ at $k=1$.
+
+Three features of the local argument prevent unsupported reductions.
+First, the magnitudes and their repeated powers are never replaced by
+static entry heights or fresh copies. Second, sector orthogonality
+comes from the original signs and current vertices, not from magnitude
+monomials on disjoint rows. Third, the multiplier estimate is used only
+on a cone preserved by the actual walk prefixes; it does not bound all
+signed linear combinations in a polynomial span.
+
+What is \emph{not} claimed. The constants are explicit but
+deliberately conservative, and no attempt is made to optimize them; in
+particular Remark~\ref{mi32-sharp-cone-remark} already identifies one
+available improvement that we do not take. No efficient algorithm for
+evaluating $D(X)$ or $R_X(p)$ is claimed. The moment estimates supply
+upper-tail bounds through Markov's inequality, but do not by themselves
+identify matching quantiles, and matching moments are not used to claim
+matching quantiles. Arbitrary noncommuting coefficient insertions can
+destroy the nonnegative monomial cone, so applications with such
+insertions need their own preserved-coefficient argument. Finally, the
+lower comparison of Section~\ref{mi32-lower-section} is quoted from
+\cite{LatalaSwiatkowski} and is not proved here in any new way.
+
+\section{The formal verification}
+\label{mi32-formalization}
+
+The upper comparison has been formalized in Lean~4
+\cite{LeanFour} on top of \texttt{mathlib} \cite{Mathlib}. This section
+records what that does and does not establish.
+
+\subsection{The formal statement}
+
+The formalization fixes the quantities of
+Section~\ref{mi32-introduction} as ordinary definitions over an
+arbitrary probability space: the moment functional
+$\norm{\cdot}_{L_p}$ as a real power of a Bochner integral, meaningful
+for $p<1$; the operator norm as the norm of the Euclidean linear map;
+$M$ and $D$ exactly as in \eqref{mi32-variances} and \eqref{mi32-D},
+with one deterministic set deleted from both axes and the order
+$\log(k+1)$ unchanged. The compared statement is
+\begin{quote}\ttfamily\small
+theorem main\_upper ($\alpha$ : $\mathbb R$) (h$\alpha$ : 1 $\le$ $\alpha$) :\\
+\phantom{xx}$\exists$ C : $\mathbb R$, 0 < C $\wedge$ UpperBoundAt $\alpha$ C
+\end{quote}
+where \texttt{UpperBoundAt} quantifies over every dimension $n\ge1$,
+every measurable space, every probability measure on it, and every
+matrix of independent centered entries with all absolute moments finite
+satisfying \eqref{mi32-regularity} at every real order $r\ge1$. No
+finite-law substitute, conditional comparison, or assumed contraction
+occurs anywhere, and no estimate is introduced as a hypothesis or as a
+custom axiom. The transitive axiom audit of the target reports exactly
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}.
+
+A separate check confirms that the hypothesis class is not vacuous: an
+independent fair-sign matrix satisfies the hypotheses at the extreme
+parameter $\alpha=1$ and has $M=\sqrt n>0$, so
+\eqref{mi32-main-bound} is a genuine constraint rather than a statement
+about an empty class.
+
+\subsection{Correspondence with this manuscript}
+
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Statement here & Formal name in the \texttt{MI32} namespace\\
+\midrule
+Theorem~\ref{mi32-main-theorem}, upper half & \texttt{main\_upper}\\
+Lemma~\ref{mi32-hilbert-boolean} & \texttt{hilbert\_walsh\_fourth\_le}\\
+Lemma~\ref{mi32-product-moment-lemma} & \texttt{PositivePolynomial.tensorMoment\_add\_le}\\
+Lemma~\ref{mi32-cone-lemma} & \texttt{SymmetricPositiveCone.fourth\_norm\_moment}\\
+ & \texttt{SymmetricConeInterpolation.moment\_holder\_order\_le}\\
+Corollary~\ref{mi32-scalar-doubling} & \texttt{PositiveLinearPowers.signed\_linear\_even\_root\_doubling}\\
+Lemma~\ref{mi32-even-comparison} & \texttt{SymmetricMomentComparison.sum\_even\_moment\_le}\\
+Theorem~\ref{mi32-hilbert-comparison} & \texttt{HilbertComparison.independent\_coordinate\_moment\_le}\\
+Proposition~\ref{mi32-real-doubling} & \texttt{SymmetricLinearAllOrders.linear\_root\_doubling}\\
+Lemma~\ref{mi32-thin-lemma} & \texttt{ThinMatrix.transposeOperator\_moment\_four\_mul\_le}\\
+Proposition~\ref{mi32-contraction-proposition} & \texttt{RawCreatorContraction.creator\_l2\_le}\\
+ & \texttt{RawAnnihilatorContraction.annihilator\_l2\_le}\\
+Theorem~\ref{mi32-local-theorem} & \texttt{LocalSymmetricMoment.operator\_moment\_le}\\
+Corollary~\ref{mi32-local-mean} & \texttt{LocalLogMoment.mean\_spectralNorm\_le\_literal}\\
+Lemma~\ref{mi32-schedule-lemma} & \texttt{DeletionScheduleArithmetic}\\
+Lemma~\ref{mi32-nested-lemma} & \texttt{NestedDeletionFamily}\\
+Lemma~\ref{mi32-partition-lemma} & \texttt{DeletionMasks.entry\_sum}\\
+Proposition~\ref{mi32-far-proposition} & \texttt{FarMaskMean.mean\_farLow\_le}, \texttt{mean\_farUp\_le}\\
+Lemma~\ref{mi32-block-norm-lemma} & \texttt{FiberBlockNorm.norm\_le\_pi\_blockSub}\\
+ & \texttt{FiberBlockNorm.norm\_offDiagonal\_le}\\
+Proposition~\ref{mi32-block-proposition} & \texttt{NearBlockMoment.block\_moment\_le}\\
+Lemma~\ref{mi32-max-lemma} & \texttt{BlockMomentMaximum.mean\_max\_le}\\
+Theorem~\ref{mi32-symmetric-deletion} & \texttt{SymmetricDeletion.symmetricUpperBoundAt}\\
+Section~\ref{mi32-symmetrization} & \texttt{SymmetrizationReduction.upperBoundAt\_of\_symmetric}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Differences between the two proofs, and limits of the check}
+
+The formal proof follows this manuscript, with two deliberate
+differences, both already flagged where they occur.
+
+\begin{enumerate}
+\item The cone constant. The formalization retains an earlier,
+conservative form of the product-moment step, so the certified cone
+comparison carries $H_\alpha=\sqrt3\,\alpha^2$ rather than the
+$\sqrt3\,\alpha$ that Lemma~\ref{mi32-product-moment-lemma} in fact
+gives (Remark~\ref{mi32-sharp-cone-remark}). We have quoted the
+certified value everywhere, so that every displayed constant in this
+manuscript is machine-checked; the sharp value would improve each of
+them.
+\item The dimension factor in Theorem~\ref{mi32-local-theorem} counts
+both sides of the bipartite dilation, giving $2n$ where the trace
+comparison between the two diagonal blocks gives $n$. At the orders
+used this costs at most $\sqrt2$.
+\end{enumerate}
+
+The verification is a check of the deduction, not of the modelling.
+It certifies that the Lean statement follows from the axioms of
+Lean's type theory; whether that statement faithfully expresses
+problem MI-32 is a question about the definitions, which a reader must
+judge from the Challenge file and from
+Section~\ref{mi32-introduction}. The lower comparison of
+Section~\ref{mi32-lower-section} is not formalized, so
+Theorem~\ref{mi32-main-theorem} is machine-checked only in its upper
+half. Independent re-verification by the Comparator and NanoDa tools
+of the Palomar protocol, an editorial review, and registration are
+separate steps. All three have now been carried out: commit
+	exttt{762bd5e} of the development repository is registered as Palomar
+entry 	exttt{PALOMAR-2026-09-14-000006}, version~1, whose mechanical
+report records Comparator, NanoDa and a sandboxed kernel replay
+admitting only the three standard axioms, and whose editorial review
+returned no blocking problem. That review is automated; it is not
+external human peer review, and registration asserts neither novelty
+nor endorsement.
+% MI32 BODY END
+
+\begin{thebibliography}{99}\raggedright
+
+\bibitem{BandeiraVanHandel}
+A.~S.~Bandeira and R.~van Handel.
+\emph{Sharp nonasymptotic bounds on the norm of random matrices with
+independent entries}. Ann.\ Probab.\ \textbf{44} (2016), 2479--2506.
+\url{https://arxiv.org/abs/1408.6185}.
+
+\bibitem{Latala2005}
+R.~Lata\l a.
+\emph{Some estimates of norms of random matrices}.
+Proc.\ Amer.\ Math.\ Soc.\ \textbf{133} (2005), 1273--1282.
+
+\bibitem{Latala2024}
+R.~Lata\l a.
+\emph{On the spectral norm of Rademacher matrices}.
+Preprint, 2024. \url{https://arxiv.org/abs/2405.13656}.
+
+\bibitem{LatalaStrzelecka}
+R.~Lata\l a and M.~Strzelecka.
+\emph{Comparison of weak and strong moments for vectors with independent
+coordinates}. Mathematika \textbf{64} (2018), 211--229.
+\url{https://arxiv.org/abs/1612.02407}.
+
+\bibitem{LatalaSwiatkowski}
+R.~Lata\l a and W.~\'Swi\k{a}tkowski.
+\emph{Norms of randomized circulant matrices}.
+Electron.\ J.\ Probab.\ \textbf{27} (2022), paper~80, 1--23.
+Theorem, lemma and remark numbers refer to arXiv version~2.
+\url{https://arxiv.org/abs/2106.03139v2}.
+
+\bibitem{LatalaVanHandelYoussef}
+R.~Lata\l a, R.~van Handel, and P.~Youssef.
+\emph{The dimension-free structure of nonhomogeneous random matrices}.
+Invent.\ Math.\ \textbf{214} (2018), 1031--1080.
+\url{https://arxiv.org/abs/1711.00807}.
+
+\bibitem{LeanFour}
+L.~de Moura and S.~Ullrich.
+\emph{The Lean 4 theorem prover and programming language}.
+In: Automated Deduction --- CADE~28, Lecture Notes in Computer Science
+\textbf{12699}, Springer, 2021, 625--635.
+
+\bibitem{Mathlib}
+The \texttt{mathlib} Community.
+\emph{The Lean mathematical library}.
+In: Proceedings of the 9th ACM SIGPLAN International Conference on
+Certified Programs and Proofs (CPP~2020), 367--381.
+
+\bibitem{Meller}
+R.~Meller.
+\emph{Spectral norm of matrices with independent entries up to
+polyloglog}. Preprint, 2025.
+\url{https://arxiv.org/abs/2512.23673}.
+
+\bibitem{MI32}
+\emph{MI-32: Spectral norms of independent entries with regular moment
+growth}. Open Problems in Numerical Linear Algebra.
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/matrix-inequalities-and-norms/MI-32/README.md}.
+
+\bibitem{ODonnellBoolean}
+R.~O'Donnell.
+\emph{Analysis of Boolean Functions}.
+Cambridge University Press, 2014.
+
+\bibitem{RiemerSchutt}
+S.~Riemer and C.~Sch\"utt.
+\emph{On the expectation of the norm of random matrices with
+non-identically distributed entries}.
+Electron.\ J.\ Probab.\ \textbf{18} (2013), paper~29, 1--13.
+
+\bibitem{Seginer}
+Y.~Seginer.
+\emph{The expected norm of random matrices}.
+Combin.\ Probab.\ Comput.\ \textbf{9} (2000), 149--166.
+
+\bibitem{VanHandelSurvey}
+R.~van Handel.
+\emph{Structured random matrices}.
+In: Convexity and Concentration, IMA Volumes in Mathematics and its
+Applications \textbf{161}, Springer, 2017, 107--156.
+
+\end{thebibliography}
+\end{document}

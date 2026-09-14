@@ -123,7 +123,10 @@ It is conservative and not optimized.
 - [Checked work and the proof ledger](docs/PROOF_OBLIGATIONS.md)
 - [Correspondence with the source problem, including two deliberate divergences](docs/SOURCE_FIDELITY.md)
 - [Provenance and reused Lean code](docs/PROVENANCE.md)
-- [Original informal proof draft](docs/source/MI32_solution.md)
+- [The manuscript](docs/manuscript/MI32.pdf) ([LaTeX source](docs/manuscript/MI32.tex)),
+  whose formal-verification section tabulates statement-to-declaration
+  correspondence
+- [Earlier informal proof checkpoint](docs/source/MI32_solution.md)
 - [Verification record](verification/status.json)
 
 ## Build

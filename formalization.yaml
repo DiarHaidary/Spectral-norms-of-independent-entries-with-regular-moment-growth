@@ -80,10 +80,13 @@ sources:
     authors: ["Diar Heidary"]
     type: other
     relationship: formalizes
-    location: "docs/source/MI32_solution.md and linked research notes"
+    location: "docs/manuscript/MI32.pdf, with LaTeX source docs/manuscript/MI32.tex; earlier checkpoint notes in docs/source/MI32_solution.md"
     note: >-
-      The author's own agent-assisted informal proof draft of 13-14 September
-      2026, and the argument that the Lean development formalises. Copies are
+      The author's own agent-assisted manuscript of 14 September 2026, and the
+      argument that the Lean development formalises. Its Section on the formal
+      verification tabulates the correspondence between each numbered statement
+      of the manuscript and the Lean declaration that carries it, and records
+      the two places where the formal proof deliberately differs. Copies are
       bundled in this repository; the original research checkpoint is unchanged.
       It is unpublished and unrefereed, and prior agent reviews and exact finite
       numerical checks in it are not Lean proof evidence. The formal deletion
