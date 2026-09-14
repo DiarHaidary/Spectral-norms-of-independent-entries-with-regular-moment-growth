@@ -32,7 +32,12 @@ The supplied projects examined for reuse were:
 - `F:/Project/nelson-nguyen-sparse-fock-extension-publish/formal`
 
 Only the necessary source closure of `GraphMatrices.WalshFourthMoment`
-was copied into `vendor/graph-matrices`. Its modules retain their
+was copied into `vendor/graph-matrices`, from the public commit
+`DiarHaidary/Sharp-Bounds-for-Graph-Matrices@01994362f8543743d556e7544d2538e93c62c02b`,
+which `vendor/graph-matrices/manifest.json` now records alongside the per-file
+hashes. That project is a prior formalization reused as a Lean dependency, not
+a mathematical source, and it is recorded in `related_formalizations` rather
+than `sources`. Its modules retain their
 original bytes, namespaces and MIT licence. `vendor/graph-matrices/manifest.json`
 records exact SHA-256 hashes. That source includes generic material
 previously ported from the SparseFock formalization; its original notices

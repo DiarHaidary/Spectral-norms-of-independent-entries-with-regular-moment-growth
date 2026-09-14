@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-14T13:10:38.855726+00:00",
+  "checked_at": "2026-09-14T13:55:09.513037+00:00",
   "status": "local_proof_gate_passed",
   "core": "passed",
   "full_target": "passed_local_axiom_audit",
@@ -3075,9 +3075,9 @@
     ".gitignore": "fe1e1c6e4bee14e8f4c0741f489c77a7b6d359f3749e1a167277125ce372352d",
     "Audit.lean": "b8e5fbbcc74bf005e19326d97da4034e92b20a112ae0bbf061c541dbe5ef72e9",
     "bipartite-cone-audit.lean": "e240e102ad6fb66f8a1050e53d4c315264b68ec1ccf0870f660843e53fd42af4",
-    "Challenge.lean": "842540b695030a37a45d628238dbef09368c25e094319ecb6345691f46e93256",
+    "Challenge.lean": "5a95a8603e37c1223fae84c1460ed2638eebfca2f5ddc7474038e4d9b616d566",
     "comparator.json": "b07babafd28006b80be40dabb3666e15fb517b4e2f0b7949fe8607d54bf1ec52",
-    "CONTINUE_HERE.md": "eb466129c8e614cccb5bfd1718e7b5c2025d3f5cc7c5d628b1fce8ca5767343a",
+    "CONTINUE_HERE.md": "a09cdded522257bd378a2fadb5f39590d1f4c245985e9b0f7d9114b6f551bbd3",
     "deletion-moment-audit.lean": "ecbe64763550d5b1cedfe116e1be33f9798bfe8eccb1711ad9ee5c05176c00a7",
     "deletion-variance-audit.lean": "f43316951d98c3e05c00293aa60c3977f1c1eed29a65f87e8d647b1a4e47ba00",
     "diagonal-copy-audit.lean": "5ebb8e6753f36116845cc8cc77e05b5ede4329629e0a65adb01df9237dfbd6cb",
@@ -3088,7 +3088,7 @@
     "docs/NEXT_REMAINDER_ANALYTIC_PLAN.md": "a64ea812b17e70c1632b8401cb3622fac8d1cbe3851748d324c66e602c600667",
     "docs/NEXT_THIN_MATRIX_STEP.md": "50cd833a703e393ef09630ab614746a83e063da6100e610abe6ee93ee02b57d5",
     "docs/PROOF_OBLIGATIONS.md": "67d97ddc1f472c8a4ca20d8eac6c7a2889fd5453bbd08d260ccffac387b04815",
-    "docs/PROVENANCE.md": "308e14a808ebc64822a518edbe120d9148c8db61b858f9593fde445d12136f98",
+    "docs/PROVENANCE.md": "0588a1f55f2ab26bc42dd0c763c311bb8ccb317d88f94dd33492b5383955304a",
     "docs/REMAINING_CHAIN_SPEC.md": "4f0a1839646559a3b9b32b0a7c231ca6f7c8e1395b2831034000a90b648b68ee",
     "docs/SECTOR_CONTRACTION_DERIVATION.md": "4ffe16bfa6a3de67b73b5d591f595624b0611e7bfe8385fb1dadc4f3aa104726",
     "docs/source/build_verification_audit.py": "2dec8a8f8c5eab4eea65a98e6a5ca8648ffd5c703c6faf214f72c94faefbee64",
@@ -3119,7 +3119,7 @@
     "docs/source/weighted_sign_localization.md": "7ec4964b0aa21975e1b87904fc5c3285fc633c2fa60711d917b88c2572bcc7ba",
     "docs/source-manifest.json": "3c2e365d7a2b58e97e08496309f19dadd50824a4fb7bf45c71a9ca571148d9f1",
     "docs/SOURCE_FIDELITY.md": "6de345f22fcab7b81ad1527714a42535d0d87aa2de189b76c2e47fdacd0b1cc4",
-    "formalization.yaml": "289b030cd8512d0f8c112067c15650941535295184b7a14fb7bbfd6f7de75800",
+    "formalization.yaml": "12759b404bb50f755877db87cf8eea4a747368f26f6847682c39e28c2754ad45",
     "FullTargetAudit.lean": "a0736a47100b539cb62f78dfac3d990beb4d35768df2b5bdfeb16524c8d9a9e7",
     "general-law-copy-audit.lean": "aaac8a0b0527e9cc2674e57422d42d3c1e3128832b07cb3a15a3b11c6b3b1014",
     "hilbert-comparison-audit.lean": "b7bc015d34477453a3c098ffabede4aa55e7dcddf4c1cbe68b62ce6fba0e8485",
@@ -3229,7 +3229,7 @@
     "poly-sector-energy-audit.lean": "37bf88d20ea2a5a48783b9fa37b87643a298cbfdfb5c59b7aa9161af7e69e9fd",
     "positive-vacuum-audit.lean": "d0c1c1fbb416b9992b4899d45dd0b3882c55f73d7f69ed56cc35fb66040dbe29",
     "raw-direction-audit.lean": "c207e0a19cb90d844d8fc87776855210ecbc284a30c3af2a3d84afde71a89d5c",
-    "README.md": "dfe93e3189a8ba2234852963f293346475dc1c499eea063c9b94d059ffd11e8c",
+    "README.md": "441ccfcf9d3349eefacfd894fd32d1c25a6f86563066696ec11a277beefc0b6e",
     "scripts/validate_metadata.py": "3f6f41638ef7e1cc8e11d34547b57e912851a13996ba7aef0bf45c802fd2511a",
     "scripts/verify.ps1": "4c7cfe0d71495a07b079303c82e6774a6b0196831e987e0344a638cb9a4de653",
     "scripts/verify.py": "d91140f53a8504bc6e5702fb31fa211c21406740277ecb345f242b8fb82d5765",
@@ -3251,6 +3251,6 @@
     "vendor/graph-matrices/GraphMatrices/WalshFiniteL2.lean": "8a9c01fb0f1a94caabedd48d98c87b88f515cc0b3bc567d8ea8034b440d15664",
     "vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean": "09e7c3efa5af23723db43b38060d10914033b3f81154e8f34483cdb71469a851",
     "vendor/graph-matrices/LICENSE": "c118394b4c1adb946a93465a686d3247c1f7f5acf40c3029ef465929f6a4cfb3",
-    "vendor/graph-matrices/manifest.json": "3039a391637a15fc6cddd91098d8bb0f155bd842a9c1c9e06cf489c5f1167cdf"
+    "vendor/graph-matrices/manifest.json": "d0bd22afdcb514d7846b60c87f830600a0da3ea6005fccb67aab296dcf4caa31"
   }
 }

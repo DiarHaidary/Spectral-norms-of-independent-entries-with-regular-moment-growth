@@ -82,8 +82,33 @@ def UpperBoundAt (α C : ℝ) : Prop :=
       (∫ ω, spectralNorm (X ω) ∂μ) ≤
         C * (varianceScale μ X + deletionScale μ X)
 
-/-- The original general-law MI-32 upper bound. This is an intentional
-Challenge hole, not proof evidence. The Solution is still incomplete. -/
+/-- **MI-32: spectral norms of independent entries with regular moment growth,
+upper bound.** For every regularity parameter `α ≥ 1` there is a constant
+`C > 0`, depending only on `α` and not on the dimension or on the individual
+entry laws, such that every `n × n` random matrix `X` with independent
+mean-zero real entries whose absolute moments double regularly, meaning
+`moment μ (2 * r) (X i j) ≤ α * moment μ r (X i j)` at every real order
+`r ≥ 1`, satisfies
+
+`∫ ‖X‖ ≤ C * (varianceScale μ X + deletionScale μ X)`.
+
+Here `‖·‖` is the Euclidean operator norm, `varianceScale` is the sum of the
+largest row and the largest column standard deviation, and `deletionScale` is
+the max-min weak moment of the source problem: the maximum over budgets
+`1 ≤ k ≤ n` of the minimum, over deterministic index sets `I` of cardinality at
+most `k`, of the bilinear weak moment at order `Real.log (k + 1)` after deleting
+`I` from both axes. The probability space is arbitrary rather than finite, one
+and the same deterministic set deletes rows and columns, and the `k = 1` order
+`Real.log 2 < 1` is kept literally, so `moment` is used below exponent one.
+
+The `sorry` below is the **intentional Challenge hole**. This module states the
+result and deliberately proves nothing; it is the small statement of record that
+a mathematical reader is expected to audit. The corresponding `MI32.main_upper`
+in the selected Solution module is **not** a hole: it is completed and
+mechanically verified, carrying a full proof whose transitive axiom audit
+reports only `propext`, `Classical.choice` and `Quot.sound`. Nothing in this
+file is evidence for that proof; the comparison of the two declarations is what
+establishes that the Solution proves this statement. -/
 theorem main_upper (α : ℝ) (hα : 1 ≤ α) :
     ∃ C : ℝ, 0 < C ∧ UpperBoundAt.{u} α C := by
   sorry

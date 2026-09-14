@@ -43,11 +43,14 @@ entry repeats a variable and the paired dilation budget is not needed.
 
 ## What is NOT done, and must not be claimed
 
-- **Comparator and NanoDa have not been run.** They require `landrun` and
-  `systemd-run`; neither exists on this Windows host. A local checkout of the
-  Comparator source is on the machine but is unbuilt and unusable here.
-- Rendering, editorial review, registration and submission: none requested,
-  none performed.
+- **Comparator and NanoDa have not been run locally.** They require `landrun`
+  and `systemd-run`; neither exists on this Windows host. A local checkout of
+  the Comparator source is on the machine but is unbuilt and unusable here.
+  Mechanical verification of a submission is Palomar's own step.
+- A Palomar submission has been made and its AI editorial review returned
+  requested changes (classification, provenance, Challenge documentation),
+  addressed in this revision. Registration has not been requested and the
+  project is not registered.
 - No human peer review of the mathematics. Agent review is not peer review.
 - No novelty, priority, lower-bound or quantile claim. The lower comparison is
   a credited existing theorem and is not formalized or selected here.

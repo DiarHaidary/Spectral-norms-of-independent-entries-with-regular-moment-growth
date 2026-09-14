@@ -6,12 +6,14 @@ proved: `MI32.main_upper` in [`Solution.lean`](Solution.lean) contains no
 `sorry`, and its transitive axiom audit reports exactly `propext`,
 `Classical.choice` and `Quot.sound`.
 
-**It has not been submitted to Palomar, and the external Palomar checks have
-not been run.** Comparator and NanoDa require `landrun` and `systemd-run` and
-cannot run on this Windows host; rendering, editorial review and registration
-have not been requested. A successful local Lean build and axiom audit is a
-different, weaker statement than a registry result, and no human peer review
-of the mathematics has taken place.
+**It is not registered with Palomar.** A submission has been made; its AI
+editorial review returned requested changes on classification and provenance
+metadata and on the Challenge documentation, which this revision addresses.
+Comparator and NanoDa cannot run on this Windows host (they need `landrun` and
+`systemd-run`), so the mechanical checks recorded here are local Lean evidence
+only and mechanical verification of the submission is Palomar's own step.
+Registration has not been requested, no human peer review of the mathematics
+has taken place, and no novelty or priority claim is made.
 
 ## The statement that is proved
 
@@ -129,7 +131,9 @@ recreate them, or run `lake exe cache get` against a fresh clone.
 The Challenge imports Mathlib only; Solution uses the project modules. They
 define the same qualified target in separate environments; all eight target
 definitions elaborate to identical terms in both, and the two `main_upper`
-types print identically. That is a local check, not a Comparator run.
+types print identically. That is a local check, not a Comparator run. The
+Challenge carries the intentional hole by design, and its theorem
+documentation says so and distinguishes it from the completed Solution.
 The manifest, exact toolchain, Comparator configuration, licence, metadata,
 and source-fidelity account are included for eventual submission.
 

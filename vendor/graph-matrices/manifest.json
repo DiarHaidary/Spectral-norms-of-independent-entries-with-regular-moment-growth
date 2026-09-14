@@ -1,5 +1,8 @@
 {
   "source": "F:\\Sandbox\\Graph Matrices\\Palomar",
+  "repository": "https://github.com/DiarHaidary/Sharp-Bounds-for-Graph-Matrices",
+  "revision": "01994362f8543743d556e7544d2538e93c62c02b",
+  "note": "Every file listed below is byte-identical to that public commit. The upstream project is MIT licensed; its notices are retained.",
   "copied_modules": [
     {
       "path": "GraphMatrices/WalshFourthMoment.lean",

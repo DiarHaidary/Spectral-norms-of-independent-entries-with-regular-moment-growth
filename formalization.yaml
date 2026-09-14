@@ -4,94 +4,160 @@ version: "v0.4"
 project:
   name: "MI-32: Lean formalization of the parity and positive-polynomial upper bound"
   description: >-
-    A Lean 4 formalization of the general-law MI-32 upper bound. The original
-    arbitrary-probability-space statement is retained verbatim and is now
-    proved: `MI32.main_upper` depends only on `propext`, `Classical.choice`
-    and `Quot.sound`. The chain consists of original-law positive-polynomial
-    moments and interpolation, exact occupation-count localization, finite
-    nets, a direct independent-coordinate Hilbert comparison, full original-law
-    creator and annihilator contractions, positive vacuum iteration, the local
-    symmetric-law operator-moment theorem and its exact logarithmic order,
-    then the nested deterministic deletion decomposition: two-sided variance
-    screening on one shared index family, an elementary centered-Gram estimate
-    for the far remainder, two two-shell block families controlled by the
-    local theorem at scheduled orders, and the original-copy symmetrization
-    reduction. Constants are explicit and conservative, not optimized.
-    Comparator, NanoDa, rendering, editorial review and registration are
-    separate Palomar steps and have not been run or requested.
+    A Lean 4 formalization of the MI-32 upper bound, that is, of the
+    Latała-Świątkowski conjecture that for every regularity parameter alpha >= 1
+    there is a constant C > 0, independent of the dimension and of the entry
+    laws, with E||X|| <= C (M(X) + D(X)) for every square random matrix X with
+    independent mean-zero real entries whose absolute moments satisfy
+    ||X_ij||_{L_2r} <= alpha ||X_ij||_{L_r} at every real order r >= 1. Here
+    ||.|| is the Euclidean operator norm, M(X) is the sum of the largest row and
+    column standard deviations, and D(X) is the max-min weak moment at order
+    log(k+1) taken over one shared deterministic deletion set on both axes. The
+    probability space is arbitrary and the subunit order log 2 at k = 1 is kept
+    literally. The selected theorem MI32.main_upper carries a complete proof
+    whose transitive axiom audit reports only propext, Classical.choice and
+    Quot.sound. The proof runs through original-law positive-polynomial moments
+    and interpolation, exact occupation-count localization, finite nets, a
+    direct independent-coordinate Hilbert comparison, full original-law creator
+    and annihilator contractions, positive vacuum iteration giving the local
+    symmetric-law operator-moment theorem at the exact order log(n+1), a nested
+    deterministic deletion decomposition with cubic two-sided variance
+    screening, an elementary centered-Gram estimate for the far remainder, two
+    two-shell block families controlled by the local theorem at scheduled
+    orders, and the original-copy symmetrization reduction. Constants are
+    explicit and conservative, not optimized.
   authors: ["Diar Heidary"]
   responsible_maintainers: ["Diar Heidary"]
   license: "MIT"
 
 classification:
   arxiv: ["math.PR", "math.FA"]
-  msc2020: ["60B20", "60E15", "47A30", "68V15"]
+  msc2020: ["60B20", "60E15", "47A30"]
 
 sources:
-  - title: "MI-32: a proof through parity counts and positive walk polynomials"
-    authors: ["Diar Heidary"]
+  - title: "MI-32 - Spectral norms of independent entries with regular moment growth, in Open Problems in Numerical Linear Algebra"
+    type: "web discussion"
+    id: "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/d7fcfe7bfe8c02cd98d9463fa5a8ba12850d5bdb/matrix-inequalities-and-norms/MI-32/README.md"
+    contributors:
+      - name: "Alex Townsend"
+        role: "compiler and editor of the Open Problems in Numerical Linear Algebra collection"
     relationship: formalizes
-    location: "docs/source/MI32_solution.md and linked research notes"
-    notes: >-
-      Agent-assisted informal proof draft dated 13-14 September 2026. Copies
-      are bundled; the original checkpoint is unchanged. Prior agent reviews
-      and exact finite checks are not Lean proof evidence. The formal deletion
-      argument deliberately diverges from the draft; see fidelity below.
-  - title: "MI-32 - Spectral norms of independent entries with regular moment growth"
-    url: "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/matrix-inequalities-and-norms/MI-32/README.md"
-    relationship: background
-    notes: >-
-      Source of the precise upper-bound conjecture, read on 14 September 2026.
-      The source labels it partially resolved; no external resolution,
-      refereeing or endorsement is claimed by this development.
-  - title: "Comparison of weak and strong moments for vectors with independent coordinates"
-    authors: ["Rafał Latała", "Marta Strzelecka"]
-    url: "https://arxiv.org/abs/1612.02407"
-    relationship: background
-    notes: >-
-      The informal draft cites Theorem 1.1. The Lean chain does not use it: a
-      direct independent-coordinate Hilbert comparison is proved instead. The
-      general published comparison itself is not formalized here.
+    note: >-
+      This entry states the problem that the selected theorem MI32.main_upper
+      formalises and proves, in exactly the form formalised: independent
+      mean-zero real entries with finite absolute moments of every order and
+      ||X_ij||_{L_2r} <= alpha ||X_ij||_{L_r} for r >= 1; the Euclidean spectral
+      norm; M(X) the sum of the largest row and the largest column standard
+      deviation; and D(X) the max-min weak moment at order log(k+1) over one
+      shared deterministic deletion set applied to both axes. The entry itself
+      attributes the conjecture to Latała and Świątkowski, recorded separately
+      below as the mathematical origin of the result. Read on 14 September 2026,
+      when the entry recorded "Status: Partially resolved" and "Last checked:
+      2026-09-11", and summarised the known partial results of Latała and of
+      Meller. The identifier is a commit permalink because the collection's
+      main-branch URL is mutable; the collection states no licence, and no
+      endorsement by the collection or its editor is claimed.
   - title: "Norms of randomized circulant matrices"
     authors: ["Rafał Latała", "Witold Świątkowski"]
-    url: "https://arxiv.org/abs/2106.03139"
+    type: paper
+    id: "https://doi.org/10.1214/22-EJP799"
+    location: "Electronic Journal of Probability 27 (2022), paper 80, 1-23; arXiv:2106.03139"
+    relationship: formalizes
+    author_endorsement: not-contacted
+    note: >-
+      Conjecture 4.3 of this paper is the mathematical origin of the selected
+      result: the inequality proved by MI32.main_upper is that conjecture. The
+      paper itself proves the Gaussian-mixture case rather than the general
+      statement, so this Lean development proves a conjecture of the source
+      rather than re-deriving a theorem of the source. Remark 4.5 of the same
+      paper is the structural model for the deletion reduction; the Lean proof
+      follows its nested-selection idea but deliberately replaces its remainder
+      step, as recorded in fidelity.divergences and docs/SOURCE_FIDELITY.md.
+      Theorem 4.1, the matching lower bound, is credited to this paper and is
+      neither formalized nor selected here.
+  - title: "MI-32: a proof through parity counts and positive walk polynomials"
+    authors: ["Diar Heidary"]
+    type: other
+    relationship: formalizes
+    location: "docs/source/MI32_solution.md and linked research notes"
+    note: >-
+      The author's own agent-assisted informal proof draft of 13-14 September
+      2026, and the argument that the Lean development formalises. Copies are
+      bundled in this repository; the original research checkpoint is unchanged.
+      It is unpublished and unrefereed, and prior agent reviews and exact finite
+      numerical checks in it are not Lean proof evidence. The formal deletion
+      argument deliberately diverges from this draft in two recorded ways; see
+      fidelity.divergences.
+  - title: "Comparison of weak and strong moments for vectors with independent coordinates"
+    authors: ["Rafał Latała", "Marta Strzelecka"]
+    type: paper
+    id: "https://arxiv.org/abs/1612.02407"
+    location: "Mathematika 64 (2018), 211-229"
     relationship: background
-    notes: >-
-      Remark 4.5 is the structural model for the deletion reduction. The Lean
-      proof follows its nested-selection idea but replaces its remainder step,
-      and its lower theorem is credited, not formalized or selected.
+    note: >-
+      The informal draft cites Theorem 1.1. The Lean chain does not use it and
+      does not formalize it: MI32/HilbertComparison.lean proves the direct
+      independent-coordinate comparison that the argument actually needs.
   - title: "Dimension-free bounds and structured results in random matrix theory"
     authors: ["Rafał Latała", "Ramon van Handel", "Pierre Youssef"]
-    url: "https://web.math.princeton.edu/~rvan/dimfr180821.pdf"
+    type: paper
+    id: "https://web.math.princeton.edu/~rvan/dimfr180821.pdf"
     relationship: background
-    notes: >-
+    note: >-
       The informal draft's remainder step invokes a variance-envelope
       consequence of Theorem 4.4. The Lean chain avoids that dependency
       entirely; nothing from this paper is formalized or assumed.
-  - title: "Supplied GraphMatrices Lean development"
-    relationship: adapts
-    location: "vendor/graph-matrices/manifest.json"
-    notes: >-
-      Byte-identical MIT-licensed source closure of scalar Boolean fourth
-      moments, with original notices and SHA-256 hashes. The Hilbert extension
-      and the MI-32-specific core are developed here.
+
+related_formalizations:
+  - id: "https://github.com/DiarHaidary/Sharp-Bounds-for-Graph-Matrices/tree/01994362f8543743d556e7544d2538e93c62c02b"
+    relationship: builds-on
+    note: >-
+      Earlier Lean development by the same author, cited at the exact public
+      commit DiarHaidary/Sharp-Bounds-for-Graph-Matrices@01994362f8543743d556e7544d2538e93c62c02b
+      (MIT). It is a prior formalization reused as a Lean dependency, not a
+      mathematical source: its own subject, sharp norm bounds for fixed-shape
+      graph matrices, is unrelated to MI-32 and none of its graph-matrix results
+      are reused or re-claimed here. What is reused is its scalar Boolean
+      machinery. The necessary source closure of GraphMatrices.WalshFourthMoment
+      is vendored byte-identically into vendor/graph-matrices/ with its original
+      notices, its MIT licence and per-file SHA-256 hashes in
+      vendor/graph-matrices/manifest.json; every one of those 16 files is
+      byte-identical to that commit. The single load-bearing reused theorem is
+      GraphMatrices.Walsh.polynomial_fourth_le_nine_pow, the scalar Boolean
+      two-to-four fourth-moment inequality with constant 9^d, together with the
+      supporting Walsh polynomial, independent-sign law and finite-law
+      vocabulary. What this development adds on top of it is
+      MI32.hilbert_walsh_fourth_le in MI32/HilbertWalsh.lean, a dimension-free
+      finite-dimensional real Hilbert-space extension of that inequality for a
+      family of Walsh polynomials with arbitrary real coefficients, proved here
+      from the scalar case and a pairwise Cauchy-Schwarz argument. The vendored
+      closure is broader than the part used, because of the upstream module
+      import structure.
 
 status:
   scope: >-
-    The original full upper theorem `MI32.main_upper` is proved with no proof
-    gap and no added axiom. Solution imports no Challenge. External Palomar
-    steps have not been run.
+    The selected theorem MI32.main_upper is proved with no proof gap and no
+    added axiom. Solution imports no Challenge. Challenge.lean retains the
+    deliberate Challenge hole by design.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
   notes: >-
-    The transitive axiom audit of `MI32.main_upper` reports exactly the three
+    The transitive axiom audit of MI32.main_upper reports exactly the three
     standard foundations; see verification/full-target-axioms.log and
-    verification/status.json. `Challenge.lean` retains a deliberate `sorry`
-    as the Palomar challenge hole and is never imported by the core or by the
-    Solution. The three-foundation Comparator configuration does not permit
-    `sorryAx`; it has not been run, since Comparator is not available in this
-    local environment.
+    verification/status.json. Challenge.lean retains a deliberate sorry as the
+    Palomar challenge hole and is never imported by the proof core or by the
+    Solution; its theorem documentation states this and distinguishes it from
+    the completed Solution declaration. Comparator and NanoDa cannot be run in
+    the author's local Windows environment, which is why the repository records
+    only local Lean evidence; mechanical verification of the submission is
+    Palomar's own step.
+  known_gaps: >-
+    No lower bound and no quantile statement is formalized or selected; the
+    matching lower estimate is credited to Latała-Świątkowski Theorem 4.1. The
+    constant is explicit but conservative and is not optimized, and no claim is
+    made about its dependence on alpha being sharp. The two deliberate
+    divergences from the informal draft are recorded in fidelity.divergences.
 
 automation:
   methods:
@@ -104,52 +170,53 @@ automation:
         Existing GraphMatrices sources were inspected and vendored with hashes.
         The remaining deletion chain was specified in
         docs/REMAINING_CHAIN_SPEC.md and implemented by parallel agents whose
-        output was rechecked module by module with `lake env lean` and then by
-        a full `lake build` plus the transitive axiom audit.
+        output was rechecked module by module with `lake env lean` and then by a
+        full `lake build` plus the transitive axiom audit.
       prompting_notes: >-
         The human requested a Lean formalization of the MI-32 proof in a new
         subfolder and a layout suitable for their eventual Palomar submission,
         and later asked for the incomplete formalization to be completed.
   spend_usd: "Not tracked"
   notes: >-
-    Human direction and responsibility are not a claim of manual authorship
-    or independent human verification of every mathematical or Lean argument.
+    Human direction and responsibility are not a claim of manual authorship or
+    independent human verification of every mathematical or Lean argument.
 
 fidelity:
   divergences: >-
-    The exact full upper-bound statement of the source problem is preserved
-    verbatim in MI32/Statement.lean and Challenge.lean and is what is proved;
-    no finite-law substitute, conditional comparison or assumed contraction is
-    used. Two deliberate divergences from the informal draft's deletion
-    argument: (1) the draft's far-remainder step invokes a variance-envelope
-    consequence of Latała-van Handel-Youssef Theorem 4.4, whereas the Lean
-    proof raises the per-coordinate screening threshold from b^2 to b^3 and
-    uses an elementary centered-Gram second-moment estimate instead, so no
-    general matrix fourth-moment inequality is needed; (2) the draft routes
-    the deletion argument through the matrix-symmetric dilation H_Y, whose
-    reflected entries repeat variables, whereas the Lean proof performs the
-    whole decomposition on the original rectangular matrix with one shared
-    index family on both axes, so every entry family used is genuinely
-    independent and the paired dilation budget is not needed. No lower-bound
-    or quantile theorem is claimed or selected. Constants are conservative.
-    Full details in docs/SOURCE_FIDELITY.md and docs/REMAINING_CHAIN_SPEC.md.
+    The exact statement of the MI-32 problem is preserved verbatim in
+    MI32/Statement.lean and Challenge.lean and is what is proved; no finite-law
+    substitute, conditional comparison or assumed contraction is used, and no
+    estimate is taken as an input hypothesis or a custom axiom. Two deliberate
+    divergences from the informal draft's deletion argument: (1) the draft's
+    far-remainder step invokes a variance-envelope consequence of Latała-van
+    Handel-Youssef Theorem 4.4, whereas the Lean proof raises the
+    per-coordinate screening threshold from b^2 to b^3 and uses an elementary
+    centered-Gram second-moment estimate instead, so no general matrix
+    fourth-moment inequality is needed; (2) the draft routes the deletion
+    argument through the matrix-symmetric dilation H_Y, whose reflected entries
+    repeat variables, whereas the Lean proof performs the whole decomposition on
+    the original rectangular matrix with one shared index family on both axes,
+    so every entry family used is genuinely independent and the paired dilation
+    budget is not needed. Full details in docs/SOURCE_FIDELITY.md and
+    docs/REMAINING_CHAIN_SPEC.md.
 
 review:
   status: agent-reviewed
   reviewers:
     - "Codex statement-fidelity agent: independent read-only audit of the exact target, 14 September 2026"
   notes: >-
-    The statement-fidelity audit found no material mismatch with the original
-    MI-32 upper conjecture. It is not independent review of the analytic
-    proof. Local Lean checking, Comparator/NanoDa, rendering, editorial review
-    and registration are separate statuses; only local Lean checking has been
-    performed. No human peer review, Palomar editorial outcome, acceptance,
-    registry entry or novelty claim is made.
+    The statement-fidelity audit found no material mismatch with the MI-32
+    problem statement. It is not independent review of the analytic proof. A
+    Palomar submission has been made and its AI editorial review returned
+    requested changes concerning classification and provenance metadata and the
+    Challenge documentation; this revision addresses them. No human peer review
+    of the mathematics has taken place, and no Palomar acceptance, registry
+    entry, priority or novelty claim is made.
 
 alignment:
   namespace: "MI32"
   statements:
-    - source: "MI-32 upper conjecture; bundled informal proof draft"
+    - source: "MI-32, that is Conjecture 4.3 of Latała-Świątkowski, as stated in the Open Problems in Numerical Linear Algebra entry"
       lean: "MI32.main_upper"
       module: "Solution"
       status: "complete"
