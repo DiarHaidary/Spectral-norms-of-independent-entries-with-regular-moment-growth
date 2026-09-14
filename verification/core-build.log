@@ -110,7 +110,7 @@ Hint: Omit it from the simp argument list.
   [apply] simp only [sign, Bool.false_eq_true, ↓reduceIte]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [3641/3665] Replayed MI32.CenteredGramNorm
+⚠ [3653/3665] Replayed MI32.CenteredGramNorm
 warning: MI32/CenteredGramNorm.lean:27:0: automatically included section variable(s) unused in theorem `MI32.CenteredGramNorm.entryEnergy_nonneg`:
   [DecidableEq C]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
