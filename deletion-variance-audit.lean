@@ -1,0 +1,14 @@
+import MI32.DeletionVarianceSelection
+
+#print axioms MI32.DeletionVarianceSelection.mem_largeRows
+#print axioms MI32.DeletionVarianceSelection.card_largeRows_le
+#print axioms MI32.DeletionVarianceSelection.subset_selection
+#print axioms MI32.DeletionVarianceSelection.largeRows_subset_selection
+#print axioms MI32.DeletionVarianceSelection.card_selection_le
+#print axioms MI32.DeletionVarianceSelection.surviving_entry_le
+#print axioms MI32.DeletionVarianceSelection.surviving_entry_le_div
+#print axioms MI32.DeletionVarianceSelection.selection_mono
+#print axioms MI32.DeletionVarianceSelection.selection_zero
+#print axioms MI32.DeletionVarianceSelection.selection_zero_budget
+#print axioms MI32.DeletionVarianceSelection.exists_selection
+#print axioms MI32.DeletionVarianceSelection.exists_variance_selection

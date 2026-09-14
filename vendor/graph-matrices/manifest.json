@@ -1,0 +1,69 @@
+{
+  "source": "F:\\Sandbox\\Graph Matrices\\Palomar",
+  "copied_modules": [
+    {
+      "path": "GraphMatrices/WalshFourthMoment.lean",
+      "sha256": "09e7c3efa5af23723db43b38060d10914033b3f81154e8f34483cdb71469a851"
+    },
+    {
+      "path": "GraphMatrices/WalshFiniteL2.lean",
+      "sha256": "8a9c01fb0f1a94caabedd48d98c87b88f515cc0b3bc567d8ea8034b440d15664"
+    },
+    {
+      "path": "GraphMatrices/FiniteL2.lean",
+      "sha256": "83072b149965312bcb3c8542256f9fa4a0bdce28346c8c4fb03b735bbc3bf2f6"
+    },
+    {
+      "path": "GraphMatrices/Walsh.lean",
+      "sha256": "f25caa9fadfd119cc7347000a41e5301360bb4ff3541c241a429819cb025473d"
+    },
+    {
+      "path": "GraphMatrices/SignGraphDegree.lean",
+      "sha256": "1dea2f53a01789557e03d3c356ffedbca869989d25bf54b9142f04267fbc9c28"
+    },
+    {
+      "path": "GraphMatrices/GraphMatrix.lean",
+      "sha256": "3f00400d36c5d08e4c6a802617726830f61d4a41222313d034cf56aca98f622c"
+    },
+    {
+      "path": "GraphMatrices/Basic.lean",
+      "sha256": "164de046b8f6c92c734da05afd3191df30c2ed673a2e607b9924e8260733cdc6"
+    },
+    {
+      "path": "GraphMatrices/FiniteLocalMoments.lean",
+      "sha256": "7f2ee608c5545648526ac0860cad6ed94decc1da01259e7511de4204bd15daa2"
+    },
+    {
+      "path": "GraphMatrices/FiniteProbability.lean",
+      "sha256": "bceb39e64edeb1adce65fff13fa92e084ca25dc7cd0dc0997b078c387b948de7"
+    },
+    {
+      "path": "GraphMatrices/GraphMomentTransfer.lean",
+      "sha256": "9a1964a859909dab7371ed69df0c404412bb932f5e2642db4cec7ce34cedaa70"
+    },
+    {
+      "path": "GraphMatrices/MatrixAverageContraction.lean",
+      "sha256": "0fea3bb54a6563d9d36ae73cf2aafe892339bb745770964ded8c9729d68ec0c4"
+    },
+    {
+      "path": "GraphMatrices/RoleColoring.lean",
+      "sha256": "e28f806a1f3d014ad54223aeae5af36d244d1b7149568af8ca97d8024f3fce64"
+    },
+    {
+      "path": "GraphMatrices/SpectralNorm.lean",
+      "sha256": "d2b800ff6f8e209b09bc59d5f03419311358765db14b686721bea126967bd43d"
+    },
+    {
+      "path": "GraphMatrices/CrossedEdges.lean",
+      "sha256": "b1186acc40deae996f1c34a5de2078d74ab68b6513c9d9d457846009eddf9fe7"
+    },
+    {
+      "path": "GraphMatrices/OffDiagonalModel.lean",
+      "sha256": "5f19f401b5c51a38ec340364d512ab0d11f5e4a6fb46b3080cca5f8d19b4e36f"
+    },
+    {
+      "path": "GraphMatrices/FinitePaleyZygmund.lean",
+      "sha256": "b97f808e15e9ebd92c25ae43196a88ee8603a40e186fcfc92ed450d7e5580597"
+    }
+  ]
+}

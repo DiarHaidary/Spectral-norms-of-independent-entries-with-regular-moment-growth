@@ -1,0 +1,114 @@
+⚠ [3457/3625] Replayed GraphMatrices.FiniteL2
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:55:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.reconstruct`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:59:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.expect_one`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:62:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.coeff_mul_sum`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:73:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.coeff_sum`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:124:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.vacuum_mulOp`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:144:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.matrixMulOp_one`:
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:153:30: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [matrixMulOp, coeff, hab]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:155:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.matrixMulOp_mul`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [3467/3625] Replayed GraphMatrices.FiniteProbability
+info: vendor/graph-matrices/GraphMatrices/FiniteProbability.lean:368:0: 'GraphMatrices.FiniteLaw.markov' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: vendor/graph-matrices/GraphMatrices/FiniteProbability.lean:369:0: 'GraphMatrices.FiniteLaw.prob_independentProduct_cylinder' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3468/3625] Replayed GraphMatrices.FiniteLocalMoments
+info: vendor/graph-matrices/GraphMatrices/FiniteLocalMoments.lean:226:0: 'GraphMatrices.FiniteLocalMoments.HasLocalDegree.expect_eq_of_matchesUpTo' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3471/3625] Replayed GraphMatrices.WalshFiniteL2
+warning: vendor/graph-matrices/GraphMatrices/WalshFiniteL2.lean:62:8: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: vendor/graph-matrices/GraphMatrices/WalshFiniteL2.lean:67:25: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3476/3625] Replayed GraphMatrices.MatrixAverageContraction
+warning: vendor/graph-matrices/GraphMatrices/MatrixAverageContraction.lean:22:0: automatically included section variable(s) unused in theorem `GraphMatrices.MatrixAverageContraction.signed_average_mean_norm_le`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/MatrixAverageContraction.lean:54:0: automatically included section variable(s) unused in theorem `GraphMatrices.MatrixAverageContraction.signed_average_mean_norm_rpow_le`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3478/3625] Replayed GraphMatrices.WalshFourthMoment
+warning: vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean:17:0: automatically included section variable(s) unused in theorem `GraphMatrices.Walsh.sign_flipOne`:
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean:40:0: automatically included section variable(s) unused in theorem `GraphMatrices.Walsh.weightedEnergy_nonneg`:
+  [Fintype E]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype E] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean:63:0: automatically included section variable(s) unused in theorem `GraphMatrices.Walsh.weightedEnergy_insert`:
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean:99:39: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sign, Bool.false_eq_true, ↓reduceIte]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3625/3625] Built MI32.LocalSymmetricMoment (8.1s)
+Build completed successfully (3625 jobs).

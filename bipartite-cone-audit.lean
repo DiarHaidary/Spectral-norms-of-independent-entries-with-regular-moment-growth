@@ -1,0 +1,11 @@
+import MI32.BipartiteConeContraction
+
+#print axioms MI32.BipartiteConeContraction.action_eq_matrix_mulVec
+#print axioms MI32.BipartiteConeContraction.action_apply_inl
+#print axioms MI32.BipartiteConeContraction.action_apply_inr
+#print axioms MI32.BipartiteConeContraction.action_inl_eq
+#print axioms MI32.BipartiteConeContraction.action_inr_eq
+#print axioms MI32.BipartiteConeContraction.polynomial_norm_sq_eq
+#print axioms MI32.BipartiteConeContraction.action_norm_sq_eq
+#print axioms MI32.BipartiteConeContraction.action_vacuum_eq
+#print axioms MI32.BipartiteConeContraction.action_l2_le

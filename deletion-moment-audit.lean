@@ -1,0 +1,11 @@
+import MI32.DeletionMomentEndpoints
+
+#print axioms MI32.DeletionMomentEndpoints.integrable_copy_abs_rpow
+#print axioms MI32.DeletionMomentEndpoints.moment_copy_fst
+#print axioms MI32.DeletionMomentEndpoints.moment_copy_snd
+#print axioms MI32.DeletionMomentEndpoints.copy_moment_le_two
+#print axioms MI32.DeletionMomentEndpoints.copy_integral_le_two_of_le_one
+#print axioms MI32.DeletionMomentEndpoints.copy_moment_le_two_rpow_of_le_one
+#print axioms MI32.DeletionMomentEndpoints.copy_moment_le_exp
+#print axioms MI32.DeletionMomentEndpoints.centered_moment_le_copy
+#print axioms MI32.DeletionMomentEndpoints.mean_zero_moment_le_copy

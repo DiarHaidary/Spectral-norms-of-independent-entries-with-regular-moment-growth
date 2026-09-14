@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact fractions.Fraction and integer occupation masks",
+  "cases": [
+    {
+      "cycle_length": 4,
+      "grade": 0,
+      "states": 1,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 4,
+      "grade": 1,
+      "states": 5,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 4,
+      "grade": 2,
+      "states": 10,
+      "nonzero": true
+    },
+    {
+      "cycle_length": 4,
+      "grade": 3,
+      "states": 10,
+      "nonzero": true
+    },
+    {
+      "cycle_length": 4,
+      "grade": 4,
+      "states": 5,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 4,
+      "grade": 5,
+      "states": 1,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 6,
+      "grade": 0,
+      "states": 1,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 6,
+      "grade": 1,
+      "states": 7,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 6,
+      "grade": 2,
+      "states": 21,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 6,
+      "grade": 3,
+      "states": 35,
+      "nonzero": true
+    },
+    {
+      "cycle_length": 6,
+      "grade": 4,
+      "states": 35,
+      "nonzero": true
+    },
+    {
+      "cycle_length": 6,
+      "grade": 5,
+      "states": 21,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 6,
+      "grade": 6,
+      "states": 7,
+      "nonzero": false
+    },
+    {
+      "cycle_length": 6,
+      "grade": 7,
+      "states": 1,
+      "nonzero": false
+    }
+  ],
+  "matrix_checks": {
+    "matrix_equalities": 118,
+    "exact_psd_checks": 42,
+    "nonzero_controls": 3
+  },
+  "actual_square_grades": [
+    2,
+    3
+  ],
+  "dependencies": [
+    {
+      "path": "F:\\Sandbox\\Vacuum-Weighted SparseStack bounds\\Continued\\mi32_cycles_2026-09-13\\verify_ordered_cycle.py",
+      "sha256": "2eb2f8ab2c69a0dc1073a11b89154b4d96de9a519290c98f2ce87c15cd50e11d"
+    },
+    {
+      "path": "F:\\Sandbox\\Vacuum-Weighted SparseStack bounds\\Continued\\mi32_cycles_2026-09-13\\ordered_cycle_boundary.md",
+      "sha256": "8a4ea2da70a0649f3b1cbdb35b6b43cecbfd885037b41521cfb10435042a78c0"
+    },
+    {
+      "path": "F:\\Sandbox\\Vacuum-Weighted SparseStack bounds\\Continued\\mi32_exchange_2026-09-13\\verify_heavy_light_cross.py",
+      "sha256": "7f953e0352a9973e02b1c1649e860efbbeedd9f0b07ab48667627123813d2a14"
+    }
+  ],
+  "limits": [
+    "Only cycle lengths four and six with one spectator are enumerated.",
+    "The coefficient fixture is real rational and nonnormal; complex formulas are proved analytically.",
+    "Identification is a specified sequential creation-word substitution, not the full sign-law quotient.",
+    "No claim about all-cycle assembly, actual norm moments, quantiles or MI-32."
+  ]
+}

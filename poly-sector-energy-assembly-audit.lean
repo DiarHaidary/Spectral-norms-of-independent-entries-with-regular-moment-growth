@@ -1,0 +1,7 @@
+import MI32.PolynomialEnergyAssembly
+#print axioms MI32.PolynomialEnergyAssembly.mem_commonLabelCover_in
+#print axioms MI32.PolynomialEnergyAssembly.mem_commonLabelCover_out
+#print axioms MI32.PolynomialEnergyAssembly.commonLabelCover_card_le
+#print axioms MI32.PolynomialEnergyAssembly.second_energy_le
+#print axioms MI32.PolynomialEnergyAssembly.second_moment_le
+#print axioms MI32.PolynomialEnergyAssembly.second_moment_le_of_all_sectors

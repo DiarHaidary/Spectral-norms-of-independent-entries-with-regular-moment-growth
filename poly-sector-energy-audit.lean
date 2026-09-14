@@ -1,0 +1,13 @@
+import MI32.PolynomialSectorEnergy
+
+#check MI32.PolynomialSectorEnergy.masked_second_energy_le
+#check MI32.PolynomialSectorEnergy.sum_sector_second_energies
+#check MI32.PolynomialSectorEnergy.integral_disjoint_mask_inner_eq_zero
+#print axioms MI32.PolynomialSectorEnergy.integrable_original_norm_sq
+#print axioms MI32.PolynomialSectorEnergy.integrable_conditionalEnergy
+#print axioms MI32.PolynomialSectorEnergy.integral_norm_sq_eq_conditionalEnergy
+#print axioms MI32.PolynomialSectorEnergy.masked_second_energy_le
+#print axioms MI32.PolynomialSectorEnergy.sum_sector_second_energies
+#print axioms MI32.PolynomialSectorEnergy.conditional_disjoint_mask_inner_eq_zero
+#print axioms MI32.PolynomialSectorEnergy.integrable_polynomial_inner
+#print axioms MI32.PolynomialSectorEnergy.integral_disjoint_mask_inner_eq_zero

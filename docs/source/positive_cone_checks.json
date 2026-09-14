@@ -1,0 +1,318 @@
+{
+  "status": "PASS",
+  "arithmetic": "fractions.Fraction, exact; no numerical checks",
+  "proof_sha256": "5870846908b9cf222c641c8dee2cf1623c0cc7299c4db8f764cd85c6d1efe1b6",
+  "verifier_sha256": "f44b818c1a3b13a96435b00e2a312e92404f6d84e9023bdb1c47075dbaf5e5ed",
+  "archived_negative_control_source": "F:\\Sandbox\\Vacuum-Weighted SparseStack bounds\\Continued\\mi32_exchange_2026-09-13\\regular_law_operator.md",
+  "archived_negative_control_sha256": "286b63e64ac85f117c5497fa107217911a16e7a2973db069ec9f2df34198fb44",
+  "counts": {
+    "all_order_regularity_certificate": 4,
+    "amplitude_moment_bound": 23,
+    "conditional_fourth_bound": 276,
+    "conditional_second": 276,
+    "cone_eligibility": 46,
+    "degree": 46,
+    "hilbert_variance_bound": 10,
+    "hilbert_variance_identity": 10,
+    "joint_moment_identity": 92,
+    "law_normalization": 4,
+    "negative_control": 2,
+    "original_law_enumeration": 23,
+    "original_moment_pair_bound": 676,
+    "parity_identity": 4715,
+    "positive_cone_fourth_bound": 23,
+    "sampled_doubling_moment": 48,
+    "signed_indicator_interpolation": 24,
+    "weak_second_attainment": 1,
+    "weak_second_identity": 25,
+    "weak_second_upper": 25
+  },
+  "total_exact_assertions": 6349,
+  "positive_cases": [
+    {
+      "name": "inhomogeneous_linear",
+      "degree": 1,
+      "parity_degree": 1,
+      "coordinates": 2,
+      "original_terms": 5,
+      "second_moment": "213/4",
+      "fourth_moment": "56879/16",
+      "EG_squared": "48527/16"
+    },
+    {
+      "name": "even_magnitude_spectators",
+      "degree": 4,
+      "parity_degree": 2,
+      "coordinates": 2,
+      "original_terms": 6,
+      "second_moment": "11689/32",
+      "fourth_moment": "120504243/512",
+      "EG_squared": "115736499/512"
+    },
+    {
+      "name": "mixed_parity_and_constant",
+      "degree": 3,
+      "parity_degree": 2,
+      "coordinates": 2,
+      "original_terms": 6,
+      "second_moment": "1439/16",
+      "fourth_moment": "5702259/256",
+      "EG_squared": "4275219/256"
+    },
+    {
+      "name": "original_K22_root0_length0",
+      "degree": 0,
+      "parity_degree": 0,
+      "coordinates": 4,
+      "original_terms": 1,
+      "second_moment": "1",
+      "fourth_moment": "1",
+      "EG_squared": "1"
+    },
+    {
+      "name": "original_K22_root0_length1",
+      "degree": 1,
+      "parity_degree": 1,
+      "coordinates": 4,
+      "original_terms": 2,
+      "second_moment": "9/2",
+      "fourth_moment": "69/2",
+      "EG_squared": "69/2"
+    },
+    {
+      "name": "original_K22_root0_length2",
+      "degree": 2,
+      "parity_degree": 2,
+      "coordinates": 4,
+      "original_terms": 4,
+      "second_moment": "405/8",
+      "fourth_moment": "215619/32",
+      "EG_squared": "209283/32"
+    },
+    {
+      "name": "original_K22_root0_length3",
+      "degree": 3,
+      "parity_degree": 3,
+      "coordinates": 4,
+      "original_terms": 8,
+      "second_moment": "22449/32",
+      "fourth_moment": "906362883/512",
+      "EG_squared": "821808963/512"
+    },
+    {
+      "name": "original_K22_root0_length4",
+      "degree": 4,
+      "parity_degree": 4,
+      "coordinates": 4,
+      "original_terms": 14,
+      "second_moment": "1355805/128",
+      "fourth_moment": "4436821624875/8192",
+      "EG_squared": "3645258742635/8192"
+    },
+    {
+      "name": "original_K22_root1_length0",
+      "degree": 0,
+      "parity_degree": 0,
+      "coordinates": 4,
+      "original_terms": 1,
+      "second_moment": "1",
+      "fourth_moment": "1",
+      "EG_squared": "1"
+    },
+    {
+      "name": "original_K22_root1_length1",
+      "degree": 1,
+      "parity_degree": 1,
+      "coordinates": 4,
+      "original_terms": 2,
+      "second_moment": "27/4",
+      "fourth_moment": "779/16",
+      "EG_squared": "779/16"
+    },
+    {
+      "name": "original_K22_root1_length2",
+      "degree": 2,
+      "parity_degree": 2,
+      "coordinates": 4,
+      "original_terms": 4,
+      "second_moment": "1037/16",
+      "fourth_moment": "1332615/256",
+      "EG_squared": "1281927/256"
+    },
+    {
+      "name": "original_K22_root1_length3",
+      "degree": 3,
+      "parity_degree": 3,
+      "coordinates": 4,
+      "original_terms": 8,
+      "second_moment": "46127/64",
+      "fourth_moment": "3686983315/4096",
+      "EG_squared": "3135590035/4096"
+    },
+    {
+      "name": "original_K22_root1_length4",
+      "degree": 4,
+      "parity_degree": 4,
+      "coordinates": 4,
+      "original_terms": 14,
+      "second_moment": "2319273/256",
+      "fourth_moment": "14976722878271/65536",
+      "EG_squared": "10892629829951/65536"
+    },
+    {
+      "name": "original_K22_root2_length0",
+      "degree": 0,
+      "parity_degree": 0,
+      "coordinates": 4,
+      "original_terms": 1,
+      "second_moment": "1",
+      "fourth_moment": "1",
+      "EG_squared": "1"
+    },
+    {
+      "name": "original_K22_root2_length1",
+      "degree": 1,
+      "parity_degree": 1,
+      "coordinates": 4,
+      "original_terms": 2,
+      "second_moment": "17/4",
+      "fourth_moment": "375/16",
+      "EG_squared": "375/16"
+    },
+    {
+      "name": "original_K22_root2_length2",
+      "degree": 2,
+      "parity_degree": 2,
+      "coordinates": 4,
+      "original_terms": 4,
+      "second_moment": "623/16",
+      "fourth_moment": "656467/256",
+      "EG_squared": "605779/256"
+    },
+    {
+      "name": "original_K22_root2_length3",
+      "degree": 3,
+      "parity_degree": 3,
+      "coordinates": 4,
+      "original_terms": 8,
+      "second_moment": "28233/64",
+      "fourth_moment": "2111324159/4096",
+      "EG_squared": "1596057599/4096"
+    },
+    {
+      "name": "original_K22_root2_length4",
+      "degree": 4,
+      "parity_degree": 4,
+      "coordinates": 4,
+      "original_terms": 14,
+      "second_moment": "1472731/256",
+      "fourth_moment": "10061452655115/65536",
+      "EG_squared": "6333757588491/65536"
+    },
+    {
+      "name": "original_K22_root3_length0",
+      "degree": 0,
+      "parity_degree": 0,
+      "coordinates": 4,
+      "original_terms": 1,
+      "second_moment": "1",
+      "fourth_moment": "1",
+      "EG_squared": "1"
+    },
+    {
+      "name": "original_K22_root3_length1",
+      "degree": 1,
+      "parity_degree": 1,
+      "coordinates": 4,
+      "original_terms": 2,
+      "second_moment": "7",
+      "fourth_moment": "61",
+      "EG_squared": "61"
+    },
+    {
+      "name": "original_K22_root3_length2",
+      "degree": 2,
+      "parity_degree": 2,
+      "coordinates": 4,
+      "original_terms": 4,
+      "second_moment": "153/2",
+      "fourth_moment": "21421/2",
+      "EG_squared": "21025/2"
+    },
+    {
+      "name": "original_K22_root3_length3",
+      "degree": 3,
+      "parity_degree": 3,
+      "coordinates": 4,
+      "original_terms": 8,
+      "second_moment": "7849/8",
+      "fourth_moment": "81219231/32",
+      "EG_squared": "75612915/32"
+    },
+    {
+      "name": "original_K22_root3_length4",
+      "degree": 4,
+      "parity_degree": 4,
+      "coordinates": 4,
+      "original_terms": 14,
+      "second_moment": "444769/32",
+      "fourth_moment": "362755392311/512",
+      "EG_squared": "309568890539/512"
+    }
+  ],
+  "positive_case_count": 23,
+  "magnitude_laws": [
+    {
+      "0": "1/4",
+      "1": "1/2",
+      "2": "1/4"
+    },
+    {
+      "1": "3/4",
+      "3": "1/4"
+    },
+    {
+      "1/2": "1/3",
+      "2": "2/3"
+    },
+    {
+      "2": "1"
+    }
+  ],
+  "common_alpha": "2",
+  "amplitude_states_per_case": 12,
+  "original_signed_states_per_case": 160,
+  "independent_sign_assignments_per_amplitude": 16,
+  "moment_pair_exponents": "u,v=0,...,12 on each of four original laws",
+  "variance_weak_second": {
+    "entry_variances": [
+      "3/2",
+      "3",
+      "11/4",
+      "4"
+    ],
+    "sigma_row_squared": "27/4",
+    "sigma_column_squared": "7",
+    "weak_R2_squared": "4",
+    "coordinate_witness_edge": 3,
+    "tested_rational_vectors": 5,
+    "scope": "Exact weak R2 identity follows from the displayed positive formula and coordinate attainment; higher-order weak suprema are not computed."
+  },
+  "signed_coefficient_negative_control": {
+    "archived_law_L": 11,
+    "alpha_from_archived_analytic_proof": 64,
+    "degree": 23,
+    "positive_extreme": 2048,
+    "extreme_probability": "2^-2049",
+    "second_and_fourth_moment": "2^-2049",
+    "violation_test": "2^2049 > 9^23 * 64^184",
+    "scope": "Finite exact interpolation and violation, using the archived analytic all-real-order regularity proof. Not a finite certification of that regularity theorem."
+  },
+  "scope": [
+    "Finite original-law moment identities and positive-cone inequalities, including zero amplitudes and repeated powers.",
+    "Actual K_(2,2) vacuum polynomials at four roots and lengths 0,...,4; all coefficient multiplications retain original edge identities.",
+    "The parity count-map compression is covered by a separate verifier, not certified here.",
+    "The universal cone theorem, strong/weak theorem, thin-matrix net argument, and MI-32 endpoint require analytic proofs and independent review.",
+    "No unknown universal constant is numerically estimated, no higher-order weak supremum optimized, and no matching-quantile claim made."
+  ]
+}

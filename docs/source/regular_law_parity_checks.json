@@ -1,0 +1,195 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and fractions.Fraction; no floating point",
+  "counts": {
+    "active_axis_size_checks": 324,
+    "annihilation_multiplicity_checks": 3,
+    "conditional_sign_polynomial_identities": 10,
+    "even_spectator_moment_non_erasure_checks": 2,
+    "even_spectator_retention_checks": 6,
+    "exact_dilation_trace_polynomial_equalities": 12,
+    "exact_moment_and_cone_fourth_power_checks": 50,
+    "exact_submatrix_compression_equalities": 324,
+    "individual_transition_count_invariants": 11880,
+    "orthogonal_sector_partition_equalities": 6,
+    "signed_to_positive_original_sign_gauge_equalities": 90,
+    "vacuum_direct_polynomial_equalities": 90
+  },
+  "support": {
+    "shape": [
+      3,
+      3
+    ],
+    "original_ordered_edges": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "weight_cases": [
+      {
+        "name": "unit_positive",
+        "weights": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "name": "unequal_positive_rational",
+        "weights": [
+          "1",
+          "2/3",
+          "3/2",
+          "5/4",
+          "4/3",
+          "7/5",
+          "2/5",
+          "3/4",
+          "5/3"
+        ]
+      },
+      {
+        "name": "unequal_signed_rational",
+        "weights": [
+          "1",
+          "-2/3",
+          "3/2",
+          "-5/4",
+          "4/3",
+          "7/5",
+          "2/5",
+          "-3/4",
+          "5/3"
+        ]
+      }
+    ]
+  },
+  "scope": [
+    "Every original monomial of total degree at most 3 at each current vertex; next step degree at most 4.",
+    "Creation and annihilation, both current directions: exact orthogonal label partitions and selected-original-submatrix factor followed by parity/count projection.",
+    "All nine original exponent slots retained, including an explicit even magnitude spectator outside the selected axis.",
+    "Six vacuum roots, lengths 0 through 4, three deterministic weight families; exact ordinary polynomial comparison and original-sign gauge.",
+    "Dilation trace polynomial identity for powers 1 through 4, three weight families.",
+    "Five explicitly supplied three-variable positive Euclidean polynomial fixtures, degrees 0 through 4; conditional sign identities and exact second/fourth moments for two stated laws."
+  ],
+  "limitations": [
+    "Finite checks do not establish universal cone hypercontractivity, regular-law strong/weak moments, any asymptotic endpoint, or final same-index deletion.",
+    "Signed deterministic weights test geometry and a sign gauge, not coefficient positivity in the bare signed-weight variables. Positivity is asserted for original matrix-entry monomials or after absorbing deterministic signs into independent original signs.",
+    "No magnitude is refreshed on reuse. Gaussian tests use exact even moments only and do not enumerate a joint Gaussian law."
+  ],
+  "moment_calibrations": [
+    {
+      "degree": 0,
+      "law": "finite_magnitudes_1_2_equal_probability",
+      "E_norm_squared": "13/9",
+      "E_norm_fourth": "169/81",
+      "E_conditional_second_squared": "169/81"
+    },
+    {
+      "degree": 0,
+      "law": "standard_gaussian",
+      "E_norm_squared": "13/9",
+      "E_norm_fourth": "169/81",
+      "E_conditional_second_squared": "169/81"
+    },
+    {
+      "degree": 1,
+      "law": "finite_magnitudes_1_2_equal_probability",
+      "E_norm_squared": "145/8",
+      "E_norm_fourth": "15301/32",
+      "E_conditional_second_squared": "12101/32"
+    },
+    {
+      "degree": 1,
+      "law": "standard_gaussian",
+      "E_norm_squared": "29/4",
+      "E_norm_fourth": "1803/16",
+      "E_conditional_second_squared": "1547/16"
+    },
+    {
+      "degree": 2,
+      "law": "finite_magnitudes_1_2_equal_probability",
+      "E_norm_squared": "2459/72",
+      "E_norm_fourth": "4536245/2592",
+      "E_conditional_second_squared": "3937205/2592"
+    },
+    {
+      "degree": 2,
+      "law": "standard_gaussian",
+      "E_norm_squared": "403/36",
+      "E_norm_fourth": "69793/144",
+      "E_conditional_second_squared": "7129/16"
+    },
+    {
+      "degree": 3,
+      "law": "finite_magnitudes_1_2_equal_probability",
+      "E_norm_squared": "12613/144",
+      "E_norm_fourth": "81411817/5184",
+      "E_conditional_second_squared": "57746353/5184"
+    },
+    {
+      "degree": 3,
+      "law": "standard_gaussian",
+      "E_norm_squared": "1015/36",
+      "E_norm_fourth": "1830187/144",
+      "E_conditional_second_squared": "588601/48"
+    },
+    {
+      "degree": 4,
+      "law": "finite_magnitudes_1_2_equal_probability",
+      "E_norm_squared": "39775/32",
+      "E_norm_fourth": "443383157/128",
+      "E_conditional_second_squared": "432638885/128"
+    },
+    {
+      "degree": 4,
+      "law": "standard_gaussian",
+      "E_norm_squared": "346",
+      "E_norm_fourth": "7425517",
+      "E_conditional_second_squared": "7416202"
+    }
+  ],
+  "pins": {
+    "verify_regular_law_parity.py": "097f03fc318fe5ef46a55885da49ec2a1a56ba02c783713cf2a59040258c27ca",
+    "regular_law_positive_cone.md": "5870846908b9cf222c641c8dee2cf1623c0cc7299c4db8f764cd85c6d1efe1b6"
+  }
+}

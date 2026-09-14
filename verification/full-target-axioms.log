@@ -1,0 +1,1 @@
+'MI32.main_upper' depends on axioms: [propext, Classical.choice, Quot.sound]

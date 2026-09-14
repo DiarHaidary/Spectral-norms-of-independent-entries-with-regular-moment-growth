@@ -1,0 +1,18 @@
+import MI32.RawDirectionalActions
+
+#check MI32.RawDirectionalActions.coefficient_creation
+#check MI32.RawDirectionalActions.coefficient_annihilation
+#check MI32.RawDirectionalActions.creation_section_eq
+#check MI32.RawDirectionalActions.annihilation_section_eq
+#print axioms MI32.RawDirectionalActions.creationCoeff_nonneg
+#print axioms MI32.RawDirectionalActions.annihilationCoeff_nonneg
+#print axioms MI32.RawDirectionalActions.degree_actionExponent
+#print axioms MI32.RawDirectionalActions.degree_actionExponent_le
+#print axioms MI32.RawDirectionalActions.parity_actionExponent
+#print axioms MI32.RawDirectionalActions.evaluate_product_split
+#print axioms MI32.RawDirectionalActions.evaluate_creation_signed
+#print axioms MI32.RawDirectionalActions.evaluate_annihilation_signed
+#print axioms MI32.RawDirectionalActions.coefficient_creation
+#print axioms MI32.RawDirectionalActions.coefficient_annihilation
+#print axioms MI32.RawDirectionalActions.creation_section_eq
+#print axioms MI32.RawDirectionalActions.annihilation_section_eq

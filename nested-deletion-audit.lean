@@ -1,0 +1,37 @@
+import MI32.NestedDeletionSelection
+
+#print axioms MI32.NestedDeletionSelection.minimizingSet_spec
+#print axioms MI32.NestedDeletionSelection.minimizingSet_le_deletionScale
+#print axioms MI32.NestedDeletionSelection.minimizingSet_le_deletionScale_of_pos
+#print axioms MI32.NestedDeletionSelection.varianceWeights_nonneg
+#print axioms MI32.NestedDeletionSelection.subset_nextSet
+#print axioms MI32.NestedDeletionSelection.minimizingSet_subset_nextSet
+#print axioms MI32.NestedDeletionSelection.card_nextSet_le
+#print axioms MI32.NestedDeletionSelection.nextSet_surviving_entry_le
+#print axioms MI32.NestedDeletionSelection.sets_zero
+#print axioms MI32.NestedDeletionSelection.sets_succ
+#print axioms MI32.NestedDeletionSelection.sets_subset_succ
+#print axioms MI32.NestedDeletionSelection.sets_mono
+#print axioms MI32.NestedDeletionSelection.sets_card_succ_le
+#print axioms MI32.NestedDeletionSelection.sets_surviving_entry_le
+#print axioms MI32.NestedDeletionSelection.sets_surviving_entry_le_of_le
+#print axioms MI32.NestedDeletionSelection.nextSet_weakMoment_le_scale
+#print axioms MI32.NestedDeletionSelection.sets_weakMoment_succ_le_scale
+#print axioms MI32.NestedDeletionSelection.sets_weakMoment_le_scale_of_le
+#print axioms MI32.NestedDeletionSelection.twoSidedNextSet_eq_univ
+#print axioms MI32.NestedDeletionSelection.subset_twoSidedNextSet
+#print axioms MI32.NestedDeletionSelection.minimizingSet_subset_twoSidedNextSet
+#print axioms MI32.NestedDeletionSelection.card_twoSidedNextSet_le
+#print axioms MI32.NestedDeletionSelection.twoSidedNextSet_surviving_column_le
+#print axioms MI32.NestedDeletionSelection.twoSidedNextSet_surviving_row_le
+#print axioms MI32.NestedDeletionSelection.twoSidedNextSet_weakMoment_le_scale
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_zero
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_succ
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_mono
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_card_succ_le
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_surviving_column_le_of_le
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_surviving_row_le_of_le
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_weakMoment_succ_le_scale
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_weakMoment_le_scale_of_le
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_succ_eq_univ
+#print axioms MI32.NestedDeletionSelection.twoSidedSets_eq_univ_of_le

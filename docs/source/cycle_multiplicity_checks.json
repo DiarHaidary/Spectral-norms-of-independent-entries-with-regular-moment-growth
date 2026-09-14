@@ -1,0 +1,835 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact rational arithmetic and Schur positivity",
+  "conditional_cycle_cases": [
+    {
+      "rows": 2,
+      "columns": 2,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 20,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "12005/1152",
+          "row_column_allowance": "5562226990117/137594142720"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "12005/1152",
+          "row_column_allowance": "377044040526181/5374771200000"
+        }
+      ]
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "rooted_words": 20,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "2345/72",
+          "row_column_allowance": "9191158459700953/59421454848000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "2345/72",
+          "row_column_allowance": "94707512218328642761/273611545920000000"
+        }
+      ]
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "rooted_words": 20,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "1805/72",
+          "row_column_allowance": "36619450453925/258096513024"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "1805/72",
+          "row_column_allowance": "275047679141/2687385600"
+        }
+      ]
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 20,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "10/9",
+          "row_column_allowance": "2316629317/537477120"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "10/9",
+          "row_column_allowance": "157036251781/20995200000"
+        }
+      ]
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "rooted_words": 20,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "50/3",
+          "row_column_allowance": "362970089/1679616"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "50/3",
+          "row_column_allowance": "9984652141/13122000"
+        }
+      ]
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "rooted_words": 20,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "10",
+          "row_column_allowance": "2650129475/15925248"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "10",
+          "row_column_allowance": "7185722747/223948800"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 2,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 60,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "1740725/73728",
+          "row_column_allowance": "14311547728625/195689447424"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "156065/4608",
+          "row_column_allowance": "7761040736197/61152952320"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "300125/8192",
+          "row_column_allowance": "303479505862625/1894080577536"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 2,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "rooted_words": 60,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "778205/8064",
+          "row_column_allowance": "12174323485362717965/32465558889824256"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "30820/171",
+          "row_column_allowance": "25089326776276456420441/29898129487822848000"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "3602255/17024",
+          "row_column_allowance": "7998049728943350100818365/5558494871882066558976"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 2,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 60,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "261725/4608",
+          "row_column_allowance": "3488810827399775/16518176833536"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "223565/4608",
+          "row_column_allowance": "26204361593183/171992678400"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "14125/256",
+          "row_column_allowance": "10041742130332775/52205595918336"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 2,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 60,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "725/288",
+          "row_column_allowance": "292072402625/37456183296"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "65/18",
+          "row_column_allowance": "158388586453/11705057280"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "125/32",
+          "row_column_allowance": "303479505862625/17764404166656"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 2,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "rooted_words": 60,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "7675/96",
+          "row_column_allowance": "435997597225/764411904"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "1225/6",
+          "row_column_allowance": "479740284341/238878720"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "8025/32",
+          "row_column_allowance": "1324983675693145/362538860544"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 2,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 60,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "725/32",
+          "row_column_allowance": "14007827225/63700992"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "25/2",
+          "row_column_allowance": "37981677377/895795200"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "485/32",
+          "row_column_allowance": "297039046025/5549064192"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 180,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "90478131961/903260160",
+          "row_column_allowance": "9844798666815592327603/41969080074240000000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "64873445777/451630080",
+          "row_column_allowance": "438869258627649727891/1074408449900544000"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "138679917257/903260160",
+          "row_column_allowance": "1551311230895799423693380563/3110750838170173440000000"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "rooted_words": 180,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "74833126811243/124826320080",
+          "row_column_allowance": "1367426765694791100183657011/666201066098641920000000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "102699702941207/124826320080",
+          "row_column_allowance": "1467272445929799806767660101097/450432930732319532777472000"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "27413913200959/31206580020",
+          "row_column_allowance": "2115941744623589125111919806650001/543167511224777673030720000000"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "law": "scaled symmetric four-point",
+      "background_counts": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 180,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "666583788529/2766234240",
+          "row_column_allowance": "95855387832768031/139345920000000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "9165911294521/44259747840",
+          "row_column_allowance": "198942627225793009/399532621824000"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "208549275257/903260160",
+          "row_column_allowance": "14351442143745153232513/23607607541760000000"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 180,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "1846492489/172889640",
+          "row_column_allowance": "4100290989927360403/163941719040000000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "1323947873/86444820",
+          "row_column_allowance": "438869258627649727891/10076776125825024000"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "2830202393/172889640",
+          "row_column_allowance": "646110466845397510909363/12151370461602240000000"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "rooted_words": 180,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "191558230441/172889640",
+          "row_column_allowance": "7148611174266188809/1311533752320000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "25385978125/17288964",
+          "row_column_allowance": "1502968437952039428851/183214111378636800"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "270829477241/172889640",
+          "row_column_allowance": "23535594338819210241691201/2430274092320448000000"
+        }
+      ]
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "law": "scaled Gaussian",
+      "background_counts": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "rooted_words": 180,
+      "roots": [
+        {
+          "root": 0,
+          "exact_cycle_cost": "1846492489/19209960",
+          "row_column_allowance": "398771497690433/552960000000"
+        },
+        {
+          "root": 1,
+          "exact_cycle_cost": "4652319557/86444820",
+          "row_column_allowance": "871060883653649/6242697216000"
+        },
+        {
+          "root": 2,
+          "exact_cycle_cost": "995036267/15717240",
+          "row_column_allowance": "62837110627109048993/368868867840000000"
+        }
+      ]
+    }
+  ],
+  "reset_counterexamples": {
+    "distinct_squares_shared_rung_second_cost": "9",
+    "same_square_second_cost": "81",
+    "with_two_ten_word_factors": [
+      "900",
+      "8100"
+    ],
+    "fresh_rule_with_two_ten_word_factors": "100",
+    "repetitions": [
+      {
+        "number_of_excursions": 1,
+        "single_word_moment": "1"
+      },
+      {
+        "number_of_excursions": 2,
+        "single_word_moment": "81"
+      },
+      {
+        "number_of_excursions": 3,
+        "single_word_moment": "50625"
+      },
+      {
+        "number_of_excursions": 4,
+        "single_word_moment": "121550625"
+      },
+      {
+        "number_of_excursions": 5,
+        "single_word_moment": "797493650625"
+      },
+      {
+        "number_of_excursions": 6,
+        "single_word_moment": "11676104538800625"
+      },
+      {
+        "number_of_excursions": 7,
+        "single_word_moment": "333481221732684650625"
+      },
+      {
+        "number_of_excursions": 8,
+        "single_word_moment": "16882486850217160437890625"
+      }
+    ]
+  },
+  "star_and_concatenation_cases": [
+    {
+      "family": "weighted Gaussian star",
+      "q": 1,
+      "exact_moment": "7/2",
+      "variance_budget": "7/2"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 2,
+      "exact_moment": "49/2",
+      "variance_budget": "28"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 3,
+      "exact_moment": "1083/4",
+      "variance_budget": "350"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 4,
+      "exact_moment": "8337/2",
+      "variance_budget": "5950"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 5,
+      "exact_moment": "331485/4",
+      "variance_budget": "127925"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 6,
+      "exact_moment": "8094375/4",
+      "variance_budget": "3326050"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 7,
+      "exact_moment": "468979245/8",
+      "variance_budget": "101444525"
+    },
+    {
+      "family": "weighted Gaussian star",
+      "q": 8,
+      "exact_moment": "3929642955/2",
+      "variance_budget": "3550558375"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 1,
+      "word_length": 8,
+      "exact_moment": "10",
+      "allowance": "10"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 2,
+      "word_length": 16,
+      "exact_moment": "8100",
+      "allowance": "8100"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 3,
+      "word_length": 24,
+      "exact_moment": "50625000",
+      "allowance": "50625000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 4,
+      "word_length": 32,
+      "exact_moment": "1215506250000",
+      "allowance": "1215506250000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 5,
+      "word_length": 40,
+      "exact_moment": "79749365062500000",
+      "allowance": "79749365062500000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 6,
+      "word_length": 48,
+      "exact_moment": "11676104538800625000000",
+      "allowance": "11676104538800625000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 1,
+      "excursions": 7,
+      "word_length": 56,
+      "exact_moment": "3334812217326846506250000000",
+      "allowance": "3334812217326846506250000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 1,
+      "word_length": 8,
+      "exact_moment": "20",
+      "allowance": "20"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 2,
+      "word_length": 16,
+      "exact_moment": "18000",
+      "allowance": "18000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 3,
+      "word_length": 24,
+      "exact_moment": "113400000",
+      "allowance": "117000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 4,
+      "word_length": 32,
+      "exact_moment": "2683044000000",
+      "allowance": "2866500000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 5,
+      "word_length": 40,
+      "exact_moment": "172961082000000000",
+      "allowance": "190392930000000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 6,
+      "word_length": 48,
+      "exact_moment": "24941232356040000000000",
+      "allowance": "28105804326600000000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 2,
+      "excursions": 7,
+      "word_length": 56,
+      "exact_moment": "7039235008433628000000000000",
+      "allowance": "8074797583032180000000000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 1,
+      "word_length": 8,
+      "exact_moment": "40",
+      "allowance": "40"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 2,
+      "word_length": 16,
+      "exact_moment": "43200",
+      "allowance": "43200"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 3,
+      "word_length": 24,
+      "exact_moment": "280800000",
+      "allowance": "302400000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 4,
+      "word_length": 32,
+      "exact_moment": "6519744000000",
+      "allowance": "7705152000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 5,
+      "word_length": 40,
+      "exact_moment": "407390860800000000",
+      "allowance": "524258542080000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 6,
+      "word_length": 48,
+      "exact_moment": "57032004572928000000000",
+      "allowance": "78659751653683200000000"
+    },
+    {
+      "family": "concatenated Gaussian square excursions",
+      "partner_rungs": 4,
+      "excursions": 7,
+      "word_length": 56,
+      "exact_moment": "15712575382691066880000000000",
+      "allowance": "22864816610692632576000000000"
+    }
+  ],
+  "counts": {
+    "actual_word_expectation_equals_rooted_contraction": 48,
+    "concatenated_rooted_cycle_family_bound": 21,
+    "exact_gram_subtraction_identity": 48,
+    "exact_positive_matrices": 18,
+    "first_cycle_gram_bound": 48,
+    "gaussian_rung_sum_allocation_budget": 21,
+    "length_ten_occupied_edge_failure_factor_three": 1,
+    "original_two_edge_rung_factorization": 30,
+    "overlapping_increment_cocycle": 2,
+    "row_column_cycle_variance_bound": 48,
+    "same_square_all_repetitions_exact": 8,
+    "same_square_fresh_budget_failure_factor_eighty_one": 1,
+    "schur_pivot_nonnegative": 48,
+    "shared_rung_fresh_budget_failure_factor_nine": 1,
+    "symmetric_positive_certificate_input": 18,
+    "ten_actual_rooted_square_words": 26,
+    "unit_gaussian_star_exact_chi_square_moment": 32,
+    "weighted_gaussian_star_variance_budget": 8,
+    "word_support_is_actual_rectangle": 260,
+    "zero_pivot_has_zero_remaining_row": 6
+  },
+  "total_checks": 693,
+  "scope": [
+    "actual length-eight alternating words on K_(2,2), K_(3,2), K_(3,3)",
+    "selected even-multiplicity backgrounds and original-entry moment laws",
+    "no sign-law enumeration or general weak-moment optimization",
+    "no coverage assertion for arbitrary interleaved cycle words",
+    "no full MI-32, amplitude-transfer, or quantile conclusion"
+  ],
+  "files": {
+    "verify_cycle_multiplicity.py": "29d8420f7e9d2fc7abdd85c75a4e2e90dd6e4b2cffabb497897613d2bc8a00c8",
+    "cycle_multiplicity.md": "1a1cc31faaa6778dcfcca14cb574b8d6e2d7323fa38288c56899f0f1848c1501"
+  }
+}

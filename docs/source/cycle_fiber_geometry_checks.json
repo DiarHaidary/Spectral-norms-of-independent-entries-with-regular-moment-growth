@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and fractions.Fraction",
+  "counts": {
+    "exact_global_gram_equalities": 16,
+    "column_state_invariants": 1056,
+    "grade_two_component_classifications": 36,
+    "equal_rung_characteristic_identities": 112,
+    "positive_square_projection_checks": 2,
+    "weighted_uniform_fold_checks": 3
+  },
+  "cases": [
+    {
+      "grade": 0,
+      "return_inputs": 0,
+      "return_outputs": 0,
+      "column_profiles": 0
+    },
+    {
+      "grade": 1,
+      "return_inputs": 32,
+      "return_outputs": 16,
+      "column_profiles": 12
+    },
+    {
+      "grade": 2,
+      "return_inputs": 120,
+      "return_outputs": 80,
+      "column_profiles": 20
+    },
+    {
+      "grade": 3,
+      "return_inputs": 256,
+      "return_outputs": 166,
+      "column_profiles": 38
+    },
+    {
+      "grade": 4,
+      "return_inputs": 314,
+      "return_outputs": 184,
+      "column_profiles": 32
+    },
+    {
+      "grade": 5,
+      "return_inputs": 224,
+      "return_outputs": 116,
+      "column_profiles": 20
+    },
+    {
+      "grade": 6,
+      "return_inputs": 88,
+      "return_outputs": 40,
+      "column_profiles": 8
+    },
+    {
+      "grade": 7,
+      "return_inputs": 16,
+      "return_outputs": 6,
+      "column_profiles": 2
+    }
+  ],
+  "grade_two_classes": {
+    "active_square_path": 24,
+    "three_star": 8,
+    "three_rung_cycle_12": 4
+  },
+  "arbitrary_count_blocks": {
+    "support": "signed unequal 3-by-4, nine original nonzero entries",
+    "counts": {
+      "shared_predecessor_count_invariance": 5904,
+      "occupied_axis_support_size": 118,
+      "exact_count_block_output_sets": 118,
+      "exact_selected_submatrix_factor_rows": 2062
+    },
+    "cases": [
+      {
+        "grade": 0,
+        "full_input_states_with_transitions": 7,
+        "full_output_states_with_transitions": 18,
+        "count_blocks": 7
+      },
+      {
+        "grade": 1,
+        "full_input_states_with_transitions": 63,
+        "full_output_states_with_transitions": 129,
+        "count_blocks": 16
+      },
+      {
+        "grade": 2,
+        "full_input_states_with_transitions": 249,
+        "full_output_states_with_transitions": 403,
+        "count_blocks": 27
+      },
+      {
+        "grade": 3,
+        "full_input_states_with_transitions": 563,
+        "full_output_states_with_transitions": 717,
+        "count_blocks": 34
+      },
+      {
+        "grade": 4,
+        "full_input_states_with_transitions": 795,
+        "full_output_states_with_transitions": 795,
+        "count_blocks": 34
+      }
+    ],
+    "scope": "Full creators and exact original-edge submatrix factor masks; no hypercontractive or moment endpoint is tested."
+  },
+  "parseval_count_insertion": {
+    "cases": [
+      {
+        "rows": 2,
+        "actual_output_gram_norm": "2",
+        "pinched_output_gram_norm": "1",
+        "exact_positive_loss": true
+      },
+      {
+        "rows": 3,
+        "actual_output_gram_norm": "2",
+        "pinched_output_gram_norm": "2/3",
+        "exact_positive_loss": true
+      },
+      {
+        "rows": 4,
+        "actual_output_gram_norm": "2",
+        "pinched_output_gram_norm": "1/2",
+        "exact_positive_loss": true
+      },
+      {
+        "rows": 5,
+        "actual_output_gram_norm": "2",
+        "pinched_output_gram_norm": "2/5",
+        "exact_positive_loss": true
+      }
+    ],
+    "exact_assertions": 16,
+    "scope": "Supplied Parseval analysis R=ones/sqrt(a) before actual matrix-unit row consumption; no automatic SRHT assertion."
+  },
+  "dependencies": {
+    "verify_cycle_fiber_geometry.py": "bd33216cbe5a07cb672307a53b01862f551a60dda024023ca396374693178af1",
+    "cycle_fiber_geometry.md": "a02c0a79f28467abd7d554ae0bab3ecd757061ef8dc7a8a3f08eb660c001e325"
+  },
+  "limits": [
+    "Exact finite evidence for weighted K_(4,2), eight grades, and inclusion identities through n=7.",
+    "No floating-point eigenvalues, no R_B supremum evaluation, no enumeration of random signs.",
+    "The uniform Gram, local-support, weak-moment, and folding claims are proved analytically in the note.",
+    "Raw eta sectors are not asserted to share one root; the note distinguishes actual root reachability."
+  ]
+}

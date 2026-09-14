@@ -1,0 +1,135 @@
+{
+  "source": "F:\\Sandbox\\Vacuum-Weighted SparseStack bounds\\Continued\\mi32_cycles_2026-09-13",
+  "files": [
+    {
+      "name": "build_verification_audit.py",
+      "sha256": "2dec8a8f8c5eab4eea65a98e6a5ca8648ffd5c703c6faf214f72c94faefbee64",
+      "bytes": 15225
+    },
+    {
+      "name": "cycle_fiber_geometry.md",
+      "sha256": "a02c0a79f28467abd7d554ae0bab3ecd757061ef8dc7a8a3f08eb660c001e325",
+      "bytes": 29039
+    },
+    {
+      "name": "cycle_fiber_geometry_checks.json",
+      "sha256": "833558cf496f1a9cbdf9a3c539b9854dfed733cb0e0c0618d8121c5a062a55d2",
+      "bytes": 4335
+    },
+    {
+      "name": "cycle_multiplicity.md",
+      "sha256": "1a1cc31faaa6778dcfcca14cb574b8d6e2d7323fa38288c56899f0f1848c1501",
+      "bytes": 18258
+    },
+    {
+      "name": "cycle_multiplicity_checks.json",
+      "sha256": "7dc667bc60666c0c0dcb097833825e0e7f0b91152d82382b1b984760e8f99fc8",
+      "bytes": 21378
+    },
+    {
+      "name": "cycle_transfer.md",
+      "sha256": "f393a600a392d129c8e7a2cec67b3abc2de1a381fd1e17b96b37ef07eef91704",
+      "bytes": 17101
+    },
+    {
+      "name": "cycle_transfer_checks.json",
+      "sha256": "ef45ea8a363c442d33ea726bfa43e7286e4c9b605c21c23972e4221b3a46773e",
+      "bytes": 2096
+    },
+    {
+      "name": "full_law_conditioning_frontier.md",
+      "sha256": "719a248f9c3dca94d7726af3a7dbb075710e604d091115649994e01f8f560453",
+      "bytes": 7298
+    },
+    {
+      "name": "MI32_solution.md",
+      "sha256": "fc2a01f6215d4d1e0e96095ae990ad4208e8126b0091ee0103edbf2918469073",
+      "bytes": 6043
+    },
+    {
+      "name": "ordered_cycle_boundary.md",
+      "sha256": "8a4ea2da70a0649f3b1cbdb35b6b43cecbfd885037b41521cfb10435042a78c0",
+      "bytes": 9228
+    },
+    {
+      "name": "ordered_cycle_checks.json",
+      "sha256": "b1ed19eb6887355f9d4719b5e839c4ed05fd1a02791b3aac3bf1677839308233",
+      "bytes": 2845
+    },
+    {
+      "name": "positive_cone_checks.json",
+      "sha256": "8e97142860b015c5ef6d467b8b57b0001cf0fe4cf008ebda1e77fdad5a53c58e",
+      "bytes": 9470
+    },
+    {
+      "name": "progress.md",
+      "sha256": "ef0a04723c12a6d5249840ac6132af253fcb849880de45e25a00dbf10d98b408",
+      "bytes": 12668
+    },
+    {
+      "name": "README.md",
+      "sha256": "569af812f2ddf326c4e2bbc433c858a39dad40dd82736e881028a4a35602ce99",
+      "bytes": 2011
+    },
+    {
+      "name": "regular_law_deletion.md",
+      "sha256": "53d213bd499316b6cf8aee783078c0549b3507753f0183f2c5d01de9e4eb93f5",
+      "bytes": 15737
+    },
+    {
+      "name": "regular_law_parity_checks.json",
+      "sha256": "42a082b86250cceaa837449439df63c2c6402fab3d111fbe6e95a9b6f9cb206a",
+      "bytes": 5710
+    },
+    {
+      "name": "regular_law_positive_cone.md",
+      "sha256": "5870846908b9cf222c641c8dee2cf1623c0cc7299c4db8f764cd85c6d1efe1b6",
+      "bytes": 13820
+    },
+    {
+      "name": "verification_audit.json",
+      "sha256": "2ecba5a582c7b77200708ed3662340783be0180b7a94158fb6a2464471683969",
+      "bytes": 34635
+    },
+    {
+      "name": "verify_cycle_fiber_geometry.py",
+      "sha256": "bd33216cbe5a07cb672307a53b01862f551a60dda024023ca396374693178af1",
+      "bytes": 14534
+    },
+    {
+      "name": "verify_cycle_multiplicity.py",
+      "sha256": "29d8420f7e9d2fc7abdd85c75a4e2e90dd6e4b2cffabb497897613d2bc8a00c8",
+      "bytes": 12191
+    },
+    {
+      "name": "verify_cycle_transfer.py",
+      "sha256": "6569f7fc941e7095a31c0a752ab56d3a7e99616b402279315fd07db05fe347e2",
+      "bytes": 10204
+    },
+    {
+      "name": "verify_ordered_cycle.py",
+      "sha256": "2eb2f8ab2c69a0dc1073a11b89154b4d96de9a519290c98f2ce87c15cd50e11d",
+      "bytes": 5712
+    },
+    {
+      "name": "verify_positive_cone.py",
+      "sha256": "f44b818c1a3b13a96435b00e2a312e92404f6d84e9023bdb1c47075dbaf5e5ed",
+      "bytes": 15826
+    },
+    {
+      "name": "verify_regular_law_parity.py",
+      "sha256": "097f03fc318fe5ef46a55885da49ec2a1a56ba02c783713cf2a59040258c27ca",
+      "bytes": 17898
+    },
+    {
+      "name": "weighted_sign_deletion.md",
+      "sha256": "6842a656cb1977c102ad14d7b90254e9d288e34cdac5b0019922ab094b34f8e3",
+      "bytes": 9631
+    },
+    {
+      "name": "weighted_sign_localization.md",
+      "sha256": "7ec4964b0aa21975e1b87904fc5c3285fc633c2fa60711d917b88c2572bcc7ba",
+      "bytes": 12181
+    }
+  ]
+}

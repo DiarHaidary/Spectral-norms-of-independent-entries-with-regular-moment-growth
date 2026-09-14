@@ -1,0 +1,158 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "MI-32: Lean formalization of the parity and positive-polynomial upper bound"
+  description: >-
+    A Lean 4 formalization of the general-law MI-32 upper bound. The original
+    arbitrary-probability-space statement is retained verbatim and is now
+    proved: `MI32.main_upper` depends only on `propext`, `Classical.choice`
+    and `Quot.sound`. The chain consists of original-law positive-polynomial
+    moments and interpolation, exact occupation-count localization, finite
+    nets, a direct independent-coordinate Hilbert comparison, full original-law
+    creator and annihilator contractions, positive vacuum iteration, the local
+    symmetric-law operator-moment theorem and its exact logarithmic order,
+    then the nested deterministic deletion decomposition: two-sided variance
+    screening on one shared index family, an elementary centered-Gram estimate
+    for the far remainder, two two-shell block families controlled by the
+    local theorem at scheduled orders, and the original-copy symmetrization
+    reduction. Constants are explicit and conservative, not optimized.
+    Comparator, NanoDa, rendering, editorial review and registration are
+    separate Palomar steps and have not been run or requested.
+  authors: ["Diar Heidary"]
+  responsible_maintainers: ["Diar Heidary"]
+  license: "MIT"
+
+classification:
+  arxiv: ["math.PR", "math.FA"]
+  msc2020: ["60B20", "60E15", "47A30", "68V15"]
+
+sources:
+  - title: "MI-32: a proof through parity counts and positive walk polynomials"
+    authors: ["Diar Heidary"]
+    relationship: formalizes
+    location: "docs/source/MI32_solution.md and linked research notes"
+    notes: >-
+      Agent-assisted informal proof draft dated 13-14 September 2026. Copies
+      are bundled; the original checkpoint is unchanged. Prior agent reviews
+      and exact finite checks are not Lean proof evidence. The formal deletion
+      argument deliberately diverges from the draft; see fidelity below.
+  - title: "MI-32 - Spectral norms of independent entries with regular moment growth"
+    url: "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/matrix-inequalities-and-norms/MI-32/README.md"
+    relationship: background
+    notes: >-
+      Source of the precise upper-bound conjecture, read on 14 September 2026.
+      The source labels it partially resolved; no external resolution,
+      refereeing or endorsement is claimed by this development.
+  - title: "Comparison of weak and strong moments for vectors with independent coordinates"
+    authors: ["Rafał Latała", "Marta Strzelecka"]
+    url: "https://arxiv.org/abs/1612.02407"
+    relationship: background
+    notes: >-
+      The informal draft cites Theorem 1.1. The Lean chain does not use it: a
+      direct independent-coordinate Hilbert comparison is proved instead. The
+      general published comparison itself is not formalized here.
+  - title: "Norms of randomized circulant matrices"
+    authors: ["Rafał Latała", "Witold Świątkowski"]
+    url: "https://arxiv.org/abs/2106.03139"
+    relationship: background
+    notes: >-
+      Remark 4.5 is the structural model for the deletion reduction. The Lean
+      proof follows its nested-selection idea but replaces its remainder step,
+      and its lower theorem is credited, not formalized or selected.
+  - title: "Dimension-free bounds and structured results in random matrix theory"
+    authors: ["Rafał Latała", "Ramon van Handel", "Pierre Youssef"]
+    url: "https://web.math.princeton.edu/~rvan/dimfr180821.pdf"
+    relationship: background
+    notes: >-
+      The informal draft's remainder step invokes a variance-envelope
+      consequence of Theorem 4.4. The Lean chain avoids that dependency
+      entirely; nothing from this paper is formalized or assumed.
+  - title: "Supplied GraphMatrices Lean development"
+    relationship: adapts
+    location: "vendor/graph-matrices/manifest.json"
+    notes: >-
+      Byte-identical MIT-licensed source closure of scalar Boolean fourth
+      moments, with original notices and SHA-256 hashes. The Hilbert extension
+      and the MI-32-specific core are developed here.
+
+status:
+  scope: >-
+    The original full upper theorem `MI32.main_upper` is proved with no proof
+    gap and no added axiom. Solution imports no Challenge. External Palomar
+    steps have not been run.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  notes: >-
+    The transitive axiom audit of `MI32.main_upper` reports exactly the three
+    standard foundations; see verification/full-target-axioms.log and
+    verification/status.json. `Challenge.lean` retains a deliberate `sorry`
+    as the Palomar challenge hole and is never imported by the core or by the
+    Solution. The three-foundation Comparator configuration does not permit
+    `sorryAx`; it has not been run, since Comparator is not available in this
+    local environment.
+
+automation:
+  methods:
+    - method: agentic
+      models: ["GPT-6 / Codex (earlier sessions)", "Claude Opus 5 (deletion chain)"]
+      framework: "OpenAI Codex; Anthropic Claude Code"
+      tool_setup: >-
+        Parallel agents produced Lean source and reviewed statement fidelity;
+        the local Lean 4.33.0 kernel checked every completed declaration.
+        Existing GraphMatrices sources were inspected and vendored with hashes.
+        The remaining deletion chain was specified in
+        docs/REMAINING_CHAIN_SPEC.md and implemented by parallel agents whose
+        output was rechecked module by module with `lake env lean` and then by
+        a full `lake build` plus the transitive axiom audit.
+      prompting_notes: >-
+        The human requested a Lean formalization of the MI-32 proof in a new
+        subfolder and a layout suitable for their eventual Palomar submission,
+        and later asked for the incomplete formalization to be completed.
+  spend_usd: "Not tracked"
+  notes: >-
+    Human direction and responsibility are not a claim of manual authorship
+    or independent human verification of every mathematical or Lean argument.
+
+fidelity:
+  divergences: >-
+    The exact full upper-bound statement of the source problem is preserved
+    verbatim in MI32/Statement.lean and Challenge.lean and is what is proved;
+    no finite-law substitute, conditional comparison or assumed contraction is
+    used. Two deliberate divergences from the informal draft's deletion
+    argument: (1) the draft's far-remainder step invokes a variance-envelope
+    consequence of Latała-van Handel-Youssef Theorem 4.4, whereas the Lean
+    proof raises the per-coordinate screening threshold from b^2 to b^3 and
+    uses an elementary centered-Gram second-moment estimate instead, so no
+    general matrix fourth-moment inequality is needed; (2) the draft routes
+    the deletion argument through the matrix-symmetric dilation H_Y, whose
+    reflected entries repeat variables, whereas the Lean proof performs the
+    whole decomposition on the original rectangular matrix with one shared
+    index family on both axes, so every entry family used is genuinely
+    independent and the paired dilation budget is not needed. No lower-bound
+    or quantile theorem is claimed or selected. Constants are conservative.
+    Full details in docs/SOURCE_FIDELITY.md and docs/REMAINING_CHAIN_SPEC.md.
+
+review:
+  status: agent-reviewed
+  reviewers:
+    - "Codex statement-fidelity agent: independent read-only audit of the exact target, 14 September 2026"
+  notes: >-
+    The statement-fidelity audit found no material mismatch with the original
+    MI-32 upper conjecture. It is not independent review of the analytic
+    proof. Local Lean checking, Comparator/NanoDa, rendering, editorial review
+    and registration are separate statuses; only local Lean checking has been
+    performed. No human peer review, Palomar editorial outcome, acceptance,
+    registry entry or novelty claim is made.
+
+alignment:
+  namespace: "MI32"
+  statements:
+    - source: "MI-32 upper conjecture; bundled informal proof draft"
+      lean: "MI32.main_upper"
+      module: "Solution"
+      status: "complete"
+      note: >-
+        Proved from MI32.SymmetricDeletion.exists_upperBoundAt; transitive
+        axioms are propext, Classical.choice and Quot.sound only.

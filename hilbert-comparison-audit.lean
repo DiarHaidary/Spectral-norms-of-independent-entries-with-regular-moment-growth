@@ -1,0 +1,4 @@
+import MI32.HilbertComparison
+
+#check MI32.HilbertComparison.independent_coordinate_moment_le
+#print axioms MI32.HilbertComparison.independent_coordinate_moment_le

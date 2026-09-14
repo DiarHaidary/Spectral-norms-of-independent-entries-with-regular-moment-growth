@@ -1,0 +1,13 @@
+import MI32.DiagonalCopyComparison
+
+#print axioms MI32.DiagonalCopyComparison.independent_coordinatePairs
+#print axioms MI32.DiagonalCopyComparison.independent_squareDifferences
+#print axioms MI32.DiagonalCopyComparison.independent_copyProducts
+#print axioms MI32.DiagonalCopyComparison.symmetric_squareDifference
+#print axioms MI32.DiagonalCopyComparison.symmetric_copyProduct
+#print axioms MI32.DiagonalCopyComparison.integrable_squareDifference_pow
+#print axioms MI32.DiagonalCopyComparison.integrable_copyProduct_pow
+#print axioms MI32.DiagonalCopyComparison.integral_copyProduct_pow
+#print axioms MI32.DiagonalCopyComparison.coordinate_even_moment_le
+#print axioms MI32.DiagonalCopyComparison.coordinate_even_moment_le_nat
+#print axioms MI32.DiagonalCopyComparison.coordinate_even_moment_le_of_regular

@@ -1,0 +1,3255 @@
+{
+  "checked_at": "2026-09-14T12:54:11.431539+00:00",
+  "status": "local_proof_gate_passed",
+  "core": "passed",
+  "full_target": "passed_local_axiom_audit",
+  "comparator": "not_run",
+  "nanoda": "not_run",
+  "rendering": "not_run",
+  "editorial_review": "not_requested",
+  "registration": "not_requested",
+  "layout": "passed_local_checks",
+  "lean_version": "Lean (version 4.33.0, x86_64-w64-windows-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "checked_core_modules": [
+    "MI32",
+    "MI32.ActiveCountSectors",
+    "MI32.AnnihilationSectorContraction",
+    "MI32.AxisRestriction",
+    "MI32.BilinearHighOrder",
+    "MI32.BipartiteConeContraction",
+    "MI32.BipartiteNorm",
+    "MI32.BipartiteVacuumIteration",
+    "MI32.BipartiteWeakMoment",
+    "MI32.BlockDiagonalMoment",
+    "MI32.BlockDiagonalNorm",
+    "MI32.BlockMaskMoment",
+    "MI32.BlockMomentMaximum",
+    "MI32.BlockOrderArithmetic",
+    "MI32.CenteredGramNorm",
+    "MI32.ConeInterpolation",
+    "MI32.CopyDeletionScale",
+    "MI32.CopySymmetrization",
+    "MI32.CreationSectorContraction",
+    "MI32.DeletionMasks",
+    "MI32.DeletionMomentEndpoints",
+    "MI32.DeletionScheduleArithmetic",
+    "MI32.DeletionVarianceSelection",
+    "MI32.DiagonalCopyComparison",
+    "MI32.FarMaskMean",
+    "MI32.FarRemainderMoment",
+    "MI32.FiberBlockNorm",
+    "MI32.FiniteNet",
+    "MI32.FrobeniusMean",
+    "MI32.GeneralLawCopy",
+    "MI32.GradedVarianceEnergy",
+    "MI32.GramEntryMoments",
+    "MI32.HilbertComparison",
+    "MI32.HilbertConditioning",
+    "MI32.HilbertWalsh",
+    "MI32.IndependentColumns",
+    "MI32.LocalLogMoment",
+    "MI32.LocalSymmetricMoment",
+    "MI32.MaskedEntryLaw",
+    "MI32.MaskedPolynomialAction",
+    "MI32.MatrixCopySymmetrization",
+    "MI32.MatrixImages",
+    "MI32.MomentDoubling",
+    "MI32.MomentTools",
+    "MI32.MultiplicationHolder",
+    "MI32.NearBlockMoment",
+    "MI32.NearMaskMean",
+    "MI32.NestedDeletionFamily",
+    "MI32.NestedDeletionSelection",
+    "MI32.NestedShells",
+    "MI32.OutputPolynomialInteraction",
+    "MI32.ParityGeometry",
+    "MI32.ParityWalshCompression",
+    "MI32.PolynomialEnergyAssembly",
+    "MI32.PolynomialSectorEnergy",
+    "MI32.PolynomialSectorMasks",
+    "MI32.PositiveCone",
+    "MI32.PositiveLinearPowers",
+    "MI32.PositiveMomentComparison",
+    "MI32.PositivePolynomial",
+    "MI32.PositiveVacuumWords",
+    "MI32.PositiveWordExtension",
+    "MI32.RawAnnihilatorContraction",
+    "MI32.RawCountBlocks",
+    "MI32.RawCreatorContraction",
+    "MI32.RawDirectionalActions",
+    "MI32.RawMultiplicationContraction",
+    "MI32.RawParity",
+    "MI32.RawPositiveCone",
+    "MI32.RawSectorNorms",
+    "MI32.RegularPositiveCone",
+    "MI32.RegularPositivePolynomial",
+    "MI32.RegularWitness",
+    "MI32.RestrictedBlockFamily",
+    "MI32.RestrictedThinMatrix",
+    "MI32.Statement",
+    "MI32.StatementChecks",
+    "MI32.SupportedPolynomialInteraction",
+    "MI32.SymmetricConeInterpolation",
+    "MI32.SymmetricDeletion",
+    "MI32.SymmetricLaw",
+    "MI32.SymmetricLinearAllOrders",
+    "MI32.SymmetricLinearRegularity",
+    "MI32.SymmetricMomentComparison",
+    "MI32.SymmetricPositiveCone",
+    "MI32.SymmetrizationReduction",
+    "MI32.ThinMatrix",
+    "MI32.ThinMomentRoot",
+    "MI32.ThinNetMoment",
+    "MI32.ThinPolynomialInteraction",
+    "MI32.ThinTranspose",
+    "MI32.TransposedPolynomialContraction",
+    "MI32.VacuumNormBound",
+    "MI32.VarianceScaleBasics",
+    "MI32.WeakDeletionMonotonicity",
+    "MI32.WeakMomentBasics"
+  ],
+  "core_axioms": {
+    "MI32.moment_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.weakMoment_univ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.spectralNorm_eq_l2_operator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.first_deletion_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.moment_nat_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.integral_pow_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositivePolynomial.tensorMoment_add_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositivePolynomial.positive_sum_second_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositivePolynomial.integrable_monomial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositivePolynomial.integral_evaluate_sq_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositivePolynomial.moment_add_le_of_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositivePolynomial.integral_evaluate_sq_le_of_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.positive_polynomial_second_moment_of_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.fourth_sum_squares_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.hilbert_walsh_fourth_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityGeometry.multiplicationEntry_eq_creation_add_annihilation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityGeometry.creationEntry_eq_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityGeometry.annihilationEntry_eq_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityGeometry.creationApply_eq_label_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityGeometry.annihilationApply_eq_label_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityGeometry.creationGram_eq_zero_of_rowCount_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveCone.evaluate_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveCone.walsh_second_eq_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveCone.integrated_walsh_fourth_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.positive_cone_fourth_moment_of_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawParity.parity_card_le_degree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawParity.monomial_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawParity.evaluate_sign_eq_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawParity.parity_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.raw_positive_polynomial_fourth_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ConeInterpolation.moment_holder_order_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ConeInterpolation.moment_four_q_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ConeInterpolation.memLp_of_fourth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLaw.map_signedAbs_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLaw.map_independent_signedAbs_eq_original": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLaw.integral_eq_walsh_signedAbs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLaw.independent_abs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.exists_half_net": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.opNorm_le_two_of_half_net": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.opNorm_pow_le_net_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.integral_opNorm_pow_le_of_images": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.integral_linear_sum_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.integral_matrix_image_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.integral_matrix_image_sq_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.matrixRowImage_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.integral_matrixRowImage_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricPositiveCone.integrable_normSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricPositiveCone.integrable_normSq_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricPositiveCone.fourth_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricPositiveCone.fourth_norm_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveLinearPowers.wordExponent_degree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveLinearPowers.evaluate_words": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveLinearPowers.signed_linear_even_moment_doubling_real_coeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveLinearPowers.signed_linear_even_root_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveMomentComparison.integral_evaluate_le_of_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricMomentComparison.integral_odd_power_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricMomentComparison.sum_even_power_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricMomentComparison.sum_even_moment_le_of_coordinate_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopySymmetrization.centered_even_moment_le_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.HilbertConditioning.integral_inner_pow_le_of_unit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.HilbertConditioning.integral_copy_inner_pow_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.IndependentColumns.independent_column_vectors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.IndependentColumns.independent_columnLinearForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.IndependentColumns.symmetric_columnLinearForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.IndependentColumns.integrable_abs_rpow_columnLinearForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.IndependentColumns.integral_columnLinearForm_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.independent_coordinatePairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.independent_squareDifferences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.independent_copyProducts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.symmetric_squareDifference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.symmetric_copyProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.integrable_copyProduct_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.integrable_squareDifference_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DiagonalCopyComparison.coordinate_even_moment_le_nat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.memLp_of_integrable_abs_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.memLp_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.add_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.mono_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.two_order_square_le_mean_add_centered_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MomentTools.even_moment_le_of_integral_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearRegularity.linear_even_root_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearRegularity.columnLinearForm_even_root_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.HilbertComparison.independent_coordinate_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinMomentRoot.opNorm_moment_le_of_images": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinMomentRoot.opNorm_moment_four_mul_le_of_images": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricConeInterpolation.moment_holder_order_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricConeInterpolation.moment_four_q_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ActiveCountSectors.annihilation_support_card_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ActiveCountSectors.annihilation_support_card_le_of_coeff_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ActiveCountSectors.creation_evaluate_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ActiveCountSectors.creation_maskCoeff_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ActiveCountSectors.creation_support_card_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ActiveCountSectors.creation_support_card_le_of_coeff_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AnnihilationSectorContraction.inputCoeff_eq_zero_of_support_card_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AnnihilationSectorContraction.input_polynomial_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AnnihilationSectorContraction.sectorAction_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AnnihilationSectorContraction.sectorAction_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.bilinear_restrict_axes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.moment_restrict_axes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.norm_zeroExtend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.thin_weak_test_restrict_cols": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.thin_weak_test_restrict_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.thin_weak_test_transposed_cols": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.transposeOperator_restrict_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.weak_test_restrict_axes": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.AxisRestriction.zeroExtendIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CreationSectorContraction.sectorAction_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedPolynomialAction.evaluateHilbert_extend_eq_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedPolynomialAction.maskedAction_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MultiplicationHolder.dominated_product_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MultiplicationHolder.operator_action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MultiplicationHolder.product_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.OutputPolynomialInteraction.action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.OutputPolynomialInteraction.measurable_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.OutputPolynomialInteraction.same_entries_action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.annihilationApply_L2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.annihilationApply_eq_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.annihilationApply_eq_inputSectorMask": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.annihilationApply_eq_sector_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.coefficient_eq_creation_add_annihilation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.coefficient_finiteMatrixApply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.coefficient_matrixApply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.creationApply_L2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.creationApply_eq_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.creationApply_eq_inputSectorMask": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.creationApply_eq_sector_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.finiteMatrixApply_eq_matrixApply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.finiteMatrixApply_eq_polynomial_coeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.finiteMatrixApply_parseval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.inputMask_L2_contraction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.inputPolynomial_parseval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ParityWalshCompression.outputMask_L2_contraction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.conditional_disjoint_mask_inner_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.integrable_conditionalEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.integrable_original_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.integrable_polynomial_inner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.integral_disjoint_mask_inner_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.integral_norm_sq_eq_conditionalEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.masked_second_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorEnergy.sum_sector_second_energies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorMasks.conditionalEnergy_mask_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorMasks.maskCoeff_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorMasks.maskCoeff_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorMasks.sectionCoeff_mask": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialSectorMasks.sum_conditionalEnergy_sectors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.degree_extendExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.evaluate_extend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.evaluate_linearExtend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.evaluate_masked_extend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.masked_extension_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.masked_extension_positive_degree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.masked_linearExtension_positive_degree": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveWordExtension.parity_extendExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.annihilation_count_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.annihilation_full_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.annihilation_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.annihilation_output_mask_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.creation_count_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.creation_full_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.creation_grade_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCountBlocks.creation_output_mask_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.annihilationCoeff_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.annihilation_section_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.coefficient_annihilation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.coefficient_creation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.creationCoeff_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.creation_section_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.degree_actionExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.degree_actionExponent_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.evaluate_annihilation_signed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.evaluate_creation_signed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.evaluate_product_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawDirectionalActions.parity_actionExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawSectorNorms.annihilationCoeff_eq_zero_outside_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawSectorNorms.annihilation_sectorAction_eq_restrict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawSectorNorms.creation_sectorAction_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawSectorNorms.norm_raw_annihilation_eq_sectorAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawSectorNorms.zeroExtend_annihilation_sectorAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedThinMatrix.cols_moment_four_mul_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedThinMatrix.independent_restrict_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedThinMatrix.independent_transposed_cols": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedThinMatrix.rows_moment_four_mul_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SupportedPolynomialInteraction.action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SupportedPolynomialInteraction.action_restrict_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SupportedPolynomialInteraction.norm_evaluateHilbert_restrict": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SupportedPolynomialInteraction.zeroExtend_evaluateHilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinMatrix.matrixRowImage_moment_four_mul_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinMatrix.transposeOperator_moment_four_mul_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinPolynomialInteraction.action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinPolynomialInteraction.same_entries_action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinTranspose.norm_transposeOperator_transpose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinTranspose.output_cols_moment_four_mul_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.ThinTranspose.transposeOperator_transpose_eq_adjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialEnergyAssembly.commonLabelCover_card_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialEnergyAssembly.mem_commonLabelCover_in": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialEnergyAssembly.mem_commonLabelCover_out": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialEnergyAssembly.second_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialEnergyAssembly.second_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PolynomialEnergyAssembly.second_moment_le_of_all_sectors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_apply_inl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_apply_inr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_eq_matrix_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_inl_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_inr_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_norm_sq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.action_vacuum_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteConeContraction.polynomial_norm_sq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteNorm.bipartite_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteNorm.measurable_bipartite_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteNorm.measurable_rectangular_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteNorm.rectangular_norm_le_bipartite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteVacuumIteration.vacuum_energies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteVacuumIteration.vacuum_eq_matrix_power": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteVacuumIteration.vacuum_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteVacuumIteration.vacuum_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteVacuumIteration.vacuum_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalSymmetricMoment.moment_rectangular_le_bipartite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalSymmetricMoment.operator_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.bipartiteWeight_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.bipartite_matrix_inl_inl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.bipartite_matrix_inl_inr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.bipartite_matrix_inr_inl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.bipartite_matrix_inr_inr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.bipartite_matrix_transpose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.card_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.coeff_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.coeff_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.coeff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.degree_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.evaluateHilbert_eq_pow_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.evaluate_eq_pow_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.evaluate_eq_pow_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.evaluate_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.evaluate_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.PositiveVacuumWords.exponent_succ": [
+      "propext"
+    ],
+    "MI32.PositiveVacuumWords.exponent_zero": [
+      "propext"
+    ],
+    "MI32.RawAnnihilatorContraction.annihilator_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawAnnihilatorContraction.input_mask_eq_zero_of_degree_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawCreatorContraction.creator_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawMultiplicationContraction.action_eq_creation_add_annihilation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawMultiplicationContraction.action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RawMultiplicationContraction.vector_sum_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.TransposedPolynomialContraction.action_l2_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.action_norm_le_sqrt_basis_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.integral_norm_even_pow_le_vacuum_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.norm_even_pow_le_vacuum_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.norm_moment_le_of_vacuum_energies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.norm_pow_of_selfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.opNorm_sq_le_basis_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VacuumNormBound.sum_vacuum_norm_sq_eq_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.bilinear_moment_le_norms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.bilinear_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.cross_norm_parts_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.lift_bilinear_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.lift_bilinear_left_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.lift_unit_test_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.memLp_bilinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BipartiteWeakMoment.norm_sq_parts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockDiagonalMoment.integrable_and_mean_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockDiagonalMoment.measurable_blockDiagonal_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockDiagonalNorm.norm_blockDiagonal_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockDiagonalNorm.norm_blockDiagonal_le_max": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockDiagonalNorm.norm_sq_eq_sum_sections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockDiagonalNorm.section_matrixOperator_blockDiagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMomentMaximum.geometric_weights_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMomentMaximum.mean_max_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMomentMaximum.scalar_le_threshold_add_power": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMomentMaximum.tail_term_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopyDeletionScale.budget_minimum_copy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopyDeletionScale.deletedBilinear_copy_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopyDeletionScale.deletionScale_copy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopyDeletionScale.exists_same_set_budget_comparison": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopyDeletionScale.test_moment_copy_le_exp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CopyDeletionScale.weakMoment_copy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.centered_moment_le_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.copy_integral_le_two_of_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.copy_moment_le_exp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.copy_moment_le_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.copy_moment_le_two_rpow_of_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.integrable_copy_abs_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.mean_zero_moment_le_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.moment_copy_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMomentEndpoints.moment_copy_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.card_largeRows_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.card_selection_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.exists_selection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.exists_variance_selection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.largeRows_subset_selection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.mem_largeRows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.selection_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.selection_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.selection_zero_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.subset_selection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.surviving_entry_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionVarianceSelection.surviving_entry_le_div": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GeneralLawCopy.entry_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GeneralLawCopy.integrable_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GeneralLawCopy.integral_copy_entry_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GeneralLawCopy.matrixCopy_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GeneralLawCopy.regular_entries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GeneralLawCopy.spectral_mean_le_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.bilinear_eq_deletedBilinear_empty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.bilinear_moment_le_eight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.dimension_factor_le_exp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.half_le_log_dimension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.integrable_and_mean_le_even_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.linearForm_eq_bilinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.log_two_le_log_dimension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.meanConstant_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.mean_spectralNorm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.mean_spectralNorm_le_literal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.one_le_momentOrder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.LocalLogMoment.twice_momentOrder_le_eight_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.independent_differences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.integrable_difference_abs_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.integrable_operator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.integral_difference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.integral_difference_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.integral_norm_le_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.integral_operator_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.measurable_difference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.norm_operatorMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.spectral_mean_le_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MatrixCopySymmetrization.symmetric_difference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearAllOrders.integral_two_pow_seven_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearAllOrders.linear_integrable_and_root_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearAllOrders.linear_root_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearAllOrders.moment_two_le_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearAllOrders.one_le_doublingConstant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricLinearAllOrders.real_doubling_of_even_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetrizationReduction.deletionScale_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetrizationReduction.upperBoundAt_of_symmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetrizationReduction.varianceScale_copy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.colStd_le_varianceScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.col_variance_le_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.finite_sup_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.finite_sup_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.rowStd_le_varianceScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.row_variance_le_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.varianceScale_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.varianceScale_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.VarianceScaleBasics.varianceScale_of_entry_second_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.abs_deletedBilinear_le_entryAbsSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.budget_minimum_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.budget_value_set_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.deletionScale_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.deletion_value_set_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.exists_deletion_minimizer_le_scale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.exists_minimizing_set": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.integrable_deletedBilinear_abs_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.memLp_entryAbsSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.minimum_le_deletionScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.moment_deletedBilinear_le_entryAbsSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.moment_le_weakMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.weakMoment_full_deletion_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.weakMoment_le_entryAbsSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.weakMoment_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakMomentBasics.weak_test_set_bddAbove": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BilinearHighOrder.bilinear_moment_doubling": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BilinearHighOrder.bilinear_moment_doubling_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BilinearHighOrder.bilinear_moment_le_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMaskMoment.integrable_of_integrable_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMaskMoment.mean_norm_le_of_block_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMaskMoment.measurable_blockSub_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockMaskMoment.measurable_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.blockOrder_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.dimension_factor_le_exp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.half_lt_log_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.index_add_two_le_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.index_add_two_le_two_blockOrder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.log_two_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.one_le_blockOrder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.pow_succ_le_pow_sub_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.two_blockOrder_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.BlockOrderArithmetic.two_order_le_blockOrder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.entryEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.gram_mean_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.mean_le_of_second_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.mean_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.norm_diagonal_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.norm_sq_le_diagonal_add_centeredGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.CenteredGramNorm.norm_sq_le_entryEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.blockSub_nearCross_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.blockSub_nearCross_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.blockSub_nearHigh_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.blockSub_nearHigh_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.cEven_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.cEven_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.cEven_fiber_label": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.cOdd_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.cOdd_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.cOdd_fiber_label": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.entry_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.farLow_eq_masked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.farUp_eq_masked_transpose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.label_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.label_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.matrix_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.nearCross_fiber_supported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.nearEven_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.nearHigh_fiber_supported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.nearLow_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.norm_blockSub_nearCross_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.norm_le_masks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.val_cEven": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionMasks.val_cOdd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.budget_add_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.budget_ge_two_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.budget_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.budget_strictMono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.budget_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.budget_zero": [
+      "propext"
+    ],
+    "MI32.DeletionScheduleArithmetic.finite_terminal_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.log_two_le_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.order_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.order_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.order_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.order_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.order_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.size_ge_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.size_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.DeletionScheduleArithmetic.size_succ": [
+      "propext"
+    ],
+    "MI32.DeletionScheduleArithmetic.step_card_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarMaskMean.card_columnsThrough_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarMaskMean.independent_transposed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarMaskMean.mean_farLow_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarMaskMean.mean_farUp_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarRemainderMoment.gram_scale_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarRemainderMoment.mean_norm_le_of_graded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarRemainderMoment.norm_transpose_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FarRemainderMoment.sqrt_scale_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.blockSub_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.fiberSection_matrixOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.fiber_supported_of_mask": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.norm_le_of_fiber_supported": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.norm_le_pi_blockSub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.norm_offDiagonal_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.norm_sq_eq_sum_fiberSections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FiberBlockNorm.offDiagonal_entry_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FrobeniusMean.entryEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FrobeniusMean.integrable_and_mean_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FrobeniusMean.mean_norm_le_of_row_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FrobeniusMean.norm_image_sq_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FrobeniusMean.norm_le_sqrt_entryEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.FrobeniusMean.norm_sq_le_entryEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.budget_ratio_le_reciprocal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.budget_ratio_sum_le_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.card_columnPairsAt_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.columnPairsAt_subset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.pair_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.pair_energy_le_of_label_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.sum_pair_weights_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.total_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GradedVarianceEnergy.total_energy_le_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.centeredGram_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.centeredGram_apply_diag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.centeredGram_apply_offdiag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.centeredGram_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.entry_memLp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.entry_memLp_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.entry_memLp_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.indepFun_centered_sq_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.indepFun_prod_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.independent_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integrable_centeredGram_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integrable_pow_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integrable_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integral_centeredGram_sq_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integral_centered_square_sum_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integral_column_product_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integral_prod_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integral_prod_sq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.integral_sub_mean_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.memLp_centeredGram_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.prod_memLp_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.sq_memLp_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.GramEntryMoments.total_centeredGram_energy_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.abs_masked_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.independent_masked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integrable_masked_abs_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integral_fourth_le_of_regular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integral_fourth_masked_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integral_masked_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integral_sq_masked_eq_zero_of_not": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integral_sq_masked_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.integral_sq_masked_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.mask_of_integral_sq_masked_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.masked_apply_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.masked_apply_true": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.masked_eq_of_true": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.masked_eq_zero_of_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.masked_sq_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.measurable_masked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.moment_zero_fun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.regular_masked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.sum_col_sq_masked_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.sum_row_sq_masked_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.MaskedEntryLaw.symmetric_masked": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearBlockMoment.blockBound_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearBlockMoment.block_integral_pow_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearBlockMoment.block_moment_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearBlockMoment.doublingConstant_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearBlockMoment.integral_pow_le_of_dominated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.budget_one": [
+      "propext"
+    ],
+    "MI32.NearMaskMean.integrable_sq_nearLow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.integral_sq_nearLow_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.mean_mask_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.mean_nearCross_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.mean_nearHigh_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.mean_nearLow_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.measurable_nearCross": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.measurable_nearHigh": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NearMaskMean.measurable_nearLow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.card_filter_level_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.card_sets_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.column_screen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.level_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.row_screen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.sets_horizon_eq_univ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.sets_mono": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.sets_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.sets_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedDeletionFamily.weak_screen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.cumulative_card_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.cumulative_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.entry_partition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.exists_unique_shell": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.farLower_common_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.farLower_nonzero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.farLower_nonzero_outside": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.farUpper_eq_transpose_farLower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.level_le_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.level_le_of_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.mem_level": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.mem_of_level_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.mem_own_shell": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.near_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.near_masks_disjoint": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.shell_disjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.shell_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.NestedShells.shell_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.bilinear_blockEntries_eq_deletedBilinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.blockEntries_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.col_budget_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.fiberExtend_apply_of_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.fiberExtend_apply_of_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.independent_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.integrable_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.measurable_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.moment_bilinear_blockEntries_le_weakMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.norm_fiberExtend": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.rectangular_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.regular_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.row_budget_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.sum_fiber_dite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RestrictedBlockFamily.symmetric_blockEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.deletionCoeff_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.deletionConstant_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.exists_upperBoundAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.five_masks_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.integrable_and_mean_spectralNorm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.symmetricUpperBoundAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.upperBoundAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.SymmetricDeletion.varianceCoeff_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.deletedBilinear_mask": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.mask_apply_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.mask_apply_not_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.norm_mask_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.norm_mask_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.weakMoment_antitone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.weakMoment_le_of_subset_of_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.WeakDeletionMonotonicity.weakMoment_mono_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.abs_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.abs_sign_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.coe_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.exists_regularEntries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.independent_entries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.integrable_entry_abs_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.integral_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.integral_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.integral_entry_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.integral_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.measurable_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.measurable_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.moment_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.regularEntries_signMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.regular_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.rowStd_signMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.signMatrix_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.sign_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MI32.RegularWitness.varianceScale_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "full_target_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "solution_sorry_count": 0,
+  "source_sha256": {
+    ".gitignore": "fe1e1c6e4bee14e8f4c0741f489c77a7b6d359f3749e1a167277125ce372352d",
+    "Audit.lean": "297b7a54233403aa6526ee17567062ced33453d4da2aa55bead572a00e7da55a",
+    "bipartite-cone-audit.lean": "e240e102ad6fb66f8a1050e53d4c315264b68ec1ccf0870f660843e53fd42af4",
+    "Challenge.lean": "4d35a3a1d5e15d469060818f01cee067833ab6e177bd135976766b25331f0aba",
+    "comparator.json": "b07babafd28006b80be40dabb3666e15fb517b4e2f0b7949fe8607d54bf1ec52",
+    "CONTINUE_HERE.md": "eb466129c8e614cccb5bfd1718e7b5c2025d3f5cc7c5d628b1fce8ca5767343a",
+    "deletion-moment-audit.lean": "ecbe64763550d5b1cedfe116e1be33f9798bfe8eccb1711ad9ee5c05176c00a7",
+    "deletion-variance-audit.lean": "f43316951d98c3e05c00293aa60c3977f1c1eed29a65f87e8d647b1a4e47ba00",
+    "diagonal-copy-audit.lean": "5ebb8e6753f36116845cc8cc77e05b5ede4329629e0a65adb01df9237dfbd6cb",
+    "docs/DELETION_REDUCTION_CHECKPOINT.md": "d90c30e5f5333903549b2b92d242936432b3cbc7e24c3c0da196f1ca0968b034",
+    "docs/HILBERT_COMPARISON_DERIVATION.md": "f6a9e269d0190000559ef26cf452538ca8424aacc9e4a98d888518433ace9a2c",
+    "docs/LOCAL_SYMMETRIC_MOMENT_CHECKPOINT.md": "927f74f7f0568d781a2125d0bb0fbda6150447cda2dac012d38f495b86a31529",
+    "docs/NEXT_FULL_DIRECTIONAL_STEP.md": "f1189e270fdd1eb3dd4d7eac577a57294d8f10ddc0e967ed73849ca475ef58d5",
+    "docs/NEXT_REMAINDER_ANALYTIC_PLAN.md": "a64ea812b17e70c1632b8401cb3622fac8d1cbe3851748d324c66e602c600667",
+    "docs/NEXT_THIN_MATRIX_STEP.md": "50cd833a703e393ef09630ab614746a83e063da6100e610abe6ee93ee02b57d5",
+    "docs/PROOF_OBLIGATIONS.md": "67d97ddc1f472c8a4ca20d8eac6c7a2889fd5453bbd08d260ccffac387b04815",
+    "docs/PROVENANCE.md": "308e14a808ebc64822a518edbe120d9148c8db61b858f9593fde445d12136f98",
+    "docs/REMAINING_CHAIN_SPEC.md": "4f0a1839646559a3b9b32b0a7c231ca6f7c8e1395b2831034000a90b648b68ee",
+    "docs/SECTOR_CONTRACTION_DERIVATION.md": "4ffe16bfa6a3de67b73b5d591f595624b0611e7bfe8385fb1dadc4f3aa104726",
+    "docs/source/build_verification_audit.py": "2dec8a8f8c5eab4eea65a98e6a5ca8648ffd5c703c6faf214f72c94faefbee64",
+    "docs/source/cycle_fiber_geometry.md": "a02c0a79f28467abd7d554ae0bab3ecd757061ef8dc7a8a3f08eb660c001e325",
+    "docs/source/cycle_fiber_geometry_checks.json": "833558cf496f1a9cbdf9a3c539b9854dfed733cb0e0c0618d8121c5a062a55d2",
+    "docs/source/cycle_multiplicity.md": "1a1cc31faaa6778dcfcca14cb574b8d6e2d7323fa38288c56899f0f1848c1501",
+    "docs/source/cycle_multiplicity_checks.json": "7dc667bc60666c0c0dcb097833825e0e7f0b91152d82382b1b984760e8f99fc8",
+    "docs/source/cycle_transfer.md": "f393a600a392d129c8e7a2cec67b3abc2de1a381fd1e17b96b37ef07eef91704",
+    "docs/source/cycle_transfer_checks.json": "ef45ea8a363c442d33ea726bfa43e7286e4c9b605c21c23972e4221b3a46773e",
+    "docs/source/full_law_conditioning_frontier.md": "719a248f9c3dca94d7726af3a7dbb075710e604d091115649994e01f8f560453",
+    "docs/source/MI32_solution.md": "fc2a01f6215d4d1e0e96095ae990ad4208e8126b0091ee0103edbf2918469073",
+    "docs/source/ordered_cycle_boundary.md": "8a4ea2da70a0649f3b1cbdb35b6b43cecbfd885037b41521cfb10435042a78c0",
+    "docs/source/ordered_cycle_checks.json": "b1ed19eb6887355f9d4719b5e839c4ed05fd1a02791b3aac3bf1677839308233",
+    "docs/source/positive_cone_checks.json": "8e97142860b015c5ef6d467b8b57b0001cf0fe4cf008ebda1e77fdad5a53c58e",
+    "docs/source/progress.md": "ef0a04723c12a6d5249840ac6132af253fcb849880de45e25a00dbf10d98b408",
+    "docs/source/README.md": "569af812f2ddf326c4e2bbc433c858a39dad40dd82736e881028a4a35602ce99",
+    "docs/source/regular_law_deletion.md": "53d213bd499316b6cf8aee783078c0549b3507753f0183f2c5d01de9e4eb93f5",
+    "docs/source/regular_law_parity_checks.json": "42a082b86250cceaa837449439df63c2c6402fab3d111fbe6e95a9b6f9cb206a",
+    "docs/source/regular_law_positive_cone.md": "5870846908b9cf222c641c8dee2cf1623c0cc7299c4db8f764cd85c6d1efe1b6",
+    "docs/source/verification_audit.json": "2ecba5a582c7b77200708ed3662340783be0180b7a94158fb6a2464471683969",
+    "docs/source/verify_cycle_fiber_geometry.py": "bd33216cbe5a07cb672307a53b01862f551a60dda024023ca396374693178af1",
+    "docs/source/verify_cycle_multiplicity.py": "29d8420f7e9d2fc7abdd85c75a4e2e90dd6e4b2cffabb497897613d2bc8a00c8",
+    "docs/source/verify_cycle_transfer.py": "6569f7fc941e7095a31c0a752ab56d3a7e99616b402279315fd07db05fe347e2",
+    "docs/source/verify_ordered_cycle.py": "2eb2f8ab2c69a0dc1073a11b89154b4d96de9a519290c98f2ce87c15cd50e11d",
+    "docs/source/verify_positive_cone.py": "f44b818c1a3b13a96435b00e2a312e92404f6d84e9023bdb1c47075dbaf5e5ed",
+    "docs/source/verify_regular_law_parity.py": "097f03fc318fe5ef46a55885da49ec2a1a56ba02c783713cf2a59040258c27ca",
+    "docs/source/weighted_sign_deletion.md": "6842a656cb1977c102ad14d7b90254e9d288e34cdac5b0019922ab094b34f8e3",
+    "docs/source/weighted_sign_localization.md": "7ec4964b0aa21975e1b87904fc5c3285fc633c2fa60711d917b88c2572bcc7ba",
+    "docs/source-manifest.json": "8494af73069d5d47e247de0bfb5e1cb9eab3f15f081db58bd6eebbece909abaa",
+    "docs/SOURCE_FIDELITY.md": "6de345f22fcab7b81ad1527714a42535d0d87aa2de189b76c2e47fdacd0b1cc4",
+    "formalization.yaml": "289b030cd8512d0f8c112067c15650941535295184b7a14fb7bbfd6f7de75800",
+    "FullTargetAudit.lean": "a0736a47100b539cb62f78dfac3d990beb4d35768df2b5bdfeb16524c8d9a9e7",
+    "general-law-copy-audit.lean": "aaac8a0b0527e9cc2674e57422d42d3c1e3128832b07cb3a15a3b11c6b3b1014",
+    "hilbert-comparison-audit.lean": "b7bc015d34477453a3c098ffabede4aa55e7dcddf4c1cbe68b62ce6fba0e8485",
+    "lake-manifest.json": "9c9f549158058647dfdab53fd09c2bac4345d4f919d66b4184c97e137d100d39",
+    "lakefile.lean": "9b98b09db10ecf1b49ed787f713e0bd320df3eea2da9ed7babadc2ae96398909",
+    "lean-toolchain": "b2b5068d5a4835675e651ce83b29c0ddb308d28b80076e7c007aef4630af0477",
+    "LICENSE": "a01c70e99b619c289a6d59bb4e61deb9b49806f9c2738daf3ad354f3f3d6641a",
+    "MI32/ActiveCountSectors.lean": "8fc04c1f028b9e0704a408be2fc6c85437b235f561ff617340e6054868cd1aaa",
+    "MI32/AnnihilationSectorContraction.lean": "27260b9dd4bf06b54c6c47b55f69dc33c8dbf8d700f6d388b8866cad50f92468",
+    "MI32/AxisRestriction.lean": "43ae80e43efcdb83c7543c3e3682eedd3945ef1e1e608808f4356af446781a37",
+    "MI32/BilinearHighOrder.lean": "c998afc1312d2590e32fa0d8576bef52531c33337c79beafbda03e618f8846c9",
+    "MI32/BipartiteConeContraction.lean": "d24a7b998307a5b980f98e2429b596df75563fb8a73b109bb565af6c168a94d4",
+    "MI32/BipartiteNorm.lean": "5d978af0f47d25361a38ab47f5c987bc99d31efd18649faff99fdac79818d9c8",
+    "MI32/BipartiteVacuumIteration.lean": "56cc8427719c4895d8eda1aca4e5075f20d25a98d3eba5919829c822b0646767",
+    "MI32/BipartiteWeakMoment.lean": "a6efc4c8f44486d40fe55189e15f830b3a8a9bfe71b17d2845eeb9d292cf468b",
+    "MI32/BlockDiagonalMoment.lean": "c3b0ebae75a34dac249e384d0e3d4d43f3dc655bd788bf55abdf580d1a469bf7",
+    "MI32/BlockDiagonalNorm.lean": "0b9407518c873ce1547f05f5ea350bedb8a366192287d5faf59f52795a95da32",
+    "MI32/BlockMaskMoment.lean": "2793640a7f06d7c54af68571b5ad052c9e2861b00e590eb4b7fc1fe3632ae691",
+    "MI32/BlockMomentMaximum.lean": "d259c32bbb00cca6729c9071051d9b95924c648800751f73b6c32c8c132e5fbf",
+    "MI32/BlockOrderArithmetic.lean": "e31c1cf4e95570b4c2b7d4c281bcb8125e7f1a78b2de5ea3129585092bf9b204",
+    "MI32/CenteredGramNorm.lean": "9613612242228a582a3cc85f30c606ce299a4700554794d57ee210fac34e15ef",
+    "MI32/ConeInterpolation.lean": "79418be913b80abd80289f23cda1f436d0aa7364c17ed44693afac381b151781",
+    "MI32/CopyDeletionScale.lean": "ee93bdafbf3c60eb28e082f76b75beebb00d852dab30b79600de6493b4887fae",
+    "MI32/CopySymmetrization.lean": "b7157492c84ecfa289e8284670378f3bab72f4d89e850d302509bc9e1b137d57",
+    "MI32/CreationSectorContraction.lean": "ef2d72f007ef1c5be40bd2e90bc6b7240def33547ba2ecbe1f790bedd79d1e85",
+    "MI32/DeletionMasks.lean": "431944293e883738318770ced399d06ce9d4cd1fafd987201ac52669609861ae",
+    "MI32/DeletionMomentEndpoints.lean": "938b9d7c528b438f14eba68529c766949aaf17cf7767df20d2be71f0b5145ac8",
+    "MI32/DeletionScheduleArithmetic.lean": "84ed32039c096882876441f9d3806f4f7a4f754b878ef3662ae0d9e2cd0311e2",
+    "MI32/DeletionVarianceSelection.lean": "a139d5435684bc16abf7f1735a165195efd007aa760f382c45a845c92ee23ea8",
+    "MI32/DiagonalCopyComparison.lean": "53397ba10c9333e6bd0496365ac6acce2c8bb4f93c3c48e24926d4f9f9dc9b89",
+    "MI32/FarMaskMean.lean": "3f5bac9e3d141835b3dc63751bbf2756a47b498b350258d9178d4b942edd474d",
+    "MI32/FarRemainderMoment.lean": "2ca3b94ac1c784ddfe5c25a2160d8e5a0d2e144e7bf0bebdb393fe89b150d5a5",
+    "MI32/FiberBlockNorm.lean": "59ea697a5e4a1a995c56656a01bdfca12b678b2dd9ffa29a07616ab1092a1f80",
+    "MI32/FiniteNet.lean": "8830c26d250e3aa397b4617bd6892d75bfb493119534f58a844410f4d6be3798",
+    "MI32/FrobeniusMean.lean": "2201c908418951b5137e28dd0f9f2e040a7ade26e6fb5125ad9142fb0ceb0fcf",
+    "MI32/GeneralLawCopy.lean": "717dedf79fc82aad7f3b6afee79adf238194d009b05d344fd0ce7ee95c7aec3a",
+    "MI32/GradedVarianceEnergy.lean": "a09e25316c9a9169dc6213bd1dad7dfb37563fa9b21f3e04c78eb93d8132e729",
+    "MI32/GramEntryMoments.lean": "d2a17139183fe4b8fe08db9adb299c2b43e71fdd7ff7639ef2daeb922b1cc10a",
+    "MI32/HilbertComparison.lean": "d6005893d39600244b54aeaca96fb025a7c4e303aaf2e2b706c942703476bb27",
+    "MI32/HilbertConditioning.lean": "34863bb77d5c1e12b0b48a3b74e22f82d38e7086dec73baf38700686943e4060",
+    "MI32/HilbertWalsh.lean": "3c958216728b4aa5aff05cd2d9d51c1d0b352b7628eeedf416b50af0ffcab8ea",
+    "MI32/IndependentColumns.lean": "fb4b2ab562302f9342c7694a884141434d8f790e1daac63311d84dd2bad980d0",
+    "MI32/LocalLogMoment.lean": "48beb8263f191e83def89a5c8c15f0d69fe797b6160ca11066902418b69ce3c2",
+    "MI32/LocalSymmetricMoment.lean": "57c26a6939e25ea2db7769c972106eb537fe6f54137c49d6e87239d4bb62591d",
+    "MI32/MaskedEntryLaw.lean": "8c90ab039a6f847d42f76f1d11d66b83685f9d61249867c4fe0e007e859e3970",
+    "MI32/MaskedPolynomialAction.lean": "1af44f9224eddaab18f61cf9dd5f397e4ea6ea0aea53f99e5ea5c8acf88660d5",
+    "MI32/MatrixCopySymmetrization.lean": "ec4c8961479910c39c187375eeead00128719599b32629e7f2cfa39c7305ca5b",
+    "MI32/MatrixImages.lean": "34550b625a8ffba362f3d429aad3f68fc9760ea6a30d63ae57876dbcb85957d7",
+    "MI32/MomentDoubling.lean": "29e3c72bfe38af09c7cce8949edac0535895e3ece0da32718604f8f7bd33ea87",
+    "MI32/MomentTools.lean": "49bc060fd31ba26d85a0debed832c8b4e89d6f43d9e4be8bb1f3669dcbc817a7",
+    "MI32/MultiplicationHolder.lean": "7a8f03d849852d7a091df32e53b3e1e28e0d233b4bd83bba9688a76004c30d67",
+    "MI32/NearBlockMoment.lean": "1e0172f25b328fd32340e769bef783692ac1d445bf224cc5d7353042c6e2c804",
+    "MI32/NearMaskMean.lean": "671999def7cf94a60c84300ee9c345941b84887abb7ded8ecf9f0d09bc9d9efe",
+    "MI32/NestedDeletionFamily.lean": "98d4ac1d616df706664480cc683ebf7f11dfd57bee1717e34f7a2420d36b472a",
+    "MI32/NestedDeletionSelection.lean": "b6bd5f9a0e9be634a7fe784ba34c3dce52deef4d7c312375aad1e9301c1b7700",
+    "MI32/NestedShells.lean": "619b2e6e1c17350b13ace525ce76a6ebbfe579c3be137d7535899e16b96affd6",
+    "MI32/OutputPolynomialInteraction.lean": "1ac1c7a03a4b109fdabe7454286b055e7b473c9c3e21cc818fa3ea1a58af42e8",
+    "MI32/ParityGeometry.lean": "6efd441fab09071e69354467bf6e159d80ae23bc9fa66265fdf9a2f0e81624ba",
+    "MI32/ParityWalshCompression.lean": "e8e8ab61dc31eb7c38219c680e361c49b03fb0431db5a9c3944e14905e99a2df",
+    "MI32/PolynomialEnergyAssembly.lean": "2931c0f1bcba3a45542f5247c1ecd34bbc62776d0cae31cb8efc9bdb77a9e286",
+    "MI32/PolynomialSectorEnergy.lean": "80cc4eaeaa8d691356d24a4734c92485c4de0ce505150586ff07955444e3ee66",
+    "MI32/PolynomialSectorMasks.lean": "3d73055e2bb01e038758c30534c7a96be39260d88f7612aa1fde329276cf6811",
+    "MI32/PositiveCone.lean": "90d38d28576fb0f26793c164f7351d1f781b05021f14c2ef678c8545ff30b679",
+    "MI32/PositiveLinearPowers.lean": "c7952a052ccec15b035b663e624561602e8b6354c278d608d8af73c4e97aac12",
+    "MI32/PositiveMomentComparison.lean": "7813a903522fb4c6aca4ac6628c91900e22f42e3efa9f91604ba183e80de8a00",
+    "MI32/PositivePolynomial.lean": "079f561a02356f91cb8ec94e8e4d6e60c4c479526a3b371d42afe8b6a14f3a9e",
+    "MI32/PositiveVacuumWords.lean": "967cf1f848f17852a6894a905649e0beabea136e266b8ebd37a036f4db31d67f",
+    "MI32/PositiveWordExtension.lean": "cd514018f4623411bf973f67392ecd8afe2589356a41e2200cdcef997f53b272",
+    "MI32/RawAnnihilatorContraction.lean": "32f361ac4d42f5230e6c851c7ffb18e1dc22b4f421e7287f1b5df5769cdbb9f0",
+    "MI32/RawCountBlocks.lean": "2aedf15594140b18306d5374d3637bea1f28f89de1ccf71a5b4ede08b3923af6",
+    "MI32/RawCreatorContraction.lean": "0c41d4a4a8df292006c3cea22a6953c4d9dad62bea656af8566f1eb3ad846a2b",
+    "MI32/RawDirectionalActions.lean": "96f00e2a6786ec86983b9f09b58745c8ea420efe70c7fafda9de83d446193176",
+    "MI32/RawMultiplicationContraction.lean": "02d5aeeb0c7525e9deea4ce172611bb6ad65a6d29a82e1352625c29f738123c2",
+    "MI32/RawParity.lean": "1cbc4f7a91e3aaac3ede217dae807b7f9891ae28e7d478183620d2336c2c44ac",
+    "MI32/RawPositiveCone.lean": "f5e2a3e384f1a4f74b921cacf5aa792a8fe325bc2cc206d12500e5ccd355d856",
+    "MI32/RawSectorNorms.lean": "9185a8c6364fa412bdb49d41c219d01d919b289684816e5f591cbf87f4c708c7",
+    "MI32/RegularPositiveCone.lean": "58ee2cc95b7d57e2a20f733182b6e101cb392274b209780008e299b3cb734a00",
+    "MI32/RegularPositivePolynomial.lean": "f4c810755b1b3124748f3e5c33bad9c5efb61e5d1ede6838b9e1c004c0776530",
+    "MI32/RegularWitness.lean": "bb82ae2834db538bb4cc9b8a02f58065254a2a223887dc8a6ed56c93f0954f1a",
+    "MI32/RestrictedBlockFamily.lean": "cef0e2d39735f111727391fd56e04836df8dd443b6796c33264fdb79be5c7a4e",
+    "MI32/RestrictedThinMatrix.lean": "282f0fc95efcb55acb457b48e51b6dcc4d47b5a1c8a0a588dd096868a30be89d",
+    "MI32/Statement.lean": "e96b2a8cd191641d7dc87f407c6a280691d1d438fd781547cf32170659e519ef",
+    "MI32/StatementChecks.lean": "bd1e6d169c0de6fd88424699c373c821a240e2da635f520c8eea8d94d688048c",
+    "MI32/SupportedPolynomialInteraction.lean": "a5e4594cbc30aee74aecf3b25fbfcea235b4ff10a3a6cf194e320d2e1280ccec",
+    "MI32/SymmetricConeInterpolation.lean": "9f98d64c6c423ed1e6a8977d770d5da263c9253146c4e3e55aa1751c48161d4d",
+    "MI32/SymmetricDeletion.lean": "5a8ab85529cfdd398628f1766ef6d994a4d3c6454765ca253f51e124b039755d",
+    "MI32/SymmetricLaw.lean": "b1c165a0b7998af9a0d537d9dd73a4fa4ad798fd148ff253523c1ea1cc78ce91",
+    "MI32/SymmetricLinearAllOrders.lean": "42d686d729970284c3090b08c9a3184e73843dc7970e5624d2b37cae04935b12",
+    "MI32/SymmetricLinearRegularity.lean": "89b2ffb3ab677f3721062b07887debdbce3bea9bf990c5a81750c13129b047b9",
+    "MI32/SymmetricMomentComparison.lean": "33152c84cba3810dddb84dfb7c28447013725a1c950986095a9248e0a5fcbb42",
+    "MI32/SymmetricPositiveCone.lean": "289e2376165866d5923d6de132ac70d22c5f250e146ae7065fd8f1ac8f043880",
+    "MI32/SymmetrizationReduction.lean": "6a53dbfd1a3c86e2c2e319cc50689b88de013eef71427ad3d8cfb475f4d80d38",
+    "MI32/ThinMatrix.lean": "be9d56de2e1ea762df1e580c5c3479ff5b3c9824e6bc8b2953903c0f8afb1c23",
+    "MI32/ThinMomentRoot.lean": "0cc35fbd730b09263521aca696b028c6badbe3031d44e65affda04e518704788",
+    "MI32/ThinNetMoment.lean": "7963fa407bbe0f0a3b63c1c16b2306664f8e6401ba82df487861078a2ba66b7e",
+    "MI32/ThinPolynomialInteraction.lean": "da1eac80a2581031ea81d13edd189b00acc590a3773a911ddf946cf267ad3acc",
+    "MI32/ThinTranspose.lean": "dc00e1425f485be9bb4966598f5e90e8c371f04a3d6cefc4194989ba3d69d1d4",
+    "MI32/TransposedPolynomialContraction.lean": "6f5d494f5f1a1d852037ef7d7720ce52fa736365e3b94179a20af9046f26b3fe",
+    "MI32/VacuumNormBound.lean": "1b8a88363cf23efe54057dfa77bab488cc704c8972b94ec50069a490e046341f",
+    "MI32/VarianceScaleBasics.lean": "06d1e21d9a6e96571019d888d421e6b35fe6685459e6ec38b620e9cd917255b4",
+    "MI32/WeakDeletionMonotonicity.lean": "28456284b174e26e963e94987e293426a61fd0f5ec5c4815733208c96b946a24",
+    "MI32/WeakMomentBasics.lean": "6102e3d74b86788061fb4c6015d2c515071b7c86ca3714e219a465f5a575c23b",
+    "MI32.lean": "1efd6739f8edc4a9d0628e806c046cc47d3a83f7a078b93101563351e492b31f",
+    "nested-deletion-audit.lean": "215ffca19d05bb1514a09bed923009d62aa75ad6e4d995758e53df62d5935b29",
+    "parity-walsh-audit.lean": "f37b33f7b839c8523cf7f616403c48eb054fe96aae3833dd6adfa2d4d9a457fa",
+    "poly-sector-energy-assembly-audit.lean": "8c74afeb611911e00a819b13a107d686c898ba1703e7c98c38d43ffff49fb54e",
+    "poly-sector-energy-audit.lean": "37bf88d20ea2a5a48783b9fa37b87643a298cbfdfb5c59b7aa9161af7e69e9fd",
+    "positive-vacuum-audit.lean": "d0c1c1fbb416b9992b4899d45dd0b3882c55f73d7f69ed56cc35fb66040dbe29",
+    "raw-direction-audit.lean": "c207e0a19cb90d844d8fc87776855210ecbc284a30c3af2a3d84afde71a89d5c",
+    "README.md": "dfe93e3189a8ba2234852963f293346475dc1c499eea063c9b94d059ffd11e8c",
+    "scripts/validate_metadata.py": "3f6f41638ef7e1cc8e11d34547b57e912851a13996ba7aef0bf45c802fd2511a",
+    "scripts/verify.ps1": "4c7cfe0d71495a07b079303c82e6774a6b0196831e987e0344a638cb9a4de653",
+    "scripts/verify.py": "d91140f53a8504bc6e5702fb31fa211c21406740277ecb345f242b8fb82d5765",
+    "Solution.lean": "3e53f2333ec43d0a826d26dc0591f33c380fa84c0cd40fd2df030af42fb76cd2",
+    "vendor/graph-matrices/GraphMatrices/Basic.lean": "164de046b8f6c92c734da05afd3191df30c2ed673a2e607b9924e8260733cdc6",
+    "vendor/graph-matrices/GraphMatrices/CrossedEdges.lean": "b1186acc40deae996f1c34a5de2078d74ab68b6513c9d9d457846009eddf9fe7",
+    "vendor/graph-matrices/GraphMatrices/FiniteL2.lean": "83072b149965312bcb3c8542256f9fa4a0bdce28346c8c4fb03b735bbc3bf2f6",
+    "vendor/graph-matrices/GraphMatrices/FiniteLocalMoments.lean": "7f2ee608c5545648526ac0860cad6ed94decc1da01259e7511de4204bd15daa2",
+    "vendor/graph-matrices/GraphMatrices/FinitePaleyZygmund.lean": "b97f808e15e9ebd92c25ae43196a88ee8603a40e186fcfc92ed450d7e5580597",
+    "vendor/graph-matrices/GraphMatrices/FiniteProbability.lean": "bceb39e64edeb1adce65fff13fa92e084ca25dc7cd0dc0997b078c387b948de7",
+    "vendor/graph-matrices/GraphMatrices/GraphMatrix.lean": "3f00400d36c5d08e4c6a802617726830f61d4a41222313d034cf56aca98f622c",
+    "vendor/graph-matrices/GraphMatrices/GraphMomentTransfer.lean": "9a1964a859909dab7371ed69df0c404412bb932f5e2642db4cec7ce34cedaa70",
+    "vendor/graph-matrices/GraphMatrices/MatrixAverageContraction.lean": "0fea3bb54a6563d9d36ae73cf2aafe892339bb745770964ded8c9729d68ec0c4",
+    "vendor/graph-matrices/GraphMatrices/OffDiagonalModel.lean": "5f19f401b5c51a38ec340364d512ab0d11f5e4a6fb46b3080cca5f8d19b4e36f",
+    "vendor/graph-matrices/GraphMatrices/RoleColoring.lean": "e28f806a1f3d014ad54223aeae5af36d244d1b7149568af8ca97d8024f3fce64",
+    "vendor/graph-matrices/GraphMatrices/SignGraphDegree.lean": "1dea2f53a01789557e03d3c356ffedbca869989d25bf54b9142f04267fbc9c28",
+    "vendor/graph-matrices/GraphMatrices/SpectralNorm.lean": "d2b800ff6f8e209b09bc59d5f03419311358765db14b686721bea126967bd43d",
+    "vendor/graph-matrices/GraphMatrices/Walsh.lean": "f25caa9fadfd119cc7347000a41e5301360bb4ff3541c241a429819cb025473d",
+    "vendor/graph-matrices/GraphMatrices/WalshFiniteL2.lean": "8a9c01fb0f1a94caabedd48d98c87b88f515cc0b3bc567d8ea8034b440d15664",
+    "vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean": "09e7c3efa5af23723db43b38060d10914033b3f81154e8f34483cdb71469a851",
+    "vendor/graph-matrices/LICENSE": "c118394b4c1adb946a93465a686d3247c1f7f5acf40c3029ef465929f6a4cfb3",
+    "vendor/graph-matrices/manifest.json": "75f0fd277c46b22d98c5e078544d7ac5aa58d064c64cfafc59a295655bb9505f"
+  }
+}

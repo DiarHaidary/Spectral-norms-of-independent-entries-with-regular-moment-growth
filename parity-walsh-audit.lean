@@ -1,0 +1,19 @@
+import MI32.ParityWalshCompression
+
+#print axioms MI32.ParityWalshCompression.coefficient_matrixApply
+#print axioms MI32.ParityWalshCompression.finiteMatrixApply_eq_matrixApply
+#print axioms MI32.ParityWalshCompression.coefficient_finiteMatrixApply
+#print axioms MI32.ParityWalshCompression.coefficient_eq_creation_add_annihilation
+#print axioms MI32.ParityWalshCompression.creationApply_eq_grade_compression
+#print axioms MI32.ParityWalshCompression.annihilationApply_eq_grade_compression
+#print axioms MI32.ParityWalshCompression.creationApply_eq_inputSectorMask
+#print axioms MI32.ParityWalshCompression.annihilationApply_eq_inputSectorMask
+#print axioms MI32.ParityWalshCompression.creationApply_eq_sector_grade_compression
+#print axioms MI32.ParityWalshCompression.annihilationApply_eq_sector_grade_compression
+#print axioms MI32.ParityWalshCompression.inputPolynomial_parseval
+#print axioms MI32.ParityWalshCompression.inputMask_L2_contraction
+#print axioms MI32.ParityWalshCompression.finiteMatrixApply_eq_polynomial_coeff
+#print axioms MI32.ParityWalshCompression.finiteMatrixApply_parseval
+#print axioms MI32.ParityWalshCompression.outputMask_L2_contraction
+#print axioms MI32.ParityWalshCompression.creationApply_L2_le
+#print axioms MI32.ParityWalshCompression.annihilationApply_L2_le

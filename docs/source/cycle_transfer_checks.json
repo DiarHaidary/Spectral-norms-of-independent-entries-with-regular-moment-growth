@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact fractions and exact Schur positivity",
+  "counts": {
+    "exact_equalities": 28,
+    "exact_psd_checks": 15,
+    "nonzero_or_failure_controls": 1
+  },
+  "primitive_cases": [
+    {
+      "half_rungs": 2,
+      "q": 1,
+      "exact_squared_norm": "288/625"
+    },
+    {
+      "half_rungs": 2,
+      "q": 2,
+      "exact_squared_norm": "288/625"
+    },
+    {
+      "half_rungs": 4,
+      "q": 1,
+      "exact_squared_norm": "576/625"
+    },
+    {
+      "half_rungs": 4,
+      "q": 2,
+      "exact_squared_norm": "864/625"
+    },
+    {
+      "half_rungs": 4,
+      "q": 3,
+      "exact_squared_norm": "864/625"
+    },
+    {
+      "half_rungs": 4,
+      "q": 4,
+      "exact_squared_norm": "576/625"
+    }
+  ],
+  "consumed_cases": [
+    {
+      "s": 0,
+      "rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cross_squared_allowance": "18/625"
+    },
+    {
+      "s": 1,
+      "rows": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "cross_squared_allowance": "72/625"
+    },
+    {
+      "s": 1,
+      "rows": [
+        0,
+        2
+      ],
+      "cross_squared_allowance": "72/625"
+    }
+  ],
+  "two_creation_row_equality": {
+    "original_labels": [
+      "j0",
+      "o0",
+      "j1",
+      "o1"
+    ],
+    "row_equality": "actual |j> -> |j,j>",
+    "child_pair_relation": "H21=-H30",
+    "child_pair_squared_norm": "1/8",
+    "primitive_matching_plus": "0",
+    "consumed_matching_plus_squared_norm": "36/625"
+  },
+  "scope": "Real rational supplied marks and Walsh4; no sampling of general complex transforms, no sign-law enumeration.",
+  "files": {
+    "mi32_cycles_2026-09-13\\cycle_transfer.md": "f393a600a392d129c8e7a2cec67b3abc2de1a381fd1e17b96b37ef07eef91704",
+    "mi32_cycles_2026-09-13\\verify_cycle_transfer.py": "6569f7fc941e7095a31c0a752ab56d3a7e99616b402279315fd07db05fe347e2",
+    "mi32_profile_2026-09-13\\verify_coherent_mark_transfer.py": "615b086be9a24faf5d5c4ba40fac0e37fd2112d6f32d0f2dd9c919d3f81a9ea5"
+  }
+}
