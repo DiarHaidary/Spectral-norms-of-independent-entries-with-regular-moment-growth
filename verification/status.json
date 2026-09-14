@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-14T13:09:11.090819+00:00",
+  "checked_at": "2026-09-14T13:10:38.855726+00:00",
   "status": "local_proof_gate_passed",
   "core": "passed",
   "full_target": "passed_local_axiom_audit",
@@ -3071,7 +3071,7 @@
   ],
   "solution_sorry_count": 0,
   "source_sha256": {
-    ".gitattributes": "ced447a891638bf2cc804146c15fd5b0d6f511be94c9d2369e4be0e6d8abf09e",
+    ".gitattributes": "f4f9db3be355b8add642b3fc3b0e5521e93a4a59d4569d1d9c2794a460505deb",
     ".gitignore": "fe1e1c6e4bee14e8f4c0741f489c77a7b6d359f3749e1a167277125ce372352d",
     "Audit.lean": "b8e5fbbcc74bf005e19326d97da4034e92b20a112ae0bbf061c541dbe5ef72e9",
     "bipartite-cone-audit.lean": "e240e102ad6fb66f8a1050e53d4c315264b68ec1ccf0870f660843e53fd42af4",

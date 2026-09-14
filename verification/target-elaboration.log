@@ -1,6 +1,6 @@
-⚠ [2570/2908] Replayed Challenge
+⚠ [2570/2794] Replayed Challenge
 warning: Challenge.lean:87:8: declaration uses `sorry`
-⚠ [3460/3551] Replayed GraphMatrices.FiniteL2
+⚠ [3461/3668] Replayed GraphMatrices.FiniteL2
 warning: vendor/graph-matrices/GraphMatrices/FiniteL2.lean:55:0: automatically included section variable(s) unused in theorem `GraphMatrices.FiniteL2.WeightedONBasis.reconstruct`:
   [DecidableEq I]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -50,14 +50,14 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [DecidableEq A] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-ℹ [3471/3551] Replayed GraphMatrices.FiniteProbability
+ℹ [3472/3668] Replayed GraphMatrices.FiniteProbability
 info: vendor/graph-matrices/GraphMatrices/FiniteProbability.lean:368:0: 'GraphMatrices.FiniteLaw.markov' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: vendor/graph-matrices/GraphMatrices/FiniteProbability.lean:369:0: 'GraphMatrices.FiniteLaw.prob_independentProduct_cylinder' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3472/3551] Replayed GraphMatrices.FiniteLocalMoments
+ℹ [3473/3668] Replayed GraphMatrices.FiniteLocalMoments
 info: vendor/graph-matrices/GraphMatrices/FiniteLocalMoments.lean:226:0: 'GraphMatrices.FiniteLocalMoments.HasLocalDegree.expect_eq_of_matchesUpTo' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-⚠ [3475/3551] Replayed GraphMatrices.WalshFiniteL2
+⚠ [3476/3668] Replayed GraphMatrices.WalshFiniteL2
 warning: vendor/graph-matrices/GraphMatrices/WalshFiniteL2.lean:62:8: This simp argument is unused:
   mul_assoc
 
@@ -72,7 +72,7 @@ Hint: Omit it from the simp argument list.
   [apply] simp
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [3480/3551] Replayed GraphMatrices.MatrixAverageContraction
+⚠ [3481/3668] Replayed GraphMatrices.MatrixAverageContraction
 warning: vendor/graph-matrices/GraphMatrices/MatrixAverageContraction.lean:22:0: automatically included section variable(s) unused in theorem `GraphMatrices.MatrixAverageContraction.signed_average_mean_norm_le`:
   [DecidableEq ι]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
@@ -85,7 +85,7 @@ consider restructuring your `variable` declarations so that the variables are no
   omit [DecidableEq ι] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [3482/3551] Replayed GraphMatrices.WalshFourthMoment
+⚠ [3483/3668] Replayed GraphMatrices.WalshFourthMoment
 warning: vendor/graph-matrices/GraphMatrices/WalshFourthMoment.lean:17:0: automatically included section variable(s) unused in theorem `GraphMatrices.Walsh.sign_flipOne`:
   [Fintype E]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
